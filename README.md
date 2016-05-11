@@ -6,17 +6,21 @@ Arbeitsgruppe Latex-Kurse (Mail: latex-kurse@mailman.zfn.uni-bremen.de).
 
 Aufgrund des Designs von Latex ist es nicht möglich, Pakete nach
 `\begin{document}` zu laden. Daher sind alle `usepackage`-Befehle in der Datei
-`packages.tex` enthalten, unabhängig davon ob diese Pakete gebraucht werden.
+`config/head.tex` enthalten, unabhängig davon ob diese Pakete gebraucht werden.
 Dies sollte zu keinen unerwünschten Nebenwirkungen führen.
 
 Die eigentlichen Abschnitte der Präsentation sind in dem Ordner `sections`
 enthalten. Dieser Ordner besitzt weiterhin eine Ebene von Unterordnern, um eine
 übersichtliche Struktur des Dateibaums zu gewährleisten und gleichzeitig eine
-granulare Auswahl an Themen zu ermöglichen.
+granulare Auswahl an Themen zu ermöglichen. Um bei Benutzung des ganzen
+Unterordners nicht alle Dateien extra angeben zu müssen, sollte es im Ordner
+`sections` zusätzlich eine `<Unterordner>.tex`-Datei geben, in der alle Dateien
+eingebunden werden.
 
-Statische Dateien wie Bilder sind in dem Ordner `assets` zu speichern. Außnahmen
+Statische Dateien wie Bilder sind in dem Ordner `images` zu speichern. Außnahmen
 sind momentan noch `sty`-Dateien und dergleichen, da Latex nach diesem im
-texmf-Tree und dem aktuellen Verzeichnis sucht.
+texmf-Tree und dem aktuellen Verzeichnis sucht. Einbinden geht dann einfach mit
+dem Dateinamen, da der `graphicspath` entsprechend gesetzt ist.
 
 Die jeweilige auf den Studiengang angepasste Version der Präsentation sollte
 dann im Wurzelverzeichnis des Repositories gespeichert werden. Vorgeschlagenes

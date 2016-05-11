@@ -1,0 +1,43 @@
+% Alles was im Kopf steht, ausser Funktionsdefinitionen. Diese sollten besser in
+% eine eigene Datei ausgelagert werden. Fuer kurze Funktionen einfach in
+% functions.tex, sonst ggf. fuer zusammenhaengende Dinge eine eigene Datei.
+
+% Titel, Autor etc. sollten gesetzt werden. Man kann sie bei Bedarf einfach in
+% der jeweiligen Praesentation ueberschreiben.
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+
+\usepackage{tikz}
+% Für lustige Grafiken
+\usetikzlibrary{shapes,snakes,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}
+
+\usepackage[european]{circuitikz}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\graphicspath{{./images/}}
+
+\usepackage[scaled=.90]{helvet}
+\renewcommand\ttdefault{txtt}
+\usefonttheme[onlymath]{serif}
+\usetheme[footlinenumber, navline=false, footlineauthor]{Bremen}
+
+\fbnum{00}
+\fbname{Uni Bremen}
+\subject{\LaTeX}
+
+\title{Eine Einführung in \LaTeX{}}
+\author[Arbeitsgruppe \LaTeX]{Arbeitsgruppe \LaTeX}
+\date{Orientierungswoche \the\year{}}
+\institute[Uni Bremen]{Arbeitsgruppe \LaTeX{}\\-- Universität Bremen --}
+
+
+\input{config/smallBremenFootline}
+
+\input{config/functions}

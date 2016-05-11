@@ -1,0 +1,71 @@
+\makeatletter
+\setbeamertemplate{footline}{%
+  \usebeamerfont{subsection in head/foot}%
+  \mbox{}\rlap{%
+    \begin{pgfpicture}{0pt}{0pt}{\paperwidth}{2.8\baselineskip}%
+      % Grauer Fond
+      \color{coolgray 1}%
+      \pgfpathrectangle{\pgfpoint{0cm}{0cm}}{%
+	\pgfpoint{\paperwidth}{1.6\baselineskip}}\pgfusepath{fill}
+      \pgfpathrectangle{\pgfpoint{0mm}{0cm}}{%
+	\pgfpoint{.75\paperwidth}{2.8\baselineskip}}\pgfusepath{fill}
+      \color{black}%
+      % Universitaetslogo
+%      \pgfputat{\pgfpoint{4mm}{1.5\baselineskip}}{%
+%	\pgfbox[left,bottom]{\pgfimage[height=2\baselineskip]{unilogo}}%
+      %}
+    \end{pgfpicture}%
+  }
+  %% Universitätslogo
+  \rlap{%
+    \raisebox{.55\baselineskip}{%
+      \mbox{}\hspace{4mm}%
+      \parbox[b]{.75\paperwidth}{%
+	\href{http://www.uni-bremen.de}{%
+	  \pgfimage[height=1.7\baselineskip]{unilogo}}%
+	}}}%
+  %% Institute/Partnerlogos
+  \rlap{%
+    \raisebox{1.75\baselineskip}{%
+      \mbox{}\hspace{.5\paperwidth}%
+      \llap{%
+      \parbox[t]{.15\paperwidth}{%
+        \vspace{0pt}%
+	\mbox{}\hfill%
+	\beamer@theme@footline@partnerlogo}%
+	\hspace{.025\paperwidth}}
+      \rlap{%
+      \hspace{.025\paperwidth}%
+      \parbox[t]{0.15\paperwidth}{%
+        \vspace{0pt}%
+	\beamer@theme@footline@secondarypartnerlogo}%
+	}}}%
+  %% Autor
+  \rlap{%
+    \raisebox{1.9\baselineskip}{%
+      \mbox{}\hspace{.75\paperwidth}%
+      \parbox[b]{.25\paperwidth}{%
+	\mbox{}\hspace{.5mm}\beamer@theme@footline@author\hfill%
+% Ausgelager siehe unten
+%	\beamer@theme@footline@number\hfill~\hspace{5mm}
+  }}}%
+  %%% Foliennummer
+  \rlap{%
+    \raisebox{1.9\baselineskip}{%
+      \mbox{}\hspace{.91\paperwidth}%
+      \parbox[b]{.05\paperwidth}{%
+        \raggedright\beamer@theme@footline@number
+      }
+    }
+  }
+  %% Abschnittsleiste
+  \rlap{\raisebox{1.9\baselineskip}{%
+      \beamer@theme@footline@section%
+  }}%
+  %% Navigationssymbole
+  \rlap{\parbox[b]{\paperwidth}{%
+      \hfill\usebeamertemplate***{navigation symbols lower}%
+      \hspace{1.5mm}\mbox{}\vspace{.5mm}%
+  }}%
+}
+\makeatother
