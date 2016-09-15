@@ -1,0 +1,63 @@
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+\section{\LaTeX{}: Was, warum, wie?}
+
+\begin{frame}
+    \frametitle{Was ist \LaTeX{}?}
+    \begin{itemize}
+        \item Eine logische Markup-Sprache zur Textauszeichnung
+        \item Plattformunabhängig und Quelloffen
+        \item Ideal für wissenschaftliche Dokumente
+        \item Multilingual
+    \end{itemize}
+    \begin{description}[pdf\TeX]
+        \item [\TeX] ist ein Textsatzsystem (1977--1986, D.\,E. Knuth)
+        \item [\LaTeX] komfortable Benutzerschnittstelle (seit 1980, L.
+        Lamport)
+        \item [pdf\TeX] Ausgabesystem (seit 1990, H.\,T. Thành)
+    \end{description}
+    %TODO: Was ist Latex nicht
+\end{frame}
+
+\begin{frame}
+    \frametitle{Warum \LaTeX?}
+    \begin{itemize}
+        \item Zeit- und Stressersparnis
+        \item Plattformunabhängig
+        \item Hohe typographische Qualität
+        \item Gut dokumentiert (Internet, Bücher)
+        \item Quasistandard bei wissenschaftlichen Veröffentlichungen
+        \item Konzentration auf den Inhalt, nicht das Layout
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{So funktioniert \LaTeX{}}
+    \begin{itemize}
+        \item Übersetzen von geschriebenem Quelltext in PDF-Dokument
+        \item Programm dafür: pdflatex
+        \item Für erweiterte Funktionen, z.B. Verweise mehrere Durchläufe nötig.
+    \end{itemize}
+    \pause\bigskip
+    \begin{block}{Ablaufschema}\centering
+        \begin{tikzpicture}[scale=.75,shorten <=2pt, shorten >=2pt]
+
+            \node[rectangle,label=above:{Code}]
+            	(code) 		at (0,0) {\includegraphics[height=30pt]{texicon.png}};
+            \node[rectangle,draw,fill=white]
+            	(latex) 	at (3,0) {\texttt{pdflatex}};
+            \node[rectangle,label=above:{Dokument}]
+            	(dokument) 	at (6,0) {\includegraphics[height=30pt]{pdficon.png}};
+            \node
+            	(aux) at (3,-2) {\footnotesize Hilfsdateien: \texttt{.aux}, \texttt{.toc},
+            	\texttt{.log}, \ldots};
+            \begin{scope}[thick]
+                \path[->] (code)  edge (latex);
+                \path[->] (latex) edge (dokument);
+                \path[<->] (latex) edge (aux);
+            \end{scope}
+        \end{tikzpicture}
+    \end{block}
+\end{frame}
