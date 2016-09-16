@@ -1,2 +1,45 @@
 
 \newenvironment{fframe}{\begin{frame}[fragile,environment=specialframe]}{\end{frame}}
+
+
+\makeatletter
+        \providecommand\grpn[1]{\textcolor{OliveGreen}{\texttt{#1}}}
+        \providecommand\cls[1]{\textcolor{BurntOrange}{\textsf{#1}}}
+        \providecommand\pkg[1]{\cls{#1}}
+        \providecommand\umg[1]{\textcolor{SeaGreen!50!Brown}{\texttt{#1}}}
+        \providecommand\msur[1]{\texttt{\{#1\}}}
+        \providecommand\osur[1]{\texttt{[#1]}}
+        \providecommand\meta[1]{\emph{\ensuremath\langle#1\ensuremath\rangle}}
+% \cmd{\foo} Prints \foo verbatim
+        \def\cmd#1{\cs{\expandafter\cmd@to@cs\string#1}}
+        \def\cmd@to@cs#1#2{\char\number`#2\relax}
+        \DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+% \marg \marg{text} prints {text}, `mandatory argument'.
+        \providecommand\marg[1]{%
+        {\ttfamily\char`\{}\meta{#1}{\ttfamily\char`\}}}
+% \oarg \oarg{text} prints [text], `optional argument'.
+        \providecommand\oarg[1]{%
+        {\ttfamily[}\meta{#1}{\ttfamily]}}
+% \parg \parg{te,xt} prints (te,xt), `picture mode argument'.
+        \providecommand\parg[1]{%
+        {\ttfamily(}\meta{#1}{\ttfamily)}}
+
+% Keine Abstände vor und nach Codeblöcken
+\preto{\@verbatim}{\topsep=1pt \partopsep=1pt }
+\makeatother
+
+\newcommand{\uebung}[1]{
+\begin{frame}
+\frametitle{Zeit zum Ausprobieren}
+
+Die Folien findet ihr hier: \url{\slideurl}
+
+Die Aufgaben hier: \url{\exerciseurl}
+\bigskip
+\begin{center}
+    {\huge
+    Bearbeitet jetzt die\\
+    Aufgabe #1
+    }
+\end{center}
+\end{frame}}
