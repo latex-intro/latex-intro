@@ -10,6 +10,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{csquotes}
 
+\definecolor{coolgray}{rgb}{0.90625,0.8828125,0.8359375}
+\definecolor{BurntOrange}{rgb}{1,0.5,0}
+\definecolor{Brown}{HTML}{C17D11}
+\definecolor{SeaGreen}{HTML}{2e8b57}
+
 \usepackage{tikz}
 % Für lustige Grafiken
 \usetikzlibrary{shapes,arrows}
@@ -40,9 +45,13 @@
 \providecommand{\exerciseurl}{http://exercises.are.here}
 
 \makeatletter
+% Titelseite automatisch erzeugen
 \g@addto@macro\beamer@lastminutepatches{\begin{frame}
     \titlepage{}
 \end{frame}}
+
+% Keine Abstände vor und nach Codeblöcken
+\preto{\@verbatim}{\topsep=1pt \partopsep=1pt }
 \makeatother
 
 \AtBeginSection{\begin{frame}
