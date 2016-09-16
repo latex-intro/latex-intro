@@ -10,6 +10,12 @@
 \newcommand{\upk}[1]{\textrm{\textbackslash usepackage\{#1\}}}
 \newcommand{\cmd}[2]{\textrm{\textbackslash #1\{\textlangle #2\textrangle\}}}
 \newcommand{\cmdd}[1]{\textrm{\textbackslash #1}}
-\newcommand{\ncmd}[2]{\textrm{\textbackslash newcommand\{\textlangle #1\textrangle\}\{\textlangle #2\textrangle\}}}
+\newcommand{\ncmd}{\textrm{\textbackslash newcommand\{\textlangle\textbackslash Befehlname\textrangle\}[\textlangle Anzahl Parameter \textrangle]\{\textlangle Befehlsdefinition\textrangle\}}}
+\newcommand{\ncmdd}[2]{\textrm{\textbackslash newcommand\{\textbackslash #1\}\{#2\}}}
+\newcommand{\dmop}[2]{\textrm{\textbackslash DeclareMathOperator\{\textlangle\textbackslash #1\textrangle\}\{\textlangle #2\textrangle\}}}
+\newcommand{\dmopp}[2]{\textrm{\textbackslash DeclareMathOperator\{\textbackslash #1\}\{#2\}}}
 \newcommand{\umg}[1]{\textcolor{umg}{#1}}
 \newcommand{\pkg}[1]{\textcolor{pkg}{#1}}
+
+\DeclareMathOperator{\ArcSin}{ArcSin}
+\DeclareMathOperator{\sgn}{sgn}

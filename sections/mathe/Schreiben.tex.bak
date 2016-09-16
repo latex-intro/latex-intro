@@ -315,7 +315,7 @@ Es gibt auch die Möglichkeit mit \cmd{xrightarrow}{Text} aus dem \pkg{amsmath}-
 \[
     x_n\xrightarrow{n\rightarrow\infty}0
 \]
-Mit \textrm{\cmd{overset}{Text}\{\textlangle Operator\textrangle\}} lässt sich außerdem auf andere Pfeile Beschriftung setzen: 
+Mit \textrm{\cmd{overset}{Text}\{\textangle Operator\textrangle\}} lässt sich außerdem auf andere Pfeile Beschriftung setzen: 
 \[
     x=1 \overset{\cdot2}{\iff} 2x=1
 \]
