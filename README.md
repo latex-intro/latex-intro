@@ -27,5 +27,5 @@ dann im Wurzelverzeichnis des Repositories gespeichert werden. Vorgeschlagenes
 Namesschema: `presentation-<Fach>[-<Typ>].tex`. Typ kann benutzt werden, um z.B.
 eine Version als Handout zu compilieren und eine normal mit Pausen.
 
-Eine Übersetzung des Dokuments ist dann ohne Hilfe von Makefiles mit `latexmk
--pdf <Dateiname>` möglich. Alle Abhängigkeiten werden hierbei berücksichtigt.
+Eine Übersetzung des Dokuments ist dann ohne Hilfe von Makefiles mit
+`latexmk -pdf <Dateiname>` möglich. Alle Abhängigkeiten werden hierbei berücksichtigt.
