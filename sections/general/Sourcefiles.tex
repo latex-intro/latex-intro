@@ -1,0 +1,200 @@
+\section{Syntax und Grundstruktur}
+
+\begin{frame}[fragile]
+    \frametitle{Zur Syntax}
+    \begin{block}{Befehl}
+        \cmd{Befehl}\oarg{Optionen}\marg{Argument1}...\marg{ArgumentN}
+    \end{block}
+    \pause
+    \begin{block}{Umgebung}
+        \cmd{begin}\marg{Umgebung}\oarg{Optionen} \ldots \cmd{end}\marg{Umgebung}
+    \end{block}
+    \pause
+    \begin{block}{Kommentar}
+        \verb+% Dies ist ein Kommentar+
+    \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Aufbau der Quelldatei}
+    \begin{itemize}
+        \item Präambel
+        \item \enquote{Inhalt}
+    \end{itemize}
+    \bigskip
+    \pause
+    
+    \begin{block}{\texttt{Beispiel.tex}}
+\begin{verbatim}
+\documentclass{scrartcl}
+% Ende der Präambel
+
+\begin{document}
+    Hallo Welt
+\end{document}
+\end{verbatim}
+    \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Was kommt wo hin?}
+    Präambel (Header)
+    \begin{itemize}
+        \item Dokumentenklasse
+        \item Benutzte Pakete
+        \item Einstellungen für das gesamte Dokument
+        \item Einige Metadaten, z.B. Autor, Titel, \ldots
+    \end{itemize}
+    \bigskip
+
+    Der eigentliche Inhalt (Text, Abbildungen, \ldots) kommt zwischen \verb+\begin{document}+ und \verb+\end{document}+
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Die Dokumentenklasse}
+    \begin{block}{Syntax}
+        \cmd{documentclass}\oarg{Optionen}\marg{Klasse}
+    \end{block}
+    \pause
+    \begin{itemize}
+        \item Dokumentklassen
+        \begin{itemize}
+            \item Die wichtigste Klasse: \verb+scrartcl+\pause
+            \item Weitere: \verb+scrreprt+, \verb+scrbook+, \verb+scrlttr2+, \verb+beamer+\pause
+        \end{itemize}
+        \item Optionen:
+        \begin{itemize}
+            \item Schriftgröße: \verb+10pt+, \verb+11pt+, \verb+12pt+\pause
+            \item Papiergröße: \verb+a4paper+\pause
+            \item Zweispaltig: \verb+twocolumn+\pause
+            \item Keine Einrückung am Anfang vom Absatz: \verb+parskip=full+
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Die Dokumentenklassen im Überblick}
+
+    \begin{tabular}{l|c|c}
+        Dokumenttyp & KOMA-Klasse & Standard-Klasse\\
+        \hline
+        Einfacher Artikel & scrartcl & article\\
+        längerer Report & scrreprt & report\\
+        Buch & scrbook & book\\
+        Briefe & scrlttr2 & --
+    \end{tabular}
+    
+    \bigskip
+    
+    In der Regel sind die KOMA-Klassen den Standard-Klassen vorzuziehen, da die KOMA-Klassen an die deutsche Formatierung angepasst sind.
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Pakete einbinden}
+    
+    Latex kann mit Paketen erweitert werden. Dies ist für viele Dinge sehr wichtig, da die Standardfunktionen zum Teil nicht ausreichen.
+    \begin{block}{Paket mit Optionen laden}
+        \cmd{usepackage}\oarg{Optionen}\marg{Paketname}
+    \end{block}
+    \pause
+    \bigskip
+    \begin{exampleblock}{Quelldatei ist UTF-8, immer nutzen}
+		\verb+\usepackage[utf8]{inputenc}+
+    \end{exampleblock}
+    \pause
+    \begin{exampleblock}{Sprache auf Deutsch umstellen}
+        \verb+\usepackage[ngerman]{babel}+
+    \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Das babel-Paket}
+    
+    Sehr wichtiges Paket zur Lokalisierung:
+    \begin{itemize}
+        \item Deutsche Überschriften für z.B. Verzeichnisse
+        \item Deutsche Silbentrennung
+        \item Deutsche Anführungszeichen
+    \end{itemize}
+    \bigskip
+    \begin{block}{Benutzen mit}
+        \verb+\usepackage[ngerman]{babel}+
+    \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Umlaute}
+    
+    Umlaute funktionieren nicht Standardmäßig, Latex muss gesagt werden wie die Datei gespeichert ist:
+    \begin{block}{Quelldatei ist UTF-8}
+		\verb+\usepackage[utf8]{inputenc}+
+    \end{block}
+    \pause
+    
+    Eventuell muss Latex außerdem eine andere Schrift zur Ausgabe nutzen:
+    \begin{block}{Andere Font-Darstellung}
+		\verb+\usepackage[T1]{fontenc}+
+    \end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Sonderzeichen}
+    
+    Latex nutzt die folgenden Sonderzeichen für spezielle Funktionen:
+    \begin{center}
+      \hfill \$
+      \hfill \%
+      \hfill \&
+      \hfill \{
+      \hfill \}
+      \hfill \_
+      \hfill \#
+      \hfill \textbackslash
+      \hfill \~{}
+      \hfill \^{}
+      \hfill
+    \end{center}
+
+    Um diese auszugeben, muss meist nur ein \textbackslash{} vor dieses gesetzt werden.
+    Damit wird \verb+\$+ zu \$.
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Leerzeichen und Absätze}
+    
+    \begin{itemize}
+        \item Mehrere Leerzeichen werden zu einem zusammengefasst \pause
+        \item Ein neuer Absatz mit einer Leerzeile \pause
+        \item Einen harten Umbruch erzeugt man mit \textbackslash\textbackslash
+    \end{itemize}
+    \pause    
+    
+    \begin{columns}[c]
+        \column{.5\textwidth}
+            \begin{verbatim*}
+Dies ist ein Text  mit
+vielen   Leerzeichen, die
+verschwinden.
+Und eine neue  Zeile.
+
+Ein neuer Absatz geht auch!
+\end{verbatim*}
+        \pause
+        \column{.5\textwidth}
+        Dies ist ein Text  mit
+        vielen   Leerzeichen, die
+        verschwinden.
+        Und eine neue  Zeile.
+
+        Ein neuer Absatz geht auch!
+\end{columns}
+\end{frame}

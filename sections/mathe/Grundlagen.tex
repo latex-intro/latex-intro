@@ -1,11 +1,11 @@
 \section{Mathematik-Modus}
 \subsection{Umgebungen}
 \begin{frame}[fragile]{Mathematische Grundlagen}
-\framesubtitle{Das Paket \textcolor{pkg}{amsmath}}
+\framesubtitle{Das Paket \pkg{amsmath}}
 Wir wollen nun erläutern, wie man in \LaTeX{} Formeln schreibt. 
 
 \medskip\pause
-Wir laden zunächst einmal das Paket \textcolor{pkg}{amsmath} mittels \upk{amsmath}. Mit diesem haben wir nun Zugriff auf eine Vielzahl mathematischer Befehle. 
+Wir laden zunächst einmal das Paket \pkg{amsmath} mittels \verb+\usepackage{amsmath}+. Mit diesem haben wir nun Zugriff auf eine Vielzahl mathematischer Befehle. 
 
 \medskip\pause
 Formeln sehen anders aus, als der normale Textmodus (z.B. Bindestrich vs. Minus), deshalb müssen wir in \LaTeX{} erstmal den Mathe-Modus aktivieren. 
@@ -50,12 +50,12 @@ Einzeilige abgesetzte Formeln werden in eckigen Klammern geschrieben:
 \begin{frame}[fragile]{Weitere Mathematik}
 Häufig muss auf eine Formel Bezug genommen werden. \LaTeX{} hilft uns dabei mit Umgebungen, die Formeln durchnummerieren:
 \begin{itemize}
-\item \textcolor{umg}{equation}: Nummeriert einzeilig;
-\item \textcolor{umg}{align}: Nummeriert mehrzeilig;
-\item \textcolor{umg}{alignat}\textrm{\{\textlangle Spaltenzahl\textrangle\}}: Nummeriert mehrzeilig mit fester Spaltenzahl.
-\item \textcolor{umg}{equation*}: Ohne Nummerierung einzeilig;
-\item \textcolor{umg}{align*}: Ohne Nummerierung mehrzeilig;
-\item \textcolor{umg}{alignat*}\textrm{\{\textlangle Spaltenzahl\textrangle\}}: Ohne Nummerierung mit fester Spaltenzahl.
+\item \umg{equation}: Nummeriert einzeilig;
+\item \umg{align}: Nummeriert mehrzeilig;
+\item \umg{alignat}\textrm{\{\textlangle Spaltenzahl\textrangle\}}: Nummeriert mehrzeilig mit festerSpaltenzahl.
+\item \umg{equation*}: Ohne Nummerierung einzeilig;
+\item \umg{align*}: Ohne Nummerierung mehrzeilig;
+\item \umg{alignat*}\textrm{\{\textlangle Spaltenzahl\textrangle\}}: Ohne Nummerierung mit fester Spaltenzahl.
 \end{itemize}
 \end{frame}
 
@@ -93,9 +93,9 @@ Häufig muss auf eine Formel Bezug genommen werden. \LaTeX{} hilft uns dabei mit
 \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Die \textcolor{umg}{alignat}-Umgebung}
+\begin{frame}[fragile]{Die \umg{alignat}-Umgebung}
 \framesubtitle{Aussehen} 
-Die \textcolor{umg}{alignat}-Umgebung empfiehlt sich vor allem bei Umformen von Gleichungen. Ein Beispiel:
+Die \umg{alignat}-Umgebung empfiehlt sich vor allem bei Umformen von Gleichungen. Ein Beispiel:
 \begin{columns}
 \begin{column}{.5\textwidth}
 \begin{codeblock}

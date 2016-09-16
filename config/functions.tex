@@ -2,50 +2,16 @@
 \newenvironment{fframe}{\begin{frame}[fragile,environment=specialframe]}{\end{frame}}
 \newenvironment{codeblock}[1][]{\smallskip\begin{block}{Code: #1}}{\end{block}}
 
-\definecolor{pkg}{HTML}{FF7F00}
-\definecolor{umg}{HTML}{32CD32}
-
 \newcommand{\R}{\mathbb{R}}
-
-\newcommand{\upk}[1]{\textrm{\textbackslash usepackage\{#1\}}}
-\newcommand{\cmd}[2]{\textrm{\textbackslash #1\{\textlangle #2\textrangle\}}}
-\newcommand{\cmdd}[1]{\textrm{\textbackslash #1}}
-\newcommand{\ncmd}{\textrm{\textbackslash newcommand\{\textlangle\textbackslash Befehlname\textrangle\}[\textlangle Anzahl Parameter \textrangle]\{\textlangle Befehlsdefinition\textrangle\}}}
-\newcommand{\ncmdd}[2]{\textrm{\textbackslash newcommand\{\textbackslash #1\}\{#2\}}}
-\newcommand{\dmop}[2]{\textrm{\textbackslash DeclareMathOperator\{\textlangle\textbackslash #1\textrangle\}\{\textlangle #2\textrangle\}}}
-\newcommand{\dmopp}[2]{\textrm{\textbackslash DeclareMathOperator\{\textbackslash #1\}\{#2\}}}
-\newcommand{\umg}[1]{\textcolor{umg}{#1}}
-\newcommand{\pkg}[1]{\textcolor{pkg}{#1}}
-
-
 \DeclareMathOperator{\ArcSin}{ArcSin}
 \DeclareMathOperator{\sgn}{sgn}
 
-\makeatletter
-        \providecommand\grpn[1]{\textcolor{OliveGreen}{\texttt{#1}}}
-        \providecommand\cls[1]{\textcolor{BurntOrange}{\textsf{#1}}}
-        \providecommand\pkg[1]{\cls{#1}}
-        \providecommand\umg[1]{\textcolor{SeaGreen!50!Brown}{\texttt{#1}}}
-        \providecommand\msur[1]{\texttt{\{#1\}}}
-        \providecommand\osur[1]{\texttt{[#1]}}
-        \providecommand\meta[1]{\emph{\ensuremath\langle#1\ensuremath\rangle}}
-% \cmd{\foo} Prints \foo verbatim
-        \def\cmd#1{\cs{\expandafter\cmd@to@cs\string#1}}
-        \def\cmd@to@cs#1#2{\char\number`#2\relax}
-        \DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
-% \marg \marg{text} prints {text}, `mandatory argument'.
-        \providecommand\marg[1]{%
-        {\ttfamily\char`\{}\meta{#1}{\ttfamily\char`\}}}
-% \oarg \oarg{text} prints [text], `optional argument'.
-        \providecommand\oarg[1]{%
-        {\ttfamily[}\meta{#1}{\ttfamily]}}
-% \parg \parg{te,xt} prints (te,xt), `picture mode argument'.
-        \providecommand\parg[1]{%
-        {\ttfamily(}\meta{#1}{\ttfamily)}}
+\newcommand{\cmd}[1]{\texttt{\textbackslash{#1}}}
+\newcommand{\marg}[1]{\texttt{\{}\textlangle\emph{#1}\textrangle\texttt{\}}}
+\newcommand{\oarg}[1]{\texttt{[}\textlangle\emph{#1}\textrangle\texttt{]}}
+\newcommand{\pkg}[1]{\textcolor{BurntOrange}{#1}}
+\newcommand{\umg}[1]{\textcolor{SeaGreen!50!Brown}{#1}}
 
-% Keine Abstände vor und nach Codeblöcken
-\preto{\@verbatim}{\topsep=1pt \partopsep=1pt }
-\makeatother
 
 \newcommand{\uebung}[1]{
 \begin{frame}

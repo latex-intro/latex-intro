@@ -118,7 +118,7 @@ Bemerke: Möchte man Vorprogrammierte Sonderzeichen, wie z.B. \$, ausgeben, dann
 \end{columns}
 
 \medskip\pause
-Wir können allerdings über die Befehle \cmdd{left} und \cmdd{right} die Größe der Klammern automatisch einstellen.
+Wir können allerdings über die Befehle \cmd{left} und \cmd{right} die Größe der Klammern automatisch einstellen.
 \end{frame}
 
 \begin{frame}[fragile]{Klammersetzung}
@@ -139,10 +139,10 @@ Wir können allerdings über die Befehle \cmdd{left} und \cmdd{right} die Größ
 \]
 \end{column}
 \end{columns}\pause
-Wir sehen, dass die Befehle \cmdd{left} und \cmdd{right} die Größe der Klammern relativ zu dem Inhalt einstellt und mithilfe von \cmdd{middle} erhält man ein entsprechend großes Zeichen innerhalb der Klammern. 
+Wir sehen, dass die Befehle \cmd{left} und \cmd{right} die Größe der Klammern relativ zu dem Inhalt einstellt und mithilfe von \cmd{middle} erhält man ein entsprechend großes Zeichen innerhalb der Klammern. 
 
 \medskip\pause
-Beachte: \alert{Ein \cmdd{left}-Befehl benötigt immer einen \cmdd{right}-Befehl!}
+Beachte: \alert{Ein \cmd{left}-Befehl benötigt immer einen \cmd{right}-Befehl!}
 \end{frame}
 
 \begin{frame}[fragile]{Klammersetzung II}
@@ -153,10 +153,10 @@ Betrachten wir einmal folgendes Beispiel:
 \]
 
 \medskip\pause
-Problem: Alle Klammern sind Gleichgroß und der Ausdruck wird unleserlich. Die Befehle \cmdd{left} und \cmdd{right} Helfen hier nicht!
+Problem: Alle Klammern sind Gleichgroß und der Ausdruck wird unleserlich. Die Befehle \cmd{left} und \cmd{right} Helfen hier nicht!
 
 \medskip\pause
-Lösung: Die Befehle \cmdd{big}, \cmdd{Big}, \cmdd{bigg} und \cmdd{Bigg}. Diese Befehle vergrößern die Klammern mit jedem weiteren Schritt
+Lösung: Die Befehle \cmd{big}, \cmd{Big}, \cmd{bigg} und \cmd{Bigg}. Diese Befehle vergrößern die Klammern mit jedem weiteren Schritt
 \end{frame}
 
 \begin{frame}[fragile]{Klammersetzung II}
@@ -172,7 +172,7 @@ Erzeugt Folgende Ausgabe:
     \Biggl(x\biggl(y\Bigl(3z\bigl(2x+y\bigr)-3\Bigr)7z\biggr)4-8y\Biggr)
 \]\pause
 
-Mit einer entsprechende Verknüpfung von \cmdd{left},\cmdd{right} und \cmdd{big}, etc., könnt ihr eure Formeln also übersichtlich halten. 
+Mit einer entsprechende Verknüpfung von \cmd{left},\cmd{right} und \cmd{big}, etc., könnt ihr eure Formeln also übersichtlich halten. 
 \end{frame}
 
 \begin{frame}[fragile]{Matrizen}
@@ -211,14 +211,14 @@ Es gibt mehrere Zeichen, die in Formeln verwendet werden können.
 Zahlen: 
 \begin{center}
 \begin{tabular}{p{0.45\textwidth}p{0.4\textwidth}}
-Beachte fehlende Leerzeichen: \textrm{\$1 2 34 \cmdd{infty}\$} & Beachte fehlende Leerzeichen: $1 2 34 \infty$
+Beachte fehlende Leerzeichen: \textrm{\$1 2 34 \cmd{infty}\$} & Beachte fehlende Leerzeichen: $1 2 34 \infty$
 \end{tabular}
 \end{center}
 Buchstaben:
 \begin{center}
 \begin{tabular}{p{0.45\textwidth}p{0.4\textwidth}}
 Text in Formeln:   & Text in Formeln:  \\
-\textrm{\$Ergebnis\cmdd{neq} \cmdd{text}\{Ergebnis\}\$} & $Ergebnis\neq\text{Ergebnis}$
+\textrm{\$Ergebnis\cmd{neq} \cmd{text}\{Ergebnis\}\$} & $Ergebnis\neq\text{Ergebnis}$
 \end{tabular}
 \end{center}
 \end{frame}
@@ -228,10 +228,10 @@ In \LaTeX{} kann man natürlich auch griechische Buchstaben verwenden:
 \begin{center}
 \begin{tabular}{p{0.45\textwidth}p{0.4\textwidth}}
 Griechen in groß:  & Griechen in groß: \\
-\textrm{\$\cmdd{Phi},\cmdd{Lamda},\cmdd{Omega}\$} & $\Phi,\,\Lambda,\,\Omega$\\
+\textrm{\$\cmd{Phi},\cmd{Lamda},\cmd{Omega}\$} & $\Phi,\,\Lambda,\,\Omega$\\
 \text{ }    &  \text{ }  \\
 Griechen in klein:  & Griechen in klein: \\
-\textrm{\$\cmdd{phi},\cmdd{lambda},\cmdd{omega} aber: \cmdd{varphi} und \cmdd{varepsilon}\$} & $\phi,\lambda,\omega$ aber: $\varphi$ und $\varepsilon$. 
+\textrm{\$\cmd{phi},\cmd{lambda},\cmd{omega} aber: \cmd{varphi} und \cmd{varepsilon}\$} & $\phi,\lambda,\omega$ aber: $\varphi$ und $\varepsilon$. 
 \end{tabular}
 \end{center}
 \end{frame}
@@ -240,15 +240,15 @@ Griechen in klein:  & Griechen in klein: \\
 In der Mathematik gibt es verschiedene Symbole, die \LaTeX{} auch beherrscht. Ein Auszug
 \begin{block}{Einige Symbole}
 \begin{tabular}{*{4}{|rl}|}\hline
-+ & $+$ & - & $-$ & \cmdd{in} & $\in$ & \cmdd{notin} & $\notin$ \\
-\cmdd{langle} & $\langle$ & \cmdd{rangle} & $\rangle$ & \cmdd{leq} & $\leq$ & \cmdd{geq} & $\geq$ \\
-\cmdd{wedge} & $\wedge$ & \cmdd{vee} & $\vee$ & \cmdd{cap} & $\cap$ & \cmdd{cup} & $\cup$ \\
-\cmdd{subset} & $\subset$ & \cmdd{subseteq} & $\subseteq$ & \cmdd{supset} & $\supset$ & \cmdd{supseteq} & $\supseteq$ \\
-= & $=$ & \cmdd{coloneqq} & $\coloneqq$ & \cmdd{neq} & $\neq$ & \cmdd{approx} & $\approx$\\
-\cmdd{cong} & $\cong$ & \cmdd{cdot} & $\cdot$ & \cmdd{times} & $\times$ & \cmdd{div} & $\div$ \\ \hline
++ & $+$ & - & $-$ & \cmd{in} & $\in$ & \cmd{notin} & $\notin$ \\
+\cmd{langle} & $\langle$ & \cmd{rangle} & $\rangle$ & \cmd{leq} & $\leq$ & \cmd{geq} & $\geq$ \\
+\cmd{wedge} & $\wedge$ & \cmd{vee} & $\vee$ & \cmd{cap} & $\cap$ & \cmd{cup} & $\cup$ \\
+\cmd{subset} & $\subset$ & \cmd{subseteq} & $\subseteq$ & \cmd{supset} & $\supset$ & \cmd{supseteq} & $\supseteq$ \\
+= & $=$ & \cmd{coloneqq} & $\coloneqq$ & \cmd{neq} & $\neq$ & \cmd{approx} & $\approx$\\
+\cmd{cong} & $\cong$ & \cmd{cdot} & $\cdot$ & \cmd{times} & $\times$ & \cmd{div} & $\div$ \\ \hline
 \end{tabular}
 \end{block}\pause
-Der Befehl \cmdd{coloneqq} benötigt das zusätzliche Laden des Pakets \pkg{mathtools}!
+Der Befehl \cmd{coloneqq} benötigt das zusätzliche Laden des Pakets \pkg{mathtools}!
 \end{frame}
 
 \begin{frame}[fragile]{Präfix-Operatoren}
@@ -256,10 +256,10 @@ Eine kurze Übersicht an Operatoren, die vor Ausdrücken stehen können.
 \begin{block}{Einige Präfix-Operatoren}
 \center
 \begin{tabular}{*{3}{|rl}|}\hline
-\cmdd{sum} & $\sum$ & \cmdd{prod} & $\prod$ & \cmdd{int} & $\int$ \\
-\cmdd{sin} & $\sin$ & \cmdd{cos} & $\cos$ & \cmdd{log} & $\log$\\
-\cmdd{min} & $\min$ & \cmdd{max} & $\max$ & \cmdd{exp} & $\exp$ \\
-\cmdd{bigcup} & $\bigcup$ & \cmdd{forall} & $\forall$ & \cmdd{exists} & $\exists$ \\ \hline
+\cmd{sum} & $\sum$ & \cmd{prod} & $\prod$ & \cmd{int} & $\int$ \\
+\cmd{sin} & $\sin$ & \cmd{cos} & $\cos$ & \cmd{log} & $\log$\\
+\cmd{min} & $\min$ & \cmd{max} & $\max$ & \cmd{exp} & $\exp$ \\
+\cmd{bigcup} & $\bigcup$ & \cmd{forall} & $\forall$ & \cmd{exists} & $\exists$ \\ \hline
 \end{tabular}
 \end{block}\pause
 \alert{Beachte:} Nicht einfach \textrm{\$sin x\$} schreiben: $sin x$ vs. $\sin x$. 
@@ -271,9 +271,9 @@ Außerdem: $\min\limits_{x>0}$ vs. $min_{x>0}$.
 \begin{frame}[fragile]{Präfix-Operatoren}
 Es kommt häufig vor, dass ein gewünschter Operator nicht vorhanden ist. In diesem Fall kann man sich über 
 \begin{center}
-\dmop{Befehlsname}{Angezeigter Name bzw. Text}
+\cmd{DeclareMathOperator}\marg{Befehlsname}\marg{Angezeigter Name bzw. Text}
 \end{center}
-einen neuen Operator definieren. Zum Beispiel \dmopp{ArcSin}{ArcSin}, oder \dmopp{sgn}{sgn}\pause
+einen neuen Operator definieren. Zum Beispiel \verb+\DeclareMathOperator{ArcSin}{ArcSin}+, oder \verb+\DeclareMathOperator{sgn}{sgn}+\pause
 \begin{columns}
 \begin{column}{0.55\textwidth}
 \begin{codeblock}
@@ -297,17 +297,17 @@ In \LaTeX{} gibt es viele verschieden Pfeile. Die wichtigsten, die wir euch empf
 \centering
 \scriptsize
 \begin{tabular}{*{3}{|rl}|}\hline
-		\cmdd{leftarrow} & $\leftarrow$ & 
-		\cmdd{rightarrow} & $\rightarrow$ &
-		\cmdd{leftrightarrow} & $\leftrightarrow$ \\
-		\cmdd{longleftarrow} & $\longleftarrow$ & 
-		\cmdd{longrightarrow} & $\longrightarrow$ &
-		\cmdd{longleftrightarrow} & $\longleftrightarrow$ \\
-		\cmdd{impliedby} & $\impliedby$ & 
-		\cmdd{implies} & $\implies$ &
-		\cmdd{iff} & $\iff$ \\
-		\cmdd{mapsto} & $\mapsto$ & 
-		\cmdd{longmapsto} & $\longmapsto$ & 
+		\cmd{leftarrow} & $\leftarrow$ & 
+		\cmd{rightarrow} & $\rightarrow$ &
+		\cmd{leftrightarrow} & $\leftrightarrow$ \\
+		\cmd{longleftarrow} & $\longleftarrow$ & 
+		\cmd{longrightarrow} & $\longrightarrow$ &
+		\cmd{longleftrightarrow} & $\longleftrightarrow$ \\
+		\cmd{impliedby} & $\impliedby$ & 
+		\cmd{implies} & $\implies$ &
+		\cmd{iff} & $\iff$ \\
+		\cmd{mapsto} & $\mapsto$ & 
+		\cmd{longmapsto} & $\longmapsto$ & 
 		& \\ \hline
 \end{tabular}
 \end{block}\pause
