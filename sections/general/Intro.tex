@@ -1,35 +1,76 @@
-\begin{frame}
-  \titlepage{}
-\end{frame}
-
 \section{\LaTeX{}: Was, warum, wie?}
 
 \begin{frame}
-    \frametitle{Was ist \LaTeX{}?}
+    \frametitle{Texte schreiben im Studium: Was brauchen wir?}
     \begin{itemize}
-        \item Eine logische Markup-Sprache zur Textauszeichnung
-        \item Plattformunabhängig und Quelloffen
-        \item Ideal für wissenschaftliche Dokumente
-        \item Multilingual
+        \item Text
+        \item Abbildungen \& Tabellen
+        \item Titelseite
+        \item Formeln
+        \item Inhaltsverzeichnis
+        \item Fußnoten
+        \item Quellenangaben
+        \item \ldots
     \end{itemize}
-    \begin{description}[pdf\TeX]
-        \item [\TeX] ist ein Textsatzsystem (1977--1986, D.\,E. Knuth)
-        \item [\LaTeX] komfortable Benutzerschnittstelle (seit 1980, L.
-        Lamport)
-        \item [pdf\TeX] Ausgabesystem (seit 1990, H.\,T. Thành)
-    \end{description}
-    %TODO: Was ist Latex nicht
 \end{frame}
 
 \begin{frame}
-    \frametitle{Warum \LaTeX?}
+    \frametitle{Womit können wir das erreichen?}
+    \begin{block}{Mehrere Möglichkeiten mit verschiedenen Ansätzen:}
+	    \begin{itemize}
+	        \item LibreOffice
+	        \item Word
+	        \item \LaTeX
+	    \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Was ist dieses \LaTeX{}?}
+    \LaTeX{} ist
     \begin{itemize}
-        \item Zeit- und Stressersparnis
+        \item eine logische Markup-Sprache zur Textauszeichnung
+        \item plattformunabhängig und Quelloffen
+        \item ideal für wissenschaftliche Dokumente
+    \end{itemize}
+    \bigskip
+    
+    \LaTeX{} ist kein
+    \begin{itemize}
+        \item WYSIWYG
+        \item ganz so einsteigerfreundliches Programm
+    \end{itemize}
+    \medskip
+    
+    Aber: Das relativiert sich sehr schnell
+\end{frame}
+
+\begin{frame}
+    \frametitle{Warum also \LaTeX?{}}
+    \begin{itemize}
         \item Plattformunabhängig
         \item Hohe typographische Qualität
         \item Gut dokumentiert (Internet, Bücher)
         \item Quasistandard bei wissenschaftlichen Veröffentlichungen
         \item Konzentration auf den Inhalt, nicht das Layout
+        \item Zeit- und Stressersparnis
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Was brauchen wir?}
+    Unbedingt:
+    \begin{itemize}
+        \item Eine \LaTeX{}-Distribution, wir benutzen TeX Live
+        \item Editor (z.B. Notepad)
+        \item PDF-Betrachter
+    \end{itemize}
+    \pause
+    \bigskip
+    Besser, ein spezialisierter Editor:
+    \begin{itemize}
+        \item Texmaker -- Unsere Empfehlung
+        \item Kile (KDE)
     \end{itemize}
 \end{frame}
 
@@ -37,7 +78,7 @@
     \frametitle{So funktioniert \LaTeX{}}
     \begin{itemize}
         \item Übersetzen von geschriebenem Quelltext in PDF-Dokument
-        \item Programm dafür: pdflatex
+        \item Programm dafür: \texttt{pdflatex}
         \item Für erweiterte Funktionen, z.B. Verweise mehrere Durchläufe nötig.
     \end{itemize}
     \pause\bigskip
