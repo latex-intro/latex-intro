@@ -12,20 +12,19 @@
 
 \usepackage{tikz}
 % Für lustige Grafiken
-\usetikzlibrary{shapes,snakes,arrows}
+\usetikzlibrary{shapes,arrows}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows}
 \usetikzlibrary{calc,fadings,decorations.pathreplacing}
 
 \usepackage[european]{circuitikz}
 
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.11}
+\usepackage{color}
+\usepackage{textcomp}
+
 \graphicspath{{./images/}}
 
-\usepackage[scaled=.90]{helvet}
-\renewcommand\ttdefault{txtt}
-\usefonttheme[onlymath]{serif}
+\renewcommand{\familydefault}{\sfdefault}
 \usetheme[footlinenumber, navline=false, footlineauthor]{Bremen}
 
 \fbnum{00}
@@ -35,13 +34,28 @@
 \title{Eine Einführung in \LaTeX{}}
 \author[Arbeitsgruppe \LaTeX]{Arbeitsgruppe \LaTeX}
 \date{Orientierungswoche \the\year{}}
-\institute[Uni Bremen]{Arbeitsgruppe \LaTeX{}\\-- Universität Bremen --}
 
 %Hinzugefügt von Robin
 \usepackage{color}
 \usepackage{ textcomp }
 \usepackage{mathtools}
 
+\institute[Uni Bremen]{-- Universität Bremen --}
+
+\providecommand{\slideurl}{http://slides.are.here}
+\providecommand{\exerciseurl}{http://exercises.are.here}
+
+\makeatletter
+\g@addto@macro\beamer@lastminutepatches{\begin{frame}
+    \titlepage{}
+\end{frame}}
+\makeatother
+
+\AtBeginSection{\begin{frame}
+    \begin{center}
+    \Huge \textbf{\secname}
+    \end{center}        
+\end{frame}}
 
 \input{config/smallBremenFootline}
 
