@@ -1,0 +1,237 @@
+\subsection{Wie nutzt man Mathe}
+
+\begin{frame}[fragile]{Wie mache ich Mathe?}
+Wir wissen nun, wo wir Mathematik hinschreiben, aber noch nicht wirklich wie.
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+Hochgestellt $a^{hoch}$ 
+ vs. $a^bc$
+Index $a_{Index}$ 
+ vs. $a_bc$
+Summe $\sum$, Integral $\int$
+Grenzen $\sum_a^b$ 
+ vs. $\displaystyle\sum_a^b$
+Gr. Buchstaben $\alpha, \beta$
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\pause
+\begin{column}{0.4\textwidth}
+Hochgestellt $a^{hoch}$ vs. $a^bc$. 
+
+\medskip\pause
+Index $a_{Index}$ vs. $a_bc$.
+
+\medskip\pause
+Summe $\sum$, Integral $\int$.
+
+\medskip\pause
+Grenzen $\sum_a^b$ vs. $\displaystyle \sum_a^b$
+
+\medskip\pause
+Gr. Buchstaben $\alpha, \beta$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Brüche}
+Für Brüche benötigt man in \LaTeX{} weder Sonderzeichen, noch diverse andere Methoden. Brüche heißen im Englischen \glqq fraction\grqq{} und auf naive Weise erhält man durch den Befehl
+\begin{center}
+\textrm{\textbackslash frac\{\textlangle Zähler\textrangle\}\{\textlangle Nenner \textrangle\}}
+\end{center}
+einen Bruch im Mathe-Modus:
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\frac{\exp(i\pi)}{i^2} = 1
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+Das Ergebnis sieht dann so aus:
+\[
+    \frac{\exp(i\pi)}{i^2} = 1
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Schriftarten}
+Im Mathe-Modus gibt es verschiedene Schriftarten. Zum Beispiel möchte man die Notation für bekannte Mengen, wie $\mathbb{R}$ oder $\mathbb{N}$, auch beibehalten. Die beiden wichtigsten Schriftarten im Mathe-Modus sind \cmd{mathbb}{Text} aus dem \pkg{amssymb}-Paket und \cmd{mathcal}{Text}.
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+$\mathcal{NZQRC}$
+
+$\mathbb{NZQRC}$
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+$\mathcal{NZQRC}$
+
+\medskip
+$\mathbb{NZQRC}$
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Mengen in \LaTeX{}}
+Frage: \LaTeX{} erwartet Parameter in geschweiften Klammern. Wie schreibe ich dann Mengenklammern? 
+
+\medskip\pause
+Antwort: Man stellt den geschweiften Klammern ein \textbackslash{} voran. 
+
+\medskip\pause
+Beispiel: \textrm{\$\textbackslash\{1, 2, 3\textbackslash\}\$} erzeugt dann $\{1, 2, 3\}$
+
+\medskip\pause
+Frage: Wie schreibe ich $x\in\mathbb{R}$
+
+\medskip\pause
+Antwort: Das $\in$-Symbol erhält man über die Befehle \textrm{\textbackslash in}($\in$) und \textrm{\textbackslash ni}($\ni$)
+
+\vskip1em\pause
+Bemerke: Möchte man Vorprogrammierte Sonderzeichen, wie z.B. \$, ausgeben, dann stellt man diesen ein \textbackslash{} voran.
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung}
+\LaTeX{} verändert die Klammergröße standardmäßig \alert{nicht}! Zum Beispiel: 
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\{(x,y)\in\mathbb{R}^2|
+(\frac{x}{y})^2 = 1\}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+\[
+    \{(x,y)\in\mathbb{R}^2|(\frac{x}{y})^2 = 1\}
+\]
+\end{column}
+\end{columns}
+
+\medskip\pause
+Wir können allerdings über die Befehle \cmdd{left} und \cmdd{right} die Größe der Klammern automatisch einstellen.
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung}
+\framesubtitle{Beispiel}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\left\{(x,y)\in\mathbb{R}^2
+\middle|\left(\frac{x}{y}
+\right)^2 = 1\right\}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+\[
+    \left\{(x,y)\in\mathbb{R}^2\middle|\left(\frac{x}{y}\right)^2 = 1\right\}
+\]
+\end{column}
+\end{columns}\pause
+Wir sehen, dass die Befehle \cmdd{left} und \cmdd{right} die Größe der Klammern relativ zu dem Inhalt einstellt und mithilfe von \cmdd{middle} erhält man ein entsprechend großes Zeichen innerhalb der Klammern. 
+
+\medskip\pause
+Beachte: \alert{Ein \cmdd{left}-Befehl benötigt immer einen \cmdd{right}-Befehl!}
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung II}
+\framesubtitle{Feste Klammergröße}
+Betrachten wir einmal folgendes Beispiel:
+\[
+    (x(y(3z(2x+y)-3)7z)4-8y)
+\]
+
+\medskip\pause
+Problem: Alle Klammern sind Gleichgroß und der Ausdruck wird unleserlich. Die Befehle \cmdd{left} und \cmdd{right} Helfen hier nicht!
+
+\medskip\pause
+Lösung: Die Befehle \cmdd{big}, \cmdd{Big}, \cmdd{bigg} und \cmdd{Bigg}. Diese Befehle vergrößern die Klammern mit jedem weiteren Schritt
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung II}
+\framesubtitle{Beispiel}
+\begin{codeblock}
+\begin{verbatim}
+\Biggl(x\biggl(y\Bigl(3z\bigl(
+2x+y\bigr)-3\Bigr)7z\biggr)4-8y\Biggr)
+\end{verbatim}
+\end{codeblock}
+Erzeugt Folgende Ausgabe: 
+\[
+    \Biggl(x\biggl(y\Bigl(3z\bigl(2x+y\bigr)-3\Bigr)7z\biggr)4-8y\Biggr)
+\]\pause
+
+Mit einer entsprechende Verknüpfung von \cmdd{left},\cmdd{right} und \cmdd{big}, etc., könnt ihr eure Formeln also übersichtlich halten. 
+\end{frame}
+
+\begin{frame}[fragile]{Matrizen}
+Matrizen könnt ihr in \LaTeX{} ähnlich wie Tabellen setzen. In der Regel sollten Matrizen im abgesetzten Modus geschrieben werden. 
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots 
+& a_{1n} \\
+0 & a_{22} & & \vdots \\
+\vdots & \ddots & \ddots 
+& \vdots \\
+0 & \cdots & 0 & a_{nn} \\
+\end{pmatrix}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+\[
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+0 & a_{22} & & \vdots \\
+\vdots & \ddots & \ddots & \vdots \\
+0 & \cdots & 0 & a_{nn} \\
+\end{pmatrix}
+\]
+\end{column}
+\end{columns}\pause
+\end{frame}
+
+\begin{frame}[fragile]{Buchstaben in Formeln}
+Es gibt mehrere Zeichen, die in Formeln verwendet werden können. 
+
+Zahlen: 
+\begin{center}
+\begin{tabular}{p{0.45\textwidth}p{0.4\textwidth}}
+Beachte fehlende Leerzeichen: \textrm{\$1 2 34 \cmdd{infty}\$} & Beachte fehlende Leerzeichen: $1 2 34 \infty$
+\end{tabular}
+\end{center}
+Buchstaben:
+\begin{center}
+\begin{tabular}{p{0.45\textwidth}p{0.4\textwidth}}
+Text in Formeln:   & Text in Formeln:  \\
+\textrm{\$Ergebnis\cmdd{neq} \cmdd{text}\{Ergebnis\}\$} & $Ergebnis\neq\text{Ergebnis}$
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Griechische Buchstaben}
+In \LaTeX{} kann man natürlich auch griechische Buchstaben verwenden: 
+\begin{center}
+\begin{tabular}{p{0.45\textwidth}p{0.4\textwidth}}
+Griechen in groß:  & Griechen in groß: \\
+\textrm{\$\cmdd{Phi},\cmdd{Lamda},\cmdd{Omega}\$} & $\Phi,\,\Lambda,\,\Omega$\\
+\text{ }    &  \text{ }  \\
+Griechen in klein:  & Griechen in klein: \\
+\textrm{\$\cmdd{phi},\cmdd{lambda},\cmdd{omega} aber: \cmdd{varphi} und \cmdd{varepsilon}\$} & $\phi,\lambda,\omega$ aber: $\varphi$ und $\varepsilon$. 
+\end{tabular}
+\end{center}
+\end{frame}

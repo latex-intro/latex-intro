@@ -1,9 +1,0 @@
-
-\newenvironment{fframe}{\begin{frame}[fragile,environment=specialframe]}{\end{frame}}
-\newenvironment{codeblock}[1][]{\smallskip\begin{block}{Code: #1}}{\end{block}}
-
-\definecolor{pkg}{HTML}{FF7F00}
-\definecolor{umg}{HTML}{32CD32}
-
-\newcommand{\pkg}[1]{\textrm{\textbackslash usepackage\{#1\}}}
-\newcommand{\cmd}[2]{\textrm{#1\{\textlangle #2\textrangle\}}}
