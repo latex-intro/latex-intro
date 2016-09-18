@@ -1,0 +1,43 @@
+\section{Eigene Befehle}
+
+\begin{frame}[fragile]{Befehle definieren}
+Wenn ihr viel mit \LaTeX{} arbeitet, werdet ihr zwangsläufig auf Ausdrücke stoßen, die wiederholt eingegeben werden. 
+
+\medskip\pause
+Das dauert oft lange und wir können uns die Zeit sparen, indem wir über den Befehl 
+\begin{center}
+\cmd{newcommand}\oarg{Anzahl Parameter}\marg{Befehlsname}\marg{Definition}
+\end{center}
+neue Befehle definieren. Dieser Befehl gehört in die Präambel! 
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{small}
+\begin{verbatim}
+% Präambel 
+\newcommand{\R}{\mathbb{R}}
+...
+\begin{document}
+Das ist jetzt sehr einfach: $\R$.
+\end{document}
+\end{verbatim}
+\end{small}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+Das ist jetzt sehr einfach: $\R$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Wichtig für eigene Befehle}
+\LaTeX{} warnt euch davor, wenn ihr einen vorhandenen Befehl überschreiben wollt. Ihr erhaltet die Fehlermeldung
+\begin{center}
+\textcolor{red}{\LaTeX{} Error: Command ... already defined.}
+\end{center}\pause
+Seid ihr euch sicher, dass der Befehel, den ihr überschreiben wollt, von euch nicht genutzt wird, dann könnt ihr diesen mit 
+\begin{center}
+\cmd{renewcommand}\oarg{Anzahl Parameter}\marg{Befehlsname}\marg{Definition}
+\end{center}
+überschreiben. Ihr solltet euch dabei aber absolut sicher sein, dass ihr den überschriebenen Befehl später nicht mehr benötigt! 
+\end{frame}
