@@ -1,4 +1,5 @@
 presentation*.pdf
+*.bak
 
 ### LaTeX ###
 *.acn
