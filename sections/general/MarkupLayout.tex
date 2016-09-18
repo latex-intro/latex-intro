@@ -1,0 +1,373 @@
+\section{Markup und Layout}
+
+\begin{frame}[fragile]
+    \frametitle{Absätze und Umbrüche}
+    
+    Um einen neuen Absatz anzufangen, muss eine Leerzeile eingefügt werden
+    
+    \bigskip
+    Einen normalen Umbruch erhält man mit \texttt{\textbackslash\textbackslash}
+    
+    \bigskip
+    Für eine neue Seite bzw. Spalte gibt es den Befehl \verb+\newpage+\\
+    Alternativ: \verb+\clearpage+ beginnt immer eine neue Seite
+    
+    \bigskip
+    Um den Abstand zwischen den Absätzen zu vergrößern, kann an der Stelle einer der folgenden Befehle verwendet werden: \verb+\smallskip+, \verb+\medskip+, \verb+\bigskip+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Das Dokument gliedern}
+    Um das Dokument zu teilen, können wir verschiedene Überschriften definieren:
+    \medskip
+    \begin{center}
+        \begin{tabular}{ll}
+            \textbf{Befehl} & \textbf{Verwendung}\\
+            \cmd{part}\marg{Name} & Bücher\\
+            \cmd{chapter}\marg{Name} & Reports, Bücher\\
+            \cmd{section}\marg{Name} & Alle\\
+            \cmd{subsection}\marg{Name} & Alle\\
+            \cmd{subsubsection}\marg{Name} & Alle\\
+            \cmd{paragraph}\marg{Name} & Alle\\
+            \cmd{subparagraph}\marg{Name} & Alle
+        \end{tabular}
+    \end{center}
+    \medskip
+    In Artikeln (\texttt{scrartcl}) werden meist nur die sections verwendet.
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Hervorhebungen im Text}
+    
+    Um Textstellen hervorzuheben, bietet \LaTeX{} einige Varianten:
+    \medskip
+    \begin{center}
+        \begin{tabular}{ll}
+            \textbf{Befehl} & \textbf{Ergebnis}\\
+            \verb+\emph{Text}+ & \emph{Text}\\
+            \verb+\enquote{Text}+ & \enquote{Text}\\
+            \verb+\textbf{Text}+ & \textbf{Text}\\
+            \verb+\textit{Text}+ & \textit{Text}\\
+            \verb+\underline{Text}+ & \underline{Text}\\
+            \verb+\texttt{Text}+ & \texttt{Text}
+        \end{tabular}
+    \end{center}
+    \medskip
+    Mittels \verb+\enquote{Text}+ werden immer die korrekten Anführungszeichen genommen. Hervorhebungen sparsam verwenden!
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Inhaltsverzeichnis}
+    Ein Inhaltsverzeichnis ist einfach mit \verb+\tableofcontents+ zu erhalten.
+    
+    \bigskip
+    Genauso kann man Verzeichnisse von Tabellen und Abbildungen erzeugen. Dazu später mehr.
+    
+    \medskip
+    \begin{alertblock}{Achtung}
+        Für Verzeichnisse benötigt \LaTeX{} einen zweiten Aufruf, nach dem ersten ist das Inhaltsverzeichnis noch leer.
+    
+        \smallskip
+        Dies gilt auch für Änderungen an den Überschriften.
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Der Titel}
+    
+    \LaTeX{} kann den Titel automatisch setzen, dafür müssen aber die entsprechenden Angaben in der Präambel gemacht werden:
+    \medskip
+    \begin{center}
+        \begin{tabular}{ll}
+            \cmd{title}\marg{Name} & Setzt den Titel*\\
+            \cmd{author}\marg{Name} & Setzt den Autor*\\
+            \cmd{date}\marg{Datum} & Setzt das Datum\\
+            \cmd{subtitle}\marg{Name} & Setzt den Untertitel\\
+            \cmd{publisher}\marg{Name} & Setzt den Herausgeber
+        \end{tabular}
+    \end{center}
+    \medskip
+    Angaben mit einem Stern sind Pflicht.
+    \medskip
+    
+    
+    Der Titel wird nun im Dokument mit \verb+\maketitle+ erstellt.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Umgebungen}
+    \LaTeX{} steuert viele Dinge über Umgebungen.\\
+    Eine Umgebung wird mit
+    \begin{center}
+        \cmd{begin}\marg{Name}
+    \end{center}
+    gestartet und mit
+    \begin{center}
+        \cmd{end}\marg{Name}
+    \end{center}
+    wieder beendet.
+    
+    \bigskip
+    Ihr kennt bereits die \texttt{document}-Umgebung
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Textausrichtung}
+    \framesubtitle{Zentriert mittels \umg{center}}
+
+    \begin{center}
+        \fbox{\begin{minipage}{0.7\linewidth}
+            \begin{center}
+                Text (und mehr) lässt sich mit der \umg{center}-Umgebung
+                zentrieren, wenn gewünscht.
+            \end{center}
+        \end{minipage}}
+    \end{center}
+    
+    \begin{center}
+        \begin{verbatim}
+        \begin{center}
+            Text (und mehr) lässt sich
+            mit der center-Umgebung
+            zentrieren, wenn gewünscht.
+        \end{center}
+        \end{verbatim}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Textausrichtung}
+    \framesubtitle{Linksbündig mittels \umg{flushleft}}
+
+    \begin{center}
+        \fbox{\begin{minipage}{0.7\linewidth}
+            \begin{flushleft}
+                Standardmäßig benutzt \LaTeX{} Blocksatz. Wenn stattdessen ein linksbündiger Flattersatz verwendet werden soll, ist das natürlich auch möglich. Hierzu gibt es die \umg{flushleft}-Umgebung.
+            \end{flushleft}
+        \end{minipage}}
+    \end{center}
+    
+    \begin{center}
+        \begin{verbatim}
+        \begin{flushleft}
+            Standardmäßig benutzt \LaTeX{} Blocksatz.
+            Wenn stattdessen ein linksbündiger
+            Flattersatz verwendet werden soll...
+        \end{flushleft}
+        \end{verbatim}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Aufzählungen und Listen}
+
+    Aufzählungen sind ebenfalls Umgebungen.\\
+    Dies bedeutet
+    \begin{itemize}
+        \item Man kann sie Schachteln
+        \item Sie haben eine einfache Syntax
+    \end{itemize}
+    
+    \bigskip
+    \LaTeX{} bietet die folgenden Umgebungen:
+    \begin{itemize}
+        \item \umg{itemize} erzeugt Bullets wie in dieser Liste
+        \item \umg{enumerate} erzeugt nummerierte Aufzählungen
+        \item \umg{description} erzeugt Erläuterungen
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Aufzählungen und Listen}
+    \framesubtitle{Ungeordnete Listen mit \umg{itemize}}
+    
+    Eine Aufzählung sieht so aus:
+    \begin{itemize}
+        \item Erster Eintrag
+        \item Letzter Eintrag
+    \end{itemize}
+    
+    \bigskip
+    \begin{verbatim}
+Eine Aufzählung sieht so aus:
+\begin{itemize}
+    \item Erster Eintrag
+    \item Letzter Eintrag
+\end{itemize}
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Aufzählungen und Listen}
+    \framesubtitle{Ungeordnete Listen mit \umg{itemize}}
+    
+    Schachtelung ist auch möglich
+    \begin{itemize}
+        \item Erster Eintrag
+        \begin{itemize}
+            \item Unterpunkt
+            \item anderer Unterpunkt
+        \end{itemize}
+        \item Letzter Eintrag
+    \end{itemize}
+    
+    \smallskip
+    \begin{verbatim}
+Eine Aufzählung sieht so aus:
+\begin{itemize}
+    \item Erster Eintrag
+    \begin{itemize}
+        \item Unterpunkt
+        \item anderer Unterpunkt
+    \end{itemize}
+    \item Letzter Eintrag
+\end{itemize}
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Aufzählungen und Listen}
+    \framesubtitle{Geordnete Listen mit \umg{enumerate}}
+    
+    Eine Aufzählung sieht so aus:
+    \begin{enumerate}
+        \item Erster Eintrag
+        \item Letzter Eintrag
+    \end{enumerate}
+    
+    \bigskip
+    \begin{verbatim}
+Eine Aufzählung sieht so aus:
+\begin{enumerate}
+    \item Erster Eintrag
+    \item Letzter Eintrag
+\end{enumerate}
+    \end{verbatim}
+    \medskip
+    
+    Eine andere Umgebung, der Rest ist gleich
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Aufzählungen und Listen}
+    \framesubtitle{Beschreibungen mit \umg{description}}
+    
+    Mit der \umg{description}-Umgebung kann man Erläuterungen erzeugen
+    \medskip
+    \begin{description}
+        \item[\LaTeX{}] Ist ein tolles Programm zum Textsatz welches anfangs komplizierter ist, nachher aber viele Probleme vereinfacht
+        \item[MS Word] Kann auch viel, nur nicht so schön
+    \end{description}
+    
+    \bigskip
+    \begin{verbatim}
+\begin{description}
+    \item[\LaTeX{}] Ist ein tolles Programm zum Textsatz
+    \item[Microsoft Word] Kann auch viel, ...
+\end{description}
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Zitate}
+    \framesubtitle{Die \umg{quote}-Umgebung}
+    
+    Zitate können mit der \umg{quote}-Umgebung sehr einfach vom restlichen Text abgehoben werden:
+    \begin{quote}
+        Seht mich an, ein Gehirn von der Größe eines Planeten, und man verlangt von mir,
+        euch in die Kommandozentrale zu bringen. Nennt man das vielleicht berufliche
+        Erfüllung? Ich jedenfalls tu's nicht.
+    \end{quote}
+    
+    \bigskip
+    \begin{verbatim}
+\begin{quote}
+    Seht mich an, ...
+\end{quote}
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Quelltexte mit \umg{verbatim}}
+    
+    Quelltext kann mit der \umg{verbatim}-Umgebung gesetzt werden:
+    
+    \medskip
+    \begin{verbatim}
+Mit \LaTeX{} kann man tolle Sachen machen.
+    \end{verbatim}
+    
+    \pause
+    \begin{semiverbatim}
+\\begin\{verbatim\}
+Mit \\LaTeX\{\} kann man tolle Sachen machen.
+\\end\{verbatim\}
+    \end{semiverbatim}
+    
+    \begin{alertblock}{Achtung}
+        Es werden keine Zeilen mehr umgebrochen, alle Leerzeichen werden so abgedruckt wie im Quelltext. Bessere Quelltextdarstellung z.B. mit dem Paket \pkg{listings}
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Verweise im Dokument}
+    \begin{alertblock}{Problem}
+        Man will auf ein Kapitel verweisen: \verb+siehe Kapitel 3+.\pause
+        
+        Nun fügt man ein neues Kapitel vor diesem ein und alle Verweise stimmen nicht mehr.
+    \end{alertblock}
+    
+    \pause
+    \begin{block}{Lösung: Labels und Verweise}
+        \begin{itemize}
+            \item Man kann an vielen Stellen mit \cmd{label}\marg{Bezeichnung} ein Label setzen
+            \item Man bekommt die Nummer des Kapitels, des Eintrags in einer \umg{enumerate}-Umgebung etc. nun mit \cmd{ref}\marg{Bezeichnung}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Verweise im Dokument}
+    \framesubtitle{Ein Beispiel}
+    Ein Label kann zum Beispiel an eine Überschrift vergeben werden. Dann kann mit \cmd{ref} die Kapitelnummer und mit \cmd{pageref}\marg{Bezeichner} die Seitenzahl benutzt werden:
+    \bigskip
+    \pause
+
+    \begin{verbatim}
+\section{Test}\label{sec:Test}
+In Kapitel \ref{sec:Test} auf Seite \pageref{sec:Test}
+    \end{verbatim}
+    
+    \pause
+    \begin{alertblock}{Achtung}
+        So wie Verzeichnisse brauchen auch Verweise zwei Durchläufe von \LaTeX{}, sonst werden nur zwei Fragezeichen angezeigt!
+    \end{alertblock}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Tipps und Tricks}
+    \framesubtitle{Worttrennungen}
+    Manchmal sind die automatischen Worttrennungen oder Zeilenumbrüche unpassend.
+    \medskip    
+    
+    Diese können mit einem geschützten Leerzeichen (\texttt{\~{}}) verhindert werden: \verb+Am 9.~September+ $\Rightarrow$ Am 9.~September
+    
+    \medskip
+    Außerdem ist es möglich, die Silbentrennung für einzelne Wörter anzupassen, wenn die automatische Trennung falsch ist.
+    
+    Beispiel: \verb+Staats\-ver\-trag+ wird nur an den markierten Stellen getrennt.
+\end{frame}
