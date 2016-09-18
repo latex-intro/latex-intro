@@ -16,6 +16,7 @@
     Um den Abstand zwischen den Absätzen zu vergrößern, kann an der Stelle einer der folgenden Befehle verwendet werden: \verb+\smallskip+, \verb+\medskip+, \verb+\bigskip+
 \end{frame}
 
+
 \begin{frame}
     \frametitle{Das Dokument gliedern}
     Um das Dokument zu teilen, können wir verschiedene Überschriften definieren:
@@ -35,6 +36,7 @@
     \medskip
     In Artikeln (\texttt{scrartcl}) werden meist nur die sections verwendet.
 \end{frame}
+
 
 \begin{frame}[fragile]
     \frametitle{Hervorhebungen im Text}
@@ -59,9 +61,12 @@
 
 \begin{frame}[fragile]
     \frametitle{Inhaltsverzeichnis}
-    Ein Inhaltsverzeichnis ist einfach mit \verb+\tableofcontents+ zu erhalten.
+    Ein Inhaltsverzeichnis ist einfach mit \verb+\tableofcontents+ zu erhalten. Hierzu werden alle Überschriften verwendet.
+    \medskip    
     
-    \bigskip
+    Überschriften ohne Nummer und Eintrag im Inhalt erstellt man mit der gesternten Variante, z.B. \cmd{section}*\marg{Name}.
+    
+    \medskip
     Genauso kann man Verzeichnisse von Tabellen und Abbildungen erzeugen. Dazu später mehr.
     
     \medskip
