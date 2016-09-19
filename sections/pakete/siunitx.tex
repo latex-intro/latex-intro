@@ -1,0 +1,35 @@
+\subsection{Einheiten mit \pkg{siunitx}}
+
+\begin{frame}[fragile]
+    \frametitle{Einheiten korrekt setzen}
+    \framesubtitle{Das Paket \pkg{siunitx}}
+    Setzen von Einheiten: \verb+$1.345 V/m$+ \textrightarrow{} $1.345 V/m$
+    
+    \medskip
+    Das sind mindestens 3 typographische Fehler!
+    
+    \bigskip\pause
+    Abhilfe schafft das Paket \pkg{siunitx}:\\
+    \verb+\usepackage[locale=DE]{siunitx}+
+    
+    \medskip\pause
+    \begin{block}{Nützliche Optionen}
+        \begin{description}
+            \item[\texttt{per-mode=symbol}] \SI{1}{\metre\per\second} \textrightarrow{} \SI[per-mode=symbol]{1}{\metre\per\second}
+            \item[\texttt{separate-uncertainty=true}] \SI{22 +- 1}{\celsius} \textrightarrow{} \SI[separate-uncertainty=true]{22 +- 1}{\celsius}
+    \end{description}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beispiele}
+\framesubtitle{Das Paket \pkg{siunitx}}
+    \begin{tabular}{ll}
+        \verb+\ang{5}+ & \ang{5}\\
+        \verb+\SI{0.587}{kg}+ & \SI{0.587}{kg}\\
+        \verb+\SI{9.81}{\metre\per\square\second}+ & \SI{9.81}{\metre\per\square\second}\\
+        \verb|\SI{22(1)}{\celsius}| & \SI[separate-uncertainty=true]{22(1)}{\celsius}\\
+        \verb|\SI{22 +- 1}{\celsius}| & \SI[separate-uncertainty=true]{22(1)}{\celsius}\\
+        \verb+\SI{1,7865e8}{W/(sr.m^2)}+ & \SI{1,7865e8}{W/(sr.m^2)}\\
+    \end{tabular}
+\end{frame}
