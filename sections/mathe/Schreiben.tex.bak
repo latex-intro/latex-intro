@@ -36,6 +36,32 @@ Gr. Buchstaben $\alpha, \beta$.
 \end{columns}
 \end{frame}
 
+
+\begin{frame}[fragile]{Wie mache ich Mathe II}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+Physikalische Ableitungen 
+ $\dot{x}$ und $\ddot{x}$. 
+Vektoren $\vec{a}$.
+Ableitungsoperator $\partial$.
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\pause
+\begin{column}{0.4\textwidth}
+Physikalische Ableitungen $\dot{x}$ und $\ddot{x}$. 
+
+\medskip\pause
+Vektoren $\vec{a}$.
+
+\medskip\pause
+Ableitungsoperator $\partial$.
+\end{column}
+\end{columns}
+\end{frame}
+
 \begin{frame}[fragile]{Brüche}
 Für Brüche benötigt man in \LaTeX{} weder Sonderzeichen, noch diverse andere Methoden. Brüche heißen im Englischen \glqq fraction\grqq{} und auf naive Weise erhält man durch den Befehl
 \begin{center}
@@ -320,3 +346,4 @@ Mit \cmd{overset}\marg{Text}\marg{Operator} lässt sich außerdem auf andere Pfe
     x=1 \overset{\cdot2}{\iff} 2x=1
 \]
 \end{frame}
+
