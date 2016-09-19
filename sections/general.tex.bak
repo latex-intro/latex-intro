@@ -1,9 +1,0 @@
-% Alle allgemeinen Folien, zum einfachen einbinden.
-
-\input{sections/general/Intro}
-
-\input{sections/general/Sourcefiles}
-
-\input{sections/general/FirstCompile}
-
-%\input{sections/general/Markup}
