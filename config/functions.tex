@@ -1,6 +1,7 @@
 
 \newenvironment{fframe}{\begin{frame}[fragile,environment=specialframe]}{\end{frame}}
 \newenvironment{codeblock}[1][]{\smallskip\begin{block}{Code: #1}}{\end{block}}
+\newenvironment{loesung}{\begin{frame}<handout:0>}{\end{frame}}
 
 \newcommand{\R}{\mathbb{R}}
 \DeclareMathOperator{\ArcSin}{ArcSin}
@@ -17,7 +18,7 @@
 Die Aufgaben hier: \url{\exerciseurl}}
 
 \newcommand{\uebung}[1]{
-\begin{frame}
+\begin{frame}<handout:0>
 \frametitle{Zeit zum Ausprobieren}
 
 \exercisesource{}
