@@ -47,6 +47,9 @@ Umgebung oder `\verb` benutzt werden.
   im registrierten Übungszettel vorhanden ist. So kann man die Folien ausblenden,
   wenn sie nicht benötigt werden.
 
+Für Sourcecode steht die `codeblock`-Umgebung zur Verfügung, es muss darin aber
+immernoch eine `verbatim`-Umgebung benutzt werden.
+
 ## Einstellungen in der Präambel
 
 - `\hidesolutions`: Zeigt niemals Lösungen an.
