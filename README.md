@@ -56,6 +56,29 @@ Umgebung oder `\verb` benutzt werden.
 - `\handoutsolutions`: Zeigt Lösungen auch in Handouts an, alle anderen
   Auswahlregeln bleiben bestehen
 
+## Übungszettel
+
+Die Übungszettel sind im Verzeichnis `uebungen` abgelegt, sie folgen weitestgehend
+dem selben Schema wie die Folien. Folgende Umgebungen stehen zur Verfügung:
+
+- `uebung` für die einzelnen Übungsaufgaben, innerhalb jeder section einfach alles
+  in eine `uebung`s-Umgebung packen.
+- `hinweis` für einen Abgesetzen Hinweis zu einer Aufgabe
+- `loesung` für eine Lösung, z.B. für Tutoren oder einen selber, wird standardmässig
+  nicht mit ausgegeben.
+- `mathe` zeichnet einen Kasten um den Inhalt, zum Absetzen größerer Blöcke zum
+  nachtexen.
+
+Außerdem gibt es noch die folgenden Befehle:
+- `\showsolutions`: Gibt die Lösungen aus
+
+Die folgenden Befehle aus den Folien sind ebenfalls verfügbar: `\pkg`, `\umg`, `\cmd`,
+`\marg`, `\oarg`.
+
+Um den Titel anzupassen, kann man den Studiengang/Kursnamen mit eingeben, er wird
+dann direkt vor dem Jahr angezeigt. Dazu einfach `\renewcommand{\course}{Titel}`
+nach dem `\input{head}` benutzen.
+
 ## Daten-Struktur
 
 Aufgrund des Designs von Latex ist es nicht möglich, Pakete nach
