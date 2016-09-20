@@ -42,12 +42,12 @@
     \frametitle{Was kommt wo hin?}
     Präambel (Header)
     \begin{itemize}
-        \item Dokumentenklasse
-        \item Benutzte Pakete
-        \item Einstellungen für das gesamte Dokument
+        \item Dokumentenklasse\pause
+        \item Benutzte Pakete\pause
+        \item Einstellungen für das gesamte Dokument\pause
         \item Einige Metadaten, z.B. Autor, Titel, \ldots
     \end{itemize}
-    \bigskip
+    \bigskip\pause
 
     Der eigentliche Inhalt (Text, Abbildungen, \ldots) kommt zwischen \verb+\begin{document}+ und \verb+\end{document}+
 \end{frame}
@@ -89,7 +89,7 @@
         Briefe & scrlttr2 & --
     \end{tabular}
     
-    \bigskip
+    \bigskip\pause
     
     In der Regel sind die KOMA-Klassen den Standard-Klassen vorzuziehen, da die KOMA-Klassen an die deutsche Formatierung angepasst sind.
 \end{frame}
@@ -98,19 +98,19 @@
 \begin{frame}[fragile]
     \frametitle{Pakete einbinden}
     
-    Latex kann mit Paketen erweitert werden. Dies ist für viele Dinge sehr wichtig, da die Standardfunktionen zum Teil nicht ausreichen.
+    Latex kann mit Paketen erweitert werden. Dies ist für viele Dinge sehr wichtig, da die Standardfunktionen zum Teil nicht ausreichen.\pause
     \begin{block}{Paket mit Optionen laden}
         \cmd{usepackage}\oarg{Optionen}\marg{Paketname}
     \end{block}
     \pause
     \bigskip
-    \begin{exampleblock}{Quelldatei ist UTF-8, immer nutzen}
+    \begin{block}{Quelldatei ist UTF-8, immer nutzen}
 		\verb+\usepackage[utf8]{inputenc}+
-    \end{exampleblock}
+    \end{block}
     \pause
-    \begin{exampleblock}{Sprache auf Deutsch umstellen}
+    \begin{block}{Sprache auf Deutsch umstellen}
         \verb+\usepackage[ngerman]{babel}+
-    \end{exampleblock}
+    \end{block}
 \end{frame}
 
 
@@ -164,7 +164,7 @@
       \hfill \^{}
       \hfill
     \end{center}
-
+    \pause
     Um diese auszugeben, muss meist nur ein \textbackslash{} vor dieses gesetzt werden.
     Damit wird \verb+\$+ zu \$.
 \end{frame}
@@ -175,7 +175,7 @@
     
     \begin{itemize}
         \item Mehrere Leerzeichen werden zu einem zusammengefasst \pause
-        \item Ein neuer Absatz mit einer Leerzeile \pause
+        \item Ein neuer Absatz wird mit einer Leerzeile gestartet\pause
         \item Einen harten Umbruch erzeugt man mit \textbackslash\textbackslash
     \end{itemize}
     \pause    

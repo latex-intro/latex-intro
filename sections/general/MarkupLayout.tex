@@ -8,7 +8,7 @@
     \bigskip
     Einen normalen Umbruch erhält man mit \texttt{\textbackslash\textbackslash}
     
-    \bigskip
+    \bigskip\pause
     Für eine neue Seite bzw. Spalte gibt es den Befehl \verb+\newpage+\\
     Alternativ: \verb+\clearpage+ beginnt immer eine neue Seite
     
@@ -24,16 +24,16 @@
     \begin{center}
         \begin{tabular}{ll}
             \textbf{Befehl} & \textbf{Verwendung}\\
-            \cmd{part}\marg{Name} & Bücher\\
-            \cmd{chapter}\marg{Name} & Reports, Bücher\\
-            \cmd{section}\marg{Name} & Alle\\
-            \cmd{subsection}\marg{Name} & Alle\\
-            \cmd{subsubsection}\marg{Name} & Alle\\
-            \cmd{paragraph}\marg{Name} & Alle\\
+            \cmd{part}\marg{Name} & Bücher\pause\\
+            \cmd{chapter}\marg{Name} & Reports, Bücher\pause\\
+            \cmd{section}\marg{Name} & Alle\pause\\
+            \cmd{subsection}\marg{Name} & Alle\pause\\
+            \cmd{subsubsection}\marg{Name} & Alle\pause\\
+            \cmd{paragraph}\marg{Name} & Alle\pause\\
             \cmd{subparagraph}\marg{Name} & Alle
         \end{tabular}
     \end{center}
-    \medskip
+    \medskip\pause
     In Artikeln (\texttt{scrartcl}) werden meist nur die sections verwendet.
 \end{frame}
 
@@ -46,27 +46,30 @@
     \begin{center}
         \begin{tabular}{ll}
             \textbf{Befehl} & \textbf{Ergebnis}\\
-            \verb+\emph{Text}+ & \emph{Text}\\
-            \verb+\textbf{Text}+ & \textbf{Text}\\
-            \verb+\textit{Text}+ & \textit{Text}\\
-            \verb+\underline{Text}+ & \underline{Text}\\
+            \verb+\emph{Text}+ & \emph{Text}\pause\\
+            \verb+\textbf{Text}+ & \textbf{Text}\pause\\
+            \verb+\textit{Text}+ & \textit{Text}\pause\\
+            \verb+\underline{Text}+ & \underline{Text}\pause\\
             \verb+\texttt{Text}+ & \texttt{Text}
         \end{tabular}
     \end{center}
+    \pause\medskip
+    
+    Hervorhebungen sparsam verwenden, am besten nur \verb|\emph{}|.
 \end{frame}
 
 
 \begin{frame}[fragile]
     \frametitle{Inhaltsverzeichnis}
     Ein Inhaltsverzeichnis ist einfach mit \verb+\tableofcontents+ zu erhalten. Hierzu werden alle Überschriften verwendet.
-    \medskip    
+    \medskip\pause
     
     Überschriften ohne Nummer und Eintrag im Inhalt erstellt man mit der gesternten Variante, z.B. \cmd{section}*\marg{Name}.
     
-    \medskip
+    \medskip\pause
     Genauso kann man Verzeichnisse von Tabellen und Abbildungen erzeugen. Dazu später mehr.
     
-    \medskip
+    \medskip\pause
     \begin{alertblock}{Achtung}
         Für Verzeichnisse benötigt \LaTeX{} einen zweiten Aufruf, nach dem ersten ist das Inhaltsverzeichnis noch leer.
     
@@ -83,16 +86,16 @@
     \medskip
     \begin{center}
         \begin{tabular}{ll}
-            \cmd{title}\marg{Name} & Setzt den Titel*\\
-            \cmd{author}\marg{Name} & Setzt den Autor*\\
-            \cmd{date}\marg{Datum} & Setzt das Datum\\
-            \cmd{subtitle}\marg{Name} & Setzt den Untertitel\\
+            \cmd{title}\marg{Name} & Setzt den Titel*\pause\\
+            \cmd{author}\marg{Name} & Setzt den Autor*\pause\\
+            \cmd{date}\marg{Datum} & Setzt das Datum\pause\\
+            \cmd{subtitle}\marg{Name} & Setzt den Untertitel\pause\\
             \cmd{publisher}\marg{Name} & Setzt den Herausgeber
         \end{tabular}
     \end{center}
     \medskip
     Angaben mit einem Stern sind Pflicht.
-    \medskip
+    \medskip\pause
     
     
     Der Titel wird nun im Dokument mit \verb+\maketitle+ erstellt.
@@ -101,18 +104,18 @@
 
 \begin{frame}
     \frametitle{Umgebungen}
-    \LaTeX{} steuert viele Dinge über Umgebungen.\\
+    \LaTeX{} steuert viele Dinge über Umgebungen.\\\pause
     Eine Umgebung wird mit
     \begin{center}
         \cmd{begin}\marg{Name}
     \end{center}
-    gestartet und mit
+    gestartet\pause und mit
     \begin{center}
         \cmd{end}\marg{Name}
     \end{center}
     wieder beendet.
     
-    \bigskip
+    \bigskip\pause
     Ihr kennt bereits die \texttt{document}-Umgebung
 \end{frame}
 
@@ -129,15 +132,18 @@
             \end{center}
         \end{minipage}}
     \end{center}
+    \pause
     
     \begin{center}
-        \begin{verbatim}
-        \begin{center}
-            Text (und mehr) lässt sich
-            mit der center-Umgebung
-            zentrieren, wenn gewünscht.
-        \end{center}
-        \end{verbatim}
+    \begin{codeblock}
+\begin{verbatim}
+\begin{center}
+    Text (und mehr) lässt sich
+    mit der center-Umgebung
+    zentrieren, wenn gewünscht.
+\end{center}
+\end{verbatim}
+\end{codeblock}
     \end{center}
 \end{frame}
 
@@ -153,15 +159,18 @@
             \end{flushleft}
         \end{minipage}}
     \end{center}
+    \pause
     
     \begin{center}
-        \begin{verbatim}
-        \begin{flushleft}
-            Standardmäßig benutzt \LaTeX{} Blocksatz.
-            Wenn stattdessen ein linksbündiger
-            Flattersatz verwendet werden soll...
-        \end{flushleft}
-        \end{verbatim}
+    \begin{codeblock}
+\begin{verbatim}
+\begin{flushleft}
+    Standardmäßig benutzt \LaTeX{} Blocksatz.
+    Wenn stattdessen ein linksbündiger
+    Flattersatz verwendet werden soll...
+\end{flushleft}
+\end{verbatim}
+    \end{codeblock}
     \end{center}
 \end{frame}
 
@@ -176,11 +185,11 @@
         \item Sie haben eine einfache Syntax
     \end{itemize}
     
-    \bigskip
+    \bigskip\pause
     \LaTeX{} bietet die folgenden Umgebungen:
     \begin{itemize}
-        \item \umg{itemize} erzeugt Bullets wie in dieser Liste
-        \item \umg{enumerate} erzeugt nummerierte Aufzählungen
+        \item \umg{itemize} erzeugt Bullets wie in dieser Liste\pause
+        \item \umg{enumerate} erzeugt nummerierte Aufzählungen\pause
         \item \umg{description} erzeugt Erläuterungen
     \end{itemize}
 \end{frame}
@@ -196,14 +205,15 @@
         \item Letzter Eintrag
     \end{itemize}
     
-    \bigskip
-    \begin{verbatim}
-Eine Aufzählung sieht so aus:
+    \bigskip\pause
+\begin{codeblock}
+\begin{verbatim}
 \begin{itemize}
     \item Erster Eintrag
     \item Letzter Eintrag
 \end{itemize}
-    \end{verbatim}
+\end{verbatim}
+\end{codeblock}
 \end{frame}
 
 
@@ -221,7 +231,7 @@ Eine Aufzählung sieht so aus:
         \item Letzter Eintrag
     \end{itemize}
     
-    \smallskip
+    \smallskip\pause
     \begin{verbatim}
 Eine Aufzählung sieht so aus:
 \begin{itemize}
@@ -246,14 +256,15 @@ Eine Aufzählung sieht so aus:
         \item Letzter Eintrag
     \end{enumerate}
     
-    \bigskip
+    \medskip\pause
+\begin{codeblock}
     \begin{verbatim}
-Eine Aufzählung sieht so aus:
 \begin{enumerate}
     \item Erster Eintrag
     \item Letzter Eintrag
 \end{enumerate}
-    \end{verbatim}
+\end{verbatim}
+\end{codeblock}
     \medskip
     
     Eine andere Umgebung, der Rest ist gleich
@@ -271,13 +282,15 @@ Eine Aufzählung sieht so aus:
         \item[MS Word] Kann auch viel, nur nicht so schön
     \end{description}
     
-    \bigskip
-    \begin{verbatim}
+    \bigskip\pause
+\begin{codeblock}
+\begin{verbatim}
 \begin{description}
     \item[\LaTeX{}] Ist ein tolles Programm zum Textsatz
     \item[Microsoft Word] Kann auch viel, ...
 \end{description}
-    \end{verbatim}
+\end{verbatim}
+\end{codeblock}
 \end{frame}
 
 
@@ -292,12 +305,14 @@ Eine Aufzählung sieht so aus:
         Erfüllung? Ich jedenfalls tu's nicht.
     \end{quote}
     
-    \bigskip
-    \begin{verbatim}
+    \bigskip\pause
+    \begin{codeblock}
+\begin{verbatim}
 \begin{quote}
     Seht mich an, ...
 \end{quote}
-    \end{verbatim}
+\end{verbatim}
+    \end{codeblock}
 \end{frame}
 
 
@@ -312,14 +327,16 @@ Mit \LaTeX{} kann man tolle Sachen machen.
     \end{verbatim}
     
     \pause
-    \begin{semiverbatim}
-\\begin\{verbatim\}
-Mit \\LaTeX\{\} kann man tolle Sachen machen.
-\\end\{verbatim\}
-    \end{semiverbatim}
-    
+    \begin{codeblock}
+\texttt{%
+\textbackslash{}begin\{verbatim\}\\
+Mit \textbackslash{}LaTeX\{\} kann man tolle Sachen machen.\\
+\textbackslash{}end\{verbatim\}
+}
+    \end{codeblock}
+    \pause
     \begin{alertblock}{Achtung}
-        Es werden keine Zeilen mehr umgebrochen, alle Leerzeichen werden so abgedruckt wie im Quelltext. Bessere Quelltextdarstellung z.B. mit dem Paket \pkg{listings}
+        Es werden keine Zeilen mehr umgebrochen, alle Leerzeichen werden so abgedruckt wie im Quelltext, keine Befehle funktionieren mehr. Bessere Quelltextdarstellung z.B. mit dem Paket \pkg{listings}
     \end{alertblock}
 \end{frame}
 
@@ -335,7 +352,7 @@ Mit \\LaTeX\{\} kann man tolle Sachen machen.
     \pause
     \begin{block}{Lösung: Labels und Verweise}
         \begin{itemize}
-            \item Man kann an vielen Stellen mit \cmd{label}\marg{Bezeichnung} ein Label setzen
+            \item Man kann an vielen Stellen mit \cmd{label}\marg{Bezeichnung} ein Label setzen\pause
             \item Man bekommt die Nummer des Kapitels, des Eintrags in einer \umg{enumerate}-Umgebung etc. nun mit \cmd{ref}\marg{Bezeichnung}
         \end{itemize}
     \end{block}
