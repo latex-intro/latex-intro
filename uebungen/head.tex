@@ -13,7 +13,7 @@
 \usepackage[version=3,arrows=pgf]{mhchem}
 \usepackage{etoolbox}
 \usepackage[framemethod=pgf]{mdframed}
-\usepackage{comment}
+\usepackage{environ}
 
 \usepackage[margin=1in]{geometry}
 
@@ -36,11 +36,12 @@
 	
 \newenvironment{mathe}{\begin{mdframed}\small\ignorespaces}{\end{mdframed}}
 
-\makeatletter
-\newbool{@withsolutions}
-\boolfalse{@withsolutions}
-\newcommand{\showsolutions}{\booltrue{@withsolutions}}
-\makeatother
+\newenvironment{loesung}{\begin{mdframed}[style=loesung]\small\textbf{Lösung:} }{\end{mdframed}}
+\NewEnviron{hide}{}
+\newcommand{\hidesolutions}{
+  \let\loesung\hide
+  \let\endloesung\endhide
+}
 
 \mdfdefinestyle{loesung}{leftmargin=2.5em,rightmargin=2.5em}
 
@@ -50,9 +51,6 @@
 
 \providecommand{\course}{\!}
 \AtBeginDocument{%
-\makeatletter
-\ifbool{@withsolutions}{\newenvironment{loesung}{\begin{mdframed}[style=loesung]\small\textbf{Lösung:} }{\end{mdframed}}}{\excludecomment{loesung}}
-\makeatother
 \begin{center}
 	\LARGE\bfseries Übungen zum \LaTeX-Kurs \course{} \the\year\par
 	\normalsize\normalfont

@@ -65,12 +65,12 @@ dem selben Schema wie die Folien. Folgende Umgebungen stehen zur Verfügung:
   in eine `uebung`s-Umgebung packen.
 - `hinweis` für einen Abgesetzen Hinweis zu einer Aufgabe
 - `loesung` für eine Lösung, z.B. für Tutoren oder einen selber, wird standardmässig
-  nicht mit ausgegeben.
+  mit ausgegeben.
 - `mathe` zeichnet einen Kasten um den Inhalt, zum Absetzen größerer Blöcke zum
   nachtexen.
 
 Außerdem gibt es noch die folgenden Befehle:
-- `\showsolutions`: Gibt die Lösungen aus
+- `\hidesolutions`: Gibt die Lösungen nicht mit aus
 
 Die folgenden Befehle aus den Folien sind ebenfalls verfügbar: `\pkg`, `\umg`, `\cmd`,
 `\marg`, `\oarg`.
