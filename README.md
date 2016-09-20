@@ -18,21 +18,43 @@ Folgende Dinge können angepasst werden:
     - Folien: `\renewcommand{\exerciseurl}{URL}`
     - Wenn beides zusammen woanders verfügbar ist (z.B. StudIP), kann der gesamte
       Text mit `\renewcommand{\exercisesource}{Die Folien findet ihr hier}`
+- Um für verschiedene Übungszettel immer die korrekten Nummern für die Übungen
+  zu benutzen, muss der Übungszettel im Verzeichnis `uebungen` gespeichert werden
+  und mit `\registerexercise{<Dateiname>}` bekannt gemacht werden (Dateiname 
+  _ohne_ Endung).
 
 ## Benutzerdefinierte Funktionen zur Layoutvereinheitlichung (aka Styleguide)
 
 Die folgenden Funktionen sind in der `config/functions.tex` definiert und
-sollten nach möglichkeit verwendet werden. Für Beispiele sollte die `verbatim`
-Umgebung oder `\verb` Benutzt werden.
+sollten nach Möglichkeit verwendet werden. Für Beispiele sollte die `verbatim`
+Umgebung oder `\verb` benutzt werden.
 
 - `\pkg{Name}`: Zur Formatierung von Paketnamen
 - `\umg{Name}`: Zur Formatierung von Umgebungsnamen
 - `\cmd{Befehl}`: Setzt `\Befehl` in Typewriter-Schrift
 - `\marg{Argument}`: Für Plfichtargumente (mandatory arguments), setzt `{<Argument>}`
 - `\oarg{Argument}`: Für optionale Argumente, setzt `[<Argument>]`
-- `\uebung{Nummern}`: Für Übungsfolien, erstellt eine Folie mit der Quelle der
+- `\uebung{Label}`: Für Übungsfolien, erstellt eine Folie mit der Quelle der
   Folien und des Übungszettels, darauf Außerdem die Aufforderung, die angegebene
-  Aufgabe zu bearbeiten
+  Aufgabe zu bearbeiten. Das Label muss im registrierten Übungszettel vorhanden
+  sein, alternativ können auch die beiden Label `<label>:first` und `<label>:last`
+  vorhanden sein, dann wird ein Bereich von Ausgaben ausgegeben. _Die Variante mit
+  `first` und `last` wird priorisiert!_
+- `\loesung[Label]{Titel}{Body}`: Erstellt eine Lösungsfolie, mit dem gegebenen
+  Titel und dem Body. _Verbatim ist nicht möglich, da die Folie nicht `fragile`
+  ist_. Die Lösungen werden im Handout-Modus nicht angezeigt. Wenn das optionale
+  Argument _Label_ verwendet wird, wird die Folie nur augegeben, wenn das Label
+  im registrierten Übungszettel vorhanden ist. So kann man die Folien ausblenden,
+  wenn sie nicht benötigt werden.
+
+## Einstellungen in der Präambel
+
+- `\hidesolutions`: Zeigt niemals Lösungen an.
+- `\forcesolutions`: Zeigt immer alle Lösungen an, auch in Handouts
+- `\registerexercise{<Dateiname>}`: Registriert eine Übung aus dem `uebungen`-
+  Verzeichnis.
+- `\handoutsolutions`: Zeigt Lösungen auch in Handouts an, alle anderen
+  Auswahlregeln bleiben bestehen
 
 ## Daten-Struktur
 

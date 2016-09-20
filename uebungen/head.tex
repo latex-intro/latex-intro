@@ -1,0 +1,66 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{textcomp}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage[
+	margin=0pt
+	,oneside
+	,textfont={small,it}
+	,format=plain
+	,indention=10pt
+	,labelfont=sc
+	,tableposition=top
+	]{caption}
+
+\newenvironment{uebung}{\begin{enumerate}[label=\thesection.\arabic*),ref=\thesection.\arabic*,fullwidth]}{\end{enumerate}}
+
+\newenvironment{hinweis}{\begin{description}[labelindent=2.5em,leftmargin=2.5em,topsep=0em]%
+	\small
+	\item[Hinweis:]
+	\ignorespaces}{\end{description}}
+
+\newcommand{\mathuebung}[1]{\fbox{\parbox[t]{.9\textwidth}{\small\ignorespaces#1}}}
+
+\newcommand\abs[1]{\lvert#1\rvert}
+\newcommand\norm[1]{\lVert#1\rVert}
+\newcommand\datei[1]{\textsf{#1}}
+
+\providecommand{\course}{\!}
+\AtBeginDocument{\begin{center}
+	\LARGE\bfseries Übungen zum \LaTeX-Kurs \course{} \the\year\par
+	\normalsize\normalfont
+	\mbox{Arbeitsgruppe \LaTeX{}}
+\end{center}
+\begin{hinweis}
+Viele der folgenden Aufgaben benötigen eigenständige Arbeit! Insbesondere musst
+du selbstständig Anleitungen lesen. Dies ist keine Schikane, sondern soll
+zeigen, dass \LaTeX\ sehr gut und ausführlich dokumentiert ist.
+\end{hinweis}
+}
+
+\providecommand\textcolor{}
+\renewcommand{\textcolor}[2]{#2}	% Farben deaktivieren
+
+\newcommand{\cmd}[1]{\texttt{\textbackslash{#1}}}
+\newcommand{\marg}[1]{\texttt{\{}\textlangle\emph{#1}\textrangle\texttt{\}}}
+\newcommand{\oarg}[1]{\texttt{[}\textlangle\emph{#1}\textrangle\texttt{]}}
+\newcommand{\pkg}[1]{\textcolor{BurntOrange}{#1}}
+\newcommand{\umg}[1]{\textcolor{SeaGreen!50!Brown}{#1}}
+
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\ArcSin}{ArcSin}
+\DeclareMathOperator{\sgn}{sgn}
+
+\addtokomafont{sectioning}{\rmfamily}
+\addtokomafont{descriptionlabel}{\rmfamily}

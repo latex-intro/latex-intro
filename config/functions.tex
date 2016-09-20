@@ -1,7 +1,6 @@
 
 \newenvironment{fframe}{\begin{frame}[fragile,environment=specialframe]}{\end{frame}}
 \newenvironment{codeblock}[1][]{\smallskip\begin{block}{Code: #1}}{\end{block}}
-\newenvironment{loesung}{\begin{frame}<handout:0>}{\end{frame}}
 
 \newcommand{\R}{\mathbb{R}}
 \DeclareMathOperator{\ArcSin}{ArcSin}
@@ -13,12 +12,55 @@
 \newcommand{\pkg}[1]{\textcolor{BurntOrange}{#1}}
 \newcommand{\umg}[1]{\textcolor{SeaGreen!50!Brown}{#1}}
 
+\providecommand{\slideurl}{http://slides.are.here}
+\providecommand{\exerciseurl}{http://exercises.are.here}
 \providecommand{\exercisesource}{Die Folien findet ihr hier: \url{\slideurl}
 
 Die Aufgaben hier: \url{\exerciseurl}}
 
-\newcommand{\uebung}[1]{
+
+\makeatletter
+\newbool{@withsolutions}
+\booltrue{@withsolutions}
+
+\newbool{@forcesolutions}
+\boolfalse{@forcesolutions}
+
+\newbool{@handoutsolutions}
+\boolfalse{@handoutsolutions}
+
+\newcommand{\hidesolutions}{\boolfalse{@withsolutions}}
+\newcommand{\forcesolutions}{\booltrue{@forcesolutions}\booltrue{@withsolutions}\booltrue{@handoutsolutions}}
+\newcommand{\handoutsolutions}{\booltrue{@handoutsolutions}}
+\newcommand{\registerexercise}[1]{\externaldocument[U-]{uebungen/#1}}
+
+% Zeige Lösung, wenn nicht manuell verborgen. Interne Funktion für die Anzeige.
+% Lösungen werden im Handout nicht angezeigt, wenn nicht \forcesolution verwendet wird.
+\newcommand{\@loesung}[2]{%
+\ifbool{@withsolutions}{
+\ifbool{@handoutsolutions}{
+\begin{frame}
+    \frametitle{#1}
+    #2
+\end{frame}
+}{
 \begin{frame}<handout:0>
+    \frametitle{#1}
+    #2
+\end{frame}
+}}{}}
+
+% Lösungsfolie anzeigen. Kann als optionalen Parameter einen Label,
+% zeigt die Folie dann nur, wenn 1) \forcesolution gesetzt ist oder
+% 2) Das Label auf dem mit \registerexercise registrierten Übungszettel vorhanden ist.
+\newcommand{\loesung}[3][]{%
+\ifblank{#1}
+    {\@loesung{#2}{#3}}
+    {\ifcsundef{r@U-#1}{\ifbool{@forcesolutions}{\@loesung{#2}{#3}}{}}{\@loesung{\ref{U-#1}) #2}{#3}}}}
+
+% Interne Funktion zur Ausgabe der Übungsfolie
+\newcommand{\@uebung}[1]{
+\begin{frame}
 \frametitle{Zeit zum Ausprobieren}
 
 \exercisesource{}
@@ -26,7 +68,22 @@ Die Aufgaben hier: \url{\exerciseurl}}
 \begin{center}
     {\huge
     Bearbeitet jetzt die\\
-    Aufgaben #1
+    #1
     }
 \end{center}
 \end{frame}}
+
+% Übungsfolie anzeigen, benötigt einen Label als Parameter.
+% Wird nur angezeigt, wenn das Label auf dem mit \registerexercise
+% registrierten Übungszettel vorhanden ist oder es die beiden Label
+% <label>:first und <label>:last gibt, dann wird ein Bereich von
+% Ausgaben angegeben.
+\newbool{@showuebung}
+\newcommand{\uebung}[1]{
+\booltrue{@showuebung}
+\ifcsundef{r@U-#1:first}{\boolfalse{@showuebung}}{}
+\ifcsundef{r@U-#1:last}{\boolfalse{@showuebung}}{}
+\ifbool{@showuebung}{\@uebung{Aufgaben \ref{U-#1:first} - \ref{U-#1:last}}}{\ifcsundef{r@U-#1}{}{\@uebung{Aufgabe \ref{U-#1}}}}
+}
+
+\makeatother

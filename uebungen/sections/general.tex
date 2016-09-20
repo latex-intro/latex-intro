@@ -1,0 +1,110 @@
+\section{Dokumentenformatierungen}
+\begin{uebung}
+\item Erstelle ein Minimaldokument mit dem Code aus 
+	Abbildung~\ref{minimaldoc} und erstelle daraus eine PDF.\label{firststart:first}
+\item Teste was passiert, wenn du die \pkg{inputenc}-Zeile auskommentierst.
+    Probiere was passiert, wenn du anstatt \texttt{utf8} zum Beispiel
+    \texttt{latin1} verwendest. Wo ist der Unterschied?\label{inputenc}
+\item Versuche ein paar Sonderzeichen zu schreiben: \textbackslash{} und \^{}Hallo\label{specialchars}
+\item Füge deiner Datei mehr Text hinzu; verwende dazu das Paket 
+	\pkg{lipsum} und den Befehl \verb+\lipsum[1-7]+. Dies fügt
+	7 Absätze eines lateinischen Fülltextes (\enquote{Lorem ipsum}) ein.
+	\begin{hinweis}
+	    Pakete werden in der Präambel mit \cmd{usepackage}\marg{Paketname} geladen.
+	\end{hinweis}\label{firststart:last}
+\item Füge deiner Datei \emph{Titel}, \emph{Autor} und 
+	\emph{Datum} und stelle diese Angaben im Titel dar.
+	Füge außerdem ein \emph{Inhaltsverzeichnis} hinzu.
+	\begin{hinweis}
+	    Du musst \LaTeX\ evtl. mehrmals ausführen, damit alle 
+		Seitenzahlen korrekt sind.
+	\end{hinweis}\label{markup:first}
+\item Füge nun noch 4-5 Absätze vor der letzten Überschrift ein.
+    Schaue nach, ob sich die Seitenzahlen im Inhaltsverzeichnis geändert haben.
+    Was musst du tun um die Seitenzahlen zu korrigieren?
+\item Ersetze die Option \texttt{ngerman} vom \pkg{babel}-Paket durch
+	\texttt{english} und finde heraus was passiert.
+\item Tausche an beliebiger Stelle ein \cmd{section}\marg{Text} gegen 
+	\cmd{section*}\marg{Text} aus und beobachte das Verhalten von \LaTeX; 
+	beobachte was passiert, wenn du \cmd{section}\oarg{Text1}\marg{Text2} 
+	anstelle der Variante mit Sternchen verwendest.
+	\label{aufg:sectionstar}
+
+\begin{figure}[h]
+	\begin{minipage}[t]{.5\textwidth}
+	\caption{Minimaldokument}\label{minimaldoc}
+	\begin{verbatim}
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\begin{document}
+\section{Überschrift}
+Etwas Text...
+\subsection{Unter-Überschrift}
+Noch mehr Text...
+\subsubsection{UU-Überschrift}
+Lorem ipsum dolor sit amet,\ldots
+\end{document}
+	\end{verbatim}
+	\end{minipage}
+	\begin{minipage}[t]{.5\textwidth}
+	\caption{Liste zum Nachbauen}\label{enumerate}\small
+	\begin{enumerate}
+		\item Hier geht es um Listen
+		\item Listen kann man schön verschachteln
+		\begin{itemize}
+			\item man muss dabei einiges beachten
+			\item \LaTeX\ ist eine strukturierte Sprache
+			\item[!] Zeichen lassen sich ändern
+			\begin{enumerate} 
+				\item Verschachtelung geht aber immer
+				\item \dots\ wie man hier sieht!
+			\end{enumerate}
+		\end{itemize}
+		\item man muss sich beim Eingeben nur konzentrieren, sonst 
+			passieren Fehler:
+		\begin{enumerate}
+			\item beliebt ist, eine \umg{enumerate}"=Umgebung mit 
+				einer \umg{itemize}"=Umgebung zu schließen
+			\item oder statt \texttt{\{itemi\textit{z}e\}} 
+				\texttt{\{itemi\textit{s}e\}} zu tippen
+		\end{enumerate}
+	\end{enumerate}
+	\end{minipage}
+\end{figure}
+\clearpage
+
+\item Experimentiere mit den Zählern \texttt{secnumdepth} und 
+	\texttt{tocdepth}, dies geschieht in der Präambel (oder Kopf) der Datei mit dem
+	Befehl \cmd{setcounter}\marg{Zähler}\marg{Wert}. \label{zaehler}
+\item Probiere verschiedene Textausrichtungen aus: Füge am Ende
+    deines Dokumentes jeweils einen Absatz \enquote{Lorem Ipsum}
+    linksbündig und zentriert ein. Baue außerdem an einer beliebigen Stelle
+    im Dokument einen Absatz \enquote{Lorem Ipsum} als Zitat ein.
+\item Füge nun an die Überschriften ein Label an (mittels \cmd{label}).
+    Verweise dann irgendwo anders mit \cmd{ref} und auch
+    \cmd{pageref} auf diese Label. Probiere dies auch mit einer \enquote{gesternten}
+    Section Variante aus Aufgabe \ref{aufg:sectionstar}.
+\item Füge nun die Liste aus Abbildung \ref{enumerate} in dein Dokument ein.
+\item Labels kann man auch mit Listen verwenden. Füge deiner Liste ein Label
+    hinzu und Verweise an anderer Stelle im Dokument darauf.
+\item Experimentiere nun mit den Dokumentklassen. Du solltest auf jeden
+    Fall einmal \texttt{scrbook} und \texttt{scrreprt} ausprobieren.
+    
+    Nun probiere außerdem die folgenden Dinge:
+    \begin{enumerate}
+        \item die Papiergröße auf DIN A5 zu ändern
+        \item zweispaltigen Text zu setzen
+        \item den Einzug am Anfang der Zeile eines neuen Absatzes zu
+            Entfernen (Versuche die Option \texttt{parskip})
+        \item Probiere einmal Querformat
+        \item Kannst du den Text mit der Buchklasse auch einseitig setzen?
+    \end{enumerate}
+\item Füge deinem Dokument einen Anhang hinzu. Im Anhang sollte mindestens
+    eine Überschrift und ein Absatz Text sein.
+    \begin{hinweis}
+        Den Anhang beginnst du mittels \cmd{appendix}. Was ändert sich
+        danach an den Überschriften? Schaue auch im Inhaltsverzeichnis nach.
+    \end{hinweis}\label{markup:last}
+\end{uebung}
