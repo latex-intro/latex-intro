@@ -73,8 +73,30 @@ zeigen, dass \LaTeX\ sehr gut und ausführlich dokumentiert ist.
 \newcommand{\umg}[1]{\texttt{#1}}
 
 \newcommand{\R}{\mathbb{R}}
+
+\renewcommand{\i}{\mathfrak{i}}
+\newcommand{\complex}[1]{\re\left(#1\right)+\i\im\left(#1\right)}
 \DeclareMathOperator{\ArcSin}{ArcSin}
 \DeclareMathOperator{\sgn}{sgn}
 
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+
 \addtokomafont{sectioning}{\rmfamily}
 \addtokomafont{descriptionlabel}{\rmfamily}
+
+%% Theorem Umgebungen: 
+\newtheorem{mythm}{Satz}
+
+\newtheoremstyle{others}  	% follow `plain` defaults but change HEADSPACE.
+  {\baselineskip}   		% ABOVESPACE
+  {\baselineskip}   		% BELOWSPACE
+  {\upshape}  				% BODYFONT
+  {}       					% INDENT (empty value is the same as 0pt)
+  {\bfseries} 				% HEADFONT
+  {:}         				% HEADPUNCT
+  {.5em}  					% HEADSPACE. `plain` default: {5pt plus 1pt minus 1pt}
+  {}          				% CUSTOM-HEAD-SPEC
+  
+\theoremstyle{others}
+\newtheorem{mythm2}{Satz}[section]
