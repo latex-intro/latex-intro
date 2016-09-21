@@ -1,7 +1,7 @@
-\section{Mathegrundlagen}
+\section{Formelsatz}
 \begin{uebung}
 
-\item Finde die \LaTeX{} Kommandos für $\forall\,\oslash\,\leftrightsquigarrow\,\otimes\,\uplus\,\hat{abc}$.
+\item Finde die \LaTeX{} Kommandos für $\forall\,\oslash\,\leftrightsquigarrow\,\otimes\,\uplus\,\hat{a}$.
         \begin{loesung}
             \verb|\forall \oslash \leftrightsquigarrow \otimes \uplus \hat{abc}|
         \end{loesung}
@@ -56,57 +56,12 @@
           \[
               s_n\xrightarrow{n\rightarrow\infty} \frac{1}{1-q}
           \]
-          \item  
-              \begin{mythm}[Existenz des linksneutralen Elements]
-                  Sei $(G,\circ)$ eine Gruppe.
-                  \begin{enumerate}[label=(\roman*)]
-                      \item Sind $e_1$ und $e_2$ neutrale Elemente, so folgt $e_1=e_2$.
-                      \item Sind $h_1$ und $h_2$ beide invers zu $g\in G$, so folgt $h_1 = h_2$.  
-                  \end{enumerate}
-              \end{mythm}
-                  \begin{proof}\text{ }\\
-                  \begin{enumerate}[label=(\roman*)]
-                      \item Ausnutzung der Eigenschaft des neutralen Elements liefert $e_1 = e_1\circ e_2=e_2$.
-                      \item Es gilt: 
-                          \begin{alignat*}{2}
-                              h_2 &= e\circ h_2 = (h_1\circ g)\circ h_2\\
-                                  &= h_1 \circ (g\circ h_2)\\
-                                  &= h_1 \circ e = h_1
-                          \end{alignat*}  
-                  \end{enumerate}
-                  \end{proof}
-                  \begin{hinweis}
-                      Schaut euch das \pkg{amsmath}-Paket an.
-                  \end{hinweis}
-          \item 
-              Befasst euch näher mit dem \pkg{amsthm}-Paket. Wie könnt ihr den Stil eines eigenen Theorems ändern? Wie könnt ihr die Nummerierung von Gleichungen und Sätzen auf einen Abschnitt beschränken? 
-              
+          
         \end{enumerate}
         \begin{loesung}
             \begin{enumerate}
                 \item Das Element-Zeichen erhalten wir durch den Befehel \cmd{in}. Zum Schluss wird der Abgesetzte Mathe-Modus gestartet mit \cmd{[} \dots \cmd{]}. 
                 \item Die Punkte $\dots$ erhalten wir wie gewohnt durch \cmd{dots}. Im abgesetzten Mathe-Modus erhalten wir die Summe $\sum$ durch \cmd{sum} und über \\ \verb|\sum^{Text}_{Text}| erhalten wir die Grenzwerte. Die Brüche werden über \cmd{frac}\marg{Zähler}\marg{Nenner} eingeführt. Der Pfeil, der hier benutzt werden soll ist \cmd{xrightarrow}\marg{text}.
-                \item Das $\circ$ erhalten wir durch \cmd{circ}. Die \umg{enumerate}-Umgebung wird wie gewohnt mit \verb|[label=(\roman*)]| in der Nummerierung angepasst. Wir haben hier ein eigenes Theorem über das \pkg{amsthm}-Paket geladen und über den Befehl \cmd{newtheorem}\marg{Name}\oarg{Zählung}\marg{Bezeichnung}\oarg{Gliederung} das neue Theorem definiert. Im header sollte dann \verb|\newtheorem{mythm}{Satz}| o.Ä. stehen, sodass ihr die \umg{mythm}-Umgebung erzeugt habt. Was folgt ist eine \umg{proof}-Umgebung, die automatisch den Kasten am Ende und \glqq Beweis:\grqq{} setzt.
-                \item Der Befehl \cmd{newtheoremstyle} ermöglicht das erstellen eines eigenen Stils für eigene Theorem-Umgebungen. Er funktioniert wie folgt:\\
-\begin{verbatim}
-\newtheoremstyle{others} 
-  {\baselineskip}  % ABOVESPACE
-  {\baselineskip}  % BELOWSPACE
-  {\itshape}       % BODYFONT
-  {}               % INDENT (empty value is the same as 0pt)
-  {\bfseries}      % HEADFONT
-  {:}              % HEADPUNCT
-  {.5em}           % HEADSPACE. 
-  {}               % CUSTOM-HEAD-SPEC
-\end{verbatim}
-                    Habt ihr einen eigenen Stil definiert, könnt ihr nun nach dem Befehl \\ \cmd{theoremstyle}\marg{Stil} definieren, welcher Umgebung diesem Stil folgen soll. Das sieht dann wie folgt aus:
-\begin{verbatim}
-\theoremstyle{others}
-\newtheorem{mythm2}{Theorem}[section]
-\end{verbatim}
-                    Mit der Option \verb|[section]| wird nun jedes Theorem innerhalb einer section durchnummeriert. 
-                    
-                    Gleichungen innerhalb einer Umgebung durchzunummerieren erhaltet ihr durch den Befehl \cmd{numberwithin}\marg{Umgebung}{Gliederung}. Dabei sind equations, also Gleichungen durchnummerierte Umgebungen!
             \end{enumerate}
         \end{loesung}
 \end{uebung}
