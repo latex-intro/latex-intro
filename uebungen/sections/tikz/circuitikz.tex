@@ -16,11 +16,13 @@
 	    \draw(4,3) 
 	    to[spst] (4,0)
 	    to[open] (8,2);
-	    \draw(8,2.5) 
-	    to[short] (9.5,2.5)
-	    to[voltmeter] (9.5,0.5)
-	    to[short] (8,0.5)
-	    to[open] (8,2.5);
+	    \begin{scope}[xshift=8cm, yshift=2.2cm, scale=0.7, transform shape]
+	    \draw(0,0) 
+	    to[short] (1.5,0)
+	    to[voltmeter] (1.5,-2)
+	    to[short] (0,-2)
+	    to[open] (0,0);
+	    \end{scope}
 	\end{circuitikz}
 \end{figure}
 \begin{figure}[h]
@@ -58,11 +60,13 @@
 	    \draw(4,3) 
 	    to[spst] (4,0)
 	    to[open] (8,2);
+	    \begin{scope}[xshift=8cm, yshift=2.2cm, scale=0.7, transform shape]
 	    \draw(8,2.5) 
 	    to[short] (9.5,2.5)
 	    to[voltmeter] (9.5,0.5)
 	    to[short] (8,0.5)
 	    to[open] (8,2.5);
-	\end{circuitikz}
+	    \end{scope}
+\end{circuitikz}
 \end{verbatim}
 \end{loesung}
