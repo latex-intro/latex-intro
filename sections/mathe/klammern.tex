@@ -1,0 +1,75 @@
+\begin{frame}[fragile]{Klammersetzung}
+\LaTeX{} verändert die Klammergröße standardmäßig \alert{nicht}! Zum Beispiel: 
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\{(x,y)\in\mathbb{R}^2|
+(\frac{x}{y})^2 = 1\}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+\[
+    \{(x,y)\in\mathbb{R}^2|(\frac{x}{y})^2 = 1\}
+\]
+\end{column}
+\end{columns}
+
+\medskip\pause
+Lösung: Die Befehle \cmd{left}, \cmd{middle]} und \cmd{right}.
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung}
+\framesubtitle{Beispiel}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\left\{(x,y)\in\mathbb{R}^2
+\middle|\left(\frac{x}{y}
+\right)^2 = 1\right\}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+\[
+    \left\{(x,y)\in\mathbb{R}^2\middle|\left(\frac{x}{y}\right)^2 = 1\right\}
+\]
+\end{column}
+\end{columns}\pause
+Wir sehen, dass die Befehle \cmd{left} und \cmd{right} die Größe der Klammern relativ zu dem Inhalt einstellt und mithilfe von \cmd{middle} erhält man ein entsprechend großes Zeichen innerhalb der Klammern.
+
+\medskip\pause
+Beachte: \alert{Ein \cmd{left}-Befehl benötigt immer einen \cmd{right}-Befehl!}
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung II}
+\framesubtitle{Feste Klammergröße}
+Betrachten wir einmal folgendes Beispiel:
+\[
+    (x(y(3z(2x+y)-3)7z)4-8y)
+\]
+
+\medskip\pause
+Problem: Alle Klammern sind Gleichgroß und der Ausdruck wird unleserlich. Die Befehle \cmd{left} und \cmd{right} Helfen hier nicht!
+
+\medskip\pause
+Lösung: Die Befehle \cmd{big}, \cmd{Big}, \cmd{bigg} und \cmd{Bigg}. Diese Befehle besitzen eine feste Größe in den Klammern.
+\end{frame}
+
+\begin{frame}[fragile]{Klammersetzung II}
+\framesubtitle{Beispiel}
+\begin{codeblock}
+\begin{verbatim}
+\Biggl(x\biggl(y\Bigl(3z\bigl(
+2x+y\bigr)-3\Bigr)7z\biggr)4-8y\Biggr)
+\end{verbatim}
+\end{codeblock}
+Erzeugt Folgende Ausgabe: 
+\[
+    \Biggl(x\biggl(y\Bigl(3z\bigl(2x+y\bigr)-3\Bigr)7z\biggr)4-8y\Biggr)
+\]\pause
+
+Übersichtliche Formeln durch Verknüppfung von \cmd{left}, \cmd{right} etc.
+\end{frame}

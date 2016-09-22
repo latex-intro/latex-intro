@@ -1,0 +1,93 @@
+\begin{frame}[fragile]{Die \umg{alignat}-Umgebung}
+\framesubtitle{Aussehen} 
+Die \umg{alignat}-Umgebung empfiehlt sich vor allem bei Umformen von Gleichungen. Ein Beispiel:
+\begin{columns}
+\begin{column}{.5\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\begin{alignat}{2}
+&& a &= b + c\\
+\iff \quad && a - c &= b\\
+\iff \quad && c &= a - b
+\end{alignat}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+
+\begin{column}{.4\textwidth}
+Wir erhalten:
+\begin{alignat}{2}
+&& a &= b + c\\
+\iff \quad && a - c &= b\\
+\iff \quad && c &= a - b
+\end{alignat}
+\end{column}
+\end{columns}
+\pause
+Beachte: \alert{Am ende der letzten Zeile darf kein \textbackslash\textbackslash{} stehen!}
+\end{frame}
+
+\begin{frame}[fragile]{Die \umg{alignat}-Umgebung}
+\framesubtitle{Aussehen}
+Betrachten wir nun folgendes Beispiel: 
+
+\begin{codeblock}
+\begin{verbatim}
+\begin{alignat}{4}
+a + (3 + 1) &= a + 4          &=&a + (2 + 2)\\
+            &= a + (0 + 4)    &=&a + (-1 + 5)\\
+b + 102     &= b + 100        &=&b + (49 + 51)\\
+            &= b + 1000 - 900 &=&b + (49 + 51)
+\end{alignat}
+\end{verbatim}
+\end{codeblock}
+\end{frame}
+
+\begin{frame}{Die \umg{alignat}-Umgebung}
+\framesubtitle{Aussehen}
+\begin{alignat}{4}
+a + (3 + 1) &= a + 4          &=&a + (2 + 2)\\
+            &= a + (0 + 4)    &=&a + (-1 + 5)\\
+b + 102     &= b + 100        &=&b + (49 + 51)\\
+            &= b + 1000 - 900 &=&b + (49 + 51)
+\end{alignat}
+Was fällt auf?
+
+\medskip
+\pause
+Die \umg{alignat}-Umgebung wechselt stets zwischen rechts-links-Ausrichtung.
+\end{frame}
+
+\begin{frame}[fragile]{Die \umg{alignat}-Umgebung}
+Problem: Eine Zeile aus einer \umg{alignat}-Umgebung soll nicht nummeriert werden, bzw. wir wollen eine Zeile anders nummerieren.
+
+\medskip\pause
+Lösung: Die Befehle \cmd{notag} und \cmd{tag}\marg{Text}.
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{codeblock}
+\begin{tiny}
+\begin{verbatim}
+\begin{alignat}{2}
+ x^2 &=1 \\
+ a^2 + b^2 &= c^2 \notag\\ 
+ i\hbar \frac{\partial}{\partial t}|\psi(t)
+ \rangle&=\mathbb{H}|\psi(t)\rangle \tag{S}
+\end{alignat}
+\end{verbatim}
+\end{tiny}
+\end{codeblock}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{alignat}{2}
+ x^2 &=1 \\
+ a^2 + b^2 &= c^2 \notag\\ 
+ i\hbar \frac{\partial}{\partial t}|\psi(t)\rangle&=\mathbb{H}|\psi(t)\rangle \tag{S}
+\end{alignat}
+\end{column}
+\end{columns}
+
+\medskip\pause
+Mit dem Befehl \cmd{tag}\marg{Text} lässt sich in der \umg{alignat*}-Umgebung auch eine einzelne Gleichung nummerieren. 
+\end{frame}

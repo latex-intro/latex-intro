@@ -1,0 +1,47 @@
+\begin{frame}[fragile]{Weitere Mathematik}
+Häufig muss auf eine Formel Bezug genommen werden. \LaTeX{} hilft uns dabei mit Umgebungen, die Formeln durchnummerieren:
+
+\pause
+\begin{itemize}
+\item \umg{equation}: Nummeriert einzeilig;\pause
+\item \umg{align}: Nummeriert mehrzeilig;\pause
+\item \umg{alignat}\textrm{\{\textlangle Spaltenzahl\textrangle\}}: Nummeriert mehrzeilig mit festerSpaltenzahl.\pause
+\item \umg{equation*}: Ohne Nummerierung einzeilig;
+\item \umg{align*}: Ohne Nummerierung mehrzeilig;
+\item \umg{alignat*}\textrm{\{\textlangle Spaltenzahl\textrangle\}}: Ohne Nummerierung mit fester Spaltenzahl.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Beispiele}
+\begin{columns}
+\begin{column}{.48\textwidth}\footnotesize
+\begin{codeblock}
+\begin{verbatim}
+	Abgesetzt, nummeriert, 
+	einzeilig:
+    \begin{equation}
+    a^2+b^2=c^2
+    \end{equation}
+    Abgesetzt, nummeriert,
+     mehrzeilig:
+    \begin{align}
+    i^{2} = (-1)\\
+    \exp{(i\pi)} = (-1) 
+    \end{align}
+\end{verbatim}
+\end{codeblock}
+\end{column}
+%
+\begin{column}{.45\textwidth}	\pause	
+	Abgesetzt, nummeriert, einzeilig:
+    \begin{equation}
+    a^2+b^2=c^2
+    \end{equation}\pause
+    Abgesetzt, nummeriert, mehrzeilig:
+    \begin{align}
+    i^{2} = (-1)\\
+    \exp{(i\pi)} = (-1) 
+    \end{align}
+\end{column}
+\end{columns}
+\end{frame}

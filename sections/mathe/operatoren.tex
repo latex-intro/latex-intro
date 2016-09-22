@@ -1,0 +1,54 @@
+\begin{frame}[fragile]{Operatoren und Relationen}
+In der Mathematik gibt es verschiedene Symbole, die \LaTeX{} auch beherrscht. Ein Auszug
+\begin{block}{Einige Symbole}
+\begin{tabular}{*{4}{|rl}|}\hline
++ & $+$ & - & $-$ & \cmd{in} & $\in$ & \cmd{notin} & $\notin$ \\
+\cmd{langle} & $\langle$ & \cmd{rangle} & $\rangle$ & \cmd{leq} & $\leq$ & \cmd{geq} & $\geq$ \\
+\cmd{wedge} & $\wedge$ & \cmd{vee} & $\vee$ & \cmd{cap} & $\cap$ & \cmd{cup} & $\cup$ \\
+\cmd{subset} & $\subset$ & \cmd{subseteq} & $\subseteq$ & \cmd{supset} & $\supset$ & \cmd{supseteq} & $\supseteq$ \\
+= & $=$ & \cmd{coloneqq} & $\coloneqq$ & \cmd{neq} & $\neq$ & \cmd{approx} & $\approx$\\
+\cmd{cong} & $\cong$ & \cmd{cdot} & $\cdot$ & \cmd{times} & $\times$ & \cmd{div} & $\div$ \\ \hline
+\end{tabular}
+\end{block}\pause
+Der Befehl \cmd{coloneqq} benötigt das zusätzliche Laden des Pakets \pkg{mathtools}!
+\end{frame}
+
+\begin{frame}[fragile]{Präfix-Operatoren}
+Eine kurze Übersicht an Operatoren, die vor Ausdrücken stehen können.
+\begin{block}{Einige Präfix-Operatoren}
+\center
+\begin{tabular}{*{3}{|rl}|}\hline
+\cmd{sum} & $\sum$ & \cmd{prod} & $\prod$ & \cmd{int} & $\int$ \\
+\cmd{sin} & $\sin$ & \cmd{cos} & $\cos$ & \cmd{log} & $\log$\\
+\cmd{min} & $\min$ & \cmd{max} & $\max$ & \cmd{exp} & $\exp$ \\
+\cmd{bigcup} & $\bigcup$ & \cmd{forall} & $\forall$ & \cmd{exists} & $\exists$ \\ \hline
+\end{tabular}
+\end{block}\pause
+\alert{Beachte:} Nicht einfach \texttt{\$sin x\$} schreiben: $sin x$ vs. $\sin x$. 
+
+\medskip\pause
+Außerdem: $\min\limits_{x>0}$ vs. $min_{x>0}$. 
+\end{frame}
+
+\begin{frame}[fragile]{Präfix-Operatoren}
+Eigene Operatoren durch
+\begin{center}
+\cmd{DeclareMathOperator}\marg{Befehlsname}\marg{Angezeigter Text}.
+\end{center}
+Beispiel:  \verb+\DeclareMathOperator{ArcSin}{ArcSin}+, oder \verb+\DeclareMathOperator{sgn}{sgn}+\pause.
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+$\ArcSin(-\sin(1)) = (-1)$ 
+$\sgn (-2) = (-1)$
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.4\textwidth}
+${\ArcSin(-\sin(1)) = (-1)}$ 
+
+bzw. $\sgn (-2) = (-1)$
+\end{column}
+\end{columns}
+\end{frame}

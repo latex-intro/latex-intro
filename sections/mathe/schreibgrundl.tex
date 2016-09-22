@@ -1,0 +1,117 @@
+\subsection{Wie nutzt man Mathe}
+
+\begin{frame}[fragile]{Wie mache ich Mathe?}
+Wir wissen nun, wo wir Mathematik hinschreiben, aber noch nicht wirklich wie.
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+Hochgestellt $a^{hoch}$ 
+ vs. $a^bc$
+Index $a_{Index}$ 
+ vs. $a_bc$
+Summe $\sum$, Integral $\int$
+Grenzen $\sum_a^b$ 
+ vs. $\displaystyle\sum_a^b$
+Gr. Buchstaben $\alpha, \beta$
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\pause
+\begin{column}{0.4\textwidth}
+Hochgestellt $a^{hoch}$ vs. $a^bc$. 
+
+\medskip\pause
+Index $a_{Index}$ vs. $a_bc$.
+
+\medskip\pause
+Summe $\sum$, Integral $\int$.
+
+\medskip\pause
+Grenzen $\sum_a^b$ vs. $\displaystyle \sum_a^b$
+
+\medskip\pause
+Gr. Buchstaben $\alpha, \beta$.
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Wie mache ich Mathe II}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+Physikalische Ableitungen 
+ $\dot{x}$ und $\ddot{x}$. 
+Vektoren $\vec{a}$.
+Ableitungsoperator $\partial$.
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\pause
+\begin{column}{0.4\textwidth}
+Physikalische Ableitungen $\dot{x}$ und $\ddot{x}$. 
+
+\medskip\pause
+Vektoren $\vec{a}$.
+
+\medskip\pause
+Ableitungsoperator $\partial$.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Brüche}
+Für Brüche benötigt man in \LaTeX{} weder Sonderzeichen, noch diverse andere Methoden. Brüche heißen im Englischen \glqq fraction\grqq{} und auf naive Weise erhält man durch den Befehl
+\begin{center}
+\cmd{frac}\marg{Zähler}\marg{Nenner}
+\end{center}
+einen Bruch im Mathe-Modus:
+\begin{columns}
+\begin{column}{0.55\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+\frac{\exp(i\pi)}{i^2} = 1
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+Das Ergebnis sieht dann so aus:
+\[
+    \frac{\exp(i\pi)}{i^2} = 1
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]{Abstände in \LaTeX}
+\LaTeX ignoriert Leerzeichen im Mathemodus. Wir können aber durch bestimmte Befehle Leerzeichen hinzufügen.\pause
+\begin{center}
+\begin{tabular}{p{0.2\textwidth}p{0.6\textwidth}}
+Befehl & Bedeutung\\
+\verb+\,+ & Setzt ein Leerzeichen. \\
+\verb+\quad+ & Setzt einen Abstand von 1em. \\
+\verb+\qquad+ & Setzt einen Abstand von 2em.
+\end{tabular}
+\end{center}\pause
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\begin{codeblock}
+\begin{verbatim}
+a\,b\quad c \qquad d
+\end{verbatim}
+\end{codeblock}
+\end{column}
+\begin{column}{0.35\textwidth}
+Beachte größer werdende Abstände: 
+\[
+a\,b\quad c \qquad d
+\]
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
