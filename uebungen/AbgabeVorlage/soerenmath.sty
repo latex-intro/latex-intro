@@ -1,0 +1,58 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{soerenmath}[2015/10/09]
+
+\RequirePackage{listings}
+\RequirePackage{textcomp}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{scalefnt}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceil}[1]{\lceil#1\rceil}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\dif}{\mathrm{d}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\iprod}[1]{\left\langle#1\right\rangle}
+
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sign}{sign}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+
+\newenvironment{given}{\textbf{Gegeben:} }{\par\pagebreak[1]}
+\newenvironment{wanted}{\textbf{Gesucht:} }{\par\pagebreak[1]}
+\newenvironment{toshow}{\textbf{Zu zeigen:} }{\par\pagebreak[1]}
+\newenvironment{claim}{\textbf{Behauptung:} }{\par\pagebreak[1]}
+\renewenvironment{proof}{\textbf{Beweis:} }{\qed\par\pagebreak[2]}
+\newenvironment{question}{\textbf{Frage:} }{\par\pagebreak[1]}
+\newenvironment{sol}{\textbf{Lösung:} }{\par\pagebreak[1]}
+\newenvironment{remark}{\textbf{Bemerkung:} }{\par\pagebreak[1]}
+
+\lstset{upquote=true}
+\lstset{showstringspaces=false}
+\lstset{basicstyle=\ttfamily\lst@ifdisplaystyle\scalefont{0.78}\else\small\fi}
+\lstset{tabsize=8}
+\lstset{extendedchars=true}
+\lstset{commentstyle=\slshape}
+\lstset{breaklines, postbreak=\space, breakindent=5pt, breakautoindent}
+\lstset{numbers=left}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}

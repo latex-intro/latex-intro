@@ -1,0 +1,221 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{asnment}[2015/10/09]
+
+\RequirePackage{varwidth}
+\RequirePackage{calc}
+\RequirePackage{lastpage}
+\RequirePackage{scrpage2}
+\RequirePackage{ifthen}
+\RequirePackage{xstring}
+
+\newsavebox{\@leftbox}
+\newsavebox{\@rightbox}
+\newsavebox{\@centerbox}
+\newsavebox{\@leftfootbox}
+\newsavebox{\@midfootbox}
+
+\newlength{\@leftwidth}
+\newlength{\@rightwidth}
+\newlength{\@centerwidth}
+\newlength{\@leftfillwidth}
+\newlength{\@rightfillwidth}
+\newlength{\@leftfootwidth}
+\newlength{\@midfootwidth}
+
+\newcommand{\@saveparboxwidth}[3]{%
+    \savebox{#1}{\begin{varwidth}{\textwidth}%
+                   \centering\sffamily#3%
+                 \end{varwidth}}%
+                 #2=\wd#1}
+
+% Berechnet die Längen, besser nicht anfassen
+\AtBeginDocument{%
+  \@saveparboxwidth{\@leftbox}{\@leftwidth}{\tutorpar}%
+  \@saveparboxwidth{\@rightbox}{\@rightwidth}{\studentpar}%
+  \@saveparboxwidth{\@centerbox}{\@centerwidth}{\titlepar}%
+  \@saveparboxwidth{\@leftfootbox}{\@leftfootwidth}{\shorttutorpar}%
+  \@saveparboxwidth{\@midfootbox}{\@midfootwidth}{\shortstudentpar}%
+  \setlength{\@leftfillwidth}{0.5\textwidth-\@leftwidth-0.5\@centerwidth}%
+  \setlength{\@rightfillwidth}{0.5\textwidth-\@rightwidth-0.5\@centerwidth}%
+  \deftripstyle{titlepage}{}{}{}{}{}%
+               {Seite \pagemark{} von \pageref*{LastPage}}
+  \deftripstyle{normalpage}%
+               {\coursename}%
+               {\asnmentname}%
+               {\deadline}%
+               {\usebox{\@leftfootbox}}%
+               {\usebox{\@midfootbox}}%
+               {Seite \pagemark{} von \pageref*{LastPage}}%
+  \setkomafont{pageheadfoot}{\normalfont\normalcolor\sffamily}%
+  \setkomafont{pagenumber}{\normalfont\normalcolor\sffamily}%
+  \pagestyle{normalpage}%
+}
+
+% Bitte den Vorgaben des Dozenten anpassen
+\renewcommand\thesection{Aufgabe \arabic{section}}
+\renewcommand\thesubsection{Aufgabe \arabic{section}.\arabic{subsection}}
+\renewcommand\thesubsubsection{Aufgabe \arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\newcommand{\asnmenttitle}{%
+  \thispagestyle{titlepage}%
+  \begin{center}%
+    \sffamily%
+    \usebox{\@leftbox}\nobreak%
+    \hspace{\@leftfillwidth}\nobreak%
+    \usebox{\@centerbox}\nobreak%
+    \hspace{\@rightfillwidth}\nobreak%
+    \usebox{\@rightbox}%
+    \\[1cm]%
+    \pointtab%
+    \\[1cm]%
+    \rule{\textwidth}{1pt}%
+  \end{center}%
+}
+
+\let\@asnmentoldappendix\appendix
+\renewcommand{\appendix}{%
+  \@asnmentoldappendix
+  \renewcommand\thesection{Anhang \Alph{section}}
+  \renewcommand\thesubsection{Anhang \Alph{section}.\arabic{subsection}}
+  \renewcommand\thesubsubsection{Anhang \Alph{section}.\arabic{subsection}.\arabic{subsubsection}}
+}
+
+
+% Hier beginnt die Magie
+\newlength{\@pointcellwidth}
+
+\newcounter{pointlistasn}
+\newcounter{pointlistmode}
+\newcounter{pointlistsum}
+\newtoks{\@pointlisttoks}
+          
+\newcommand{\@pointlistparseA}{%
+  \@ifnextchar\end{\@pointlistendasn}{\@pointlistparseB}%
+}
+
+\newcommand{\@pointlistsepchar}{:}
+\newcommand{\@pointlistovridechar}{!}
+\newcommand{\@pointlistendasnchar}{,}
+\newcommand{\@pointlistsumchar}{+}
+
+\newcommand{\@pointlistparseB}[1]{%
+  \expandafter\ifx\@pointlistsepchar#1%
+    \@pointlistsep%
+    \@pointlisttoks={}%
+  \else\expandafter\ifx\@pointlistovridechar#1%
+    \@pointlistovride%
+    \@pointlisttoks={}%
+  \else\expandafter\ifx\@pointlistendasnchar#1%
+    \@pointlistendasn%
+    \@pointlisttoks={}%
+  \else\expandafter\ifx\@pointlistsumchar#1%
+    \@pointlistsum%
+    \@pointlisttoks=\expandafter{\the\expandafter\@pointlisttoks#1}%
+  \else%
+    \@pointlisttoks=\expandafter{\the\expandafter\@pointlisttoks#1}%
+  \fi\fi\fi\fi%
+  \expandafter\@pointlistparseA%
+}
+
+\newcommand{\@pointlistsep}{%
+  \ifnum\value{pointlistmode}=0\relax%
+    \expandafter\xdef\csname pointname-\the\value{pointlistasn}\endcsname%
+      {\the\@pointlisttoks}%
+    \setcounter{pointlistmode}{1}%
+  \fi%
+}
+
+\newcommand{\@pointlistovride}{%
+  \ifnum\value{pointlistmode}=1\relax%
+    \expandafter\xdef\csname pointval-\the\value{pointlistasn}\endcsname%
+      {\the\@pointlisttoks}%
+  \else\ifnum\value{pointlistmode}=0\relax%
+    \expandafter\xdef\csname pointname-\the\value{pointlistasn}\endcsname%
+      {\the\@pointlisttoks}%
+    \expandafter\xdef\csname pointval-\the\value{pointlistasn}\endcsname%
+      {\noexpand\textbf{??}}%
+  \fi\fi%
+  \setcounter{pointlistmode}{2}%
+}
+
+\newcommand{\@pointlistendasn}{%
+  \ifnum\value{pointlistmode}=0\relax%
+    \expandafter\xdef\csname pointname-\the\value{pointlistasn}\endcsname%
+      {\the\@pointlisttoks}%
+    \expandafter\xdef\csname pointval-\the\value{pointlistasn}\endcsname%
+      {\noexpand\textbf{??}}%
+  \else%
+    \ifnum\value{pointlistmode}=3\relax%
+    \else%
+      \IfInteger{\the\@pointlisttoks}%
+                {\addtocounter{pointlistsum}{\the\@pointlisttoks}}%
+                {\expandafter%
+                 \xdef\csname pointval-\the\value{pointlistasn}\endcsname%
+                   {\noexpand\textbf{??}}}%
+      \ifnum\value{pointlistmode}=1\relax%
+        \expandafter\xdef\csname pointval-\the\value{pointlistasn}\endcsname%
+          {\the\@pointlisttoks}%
+      \fi%
+    \fi%
+  \setcounter{pointlistmode}{0}%
+  \expandafter\xdef\csname pointpre-\the\value{pointlistasn}\endcsname%
+    {\noexpand\rule{\@pointcellwidth}{0pt}}%
+  \stepcounter{pointlistasn}%
+  \fi%
+}  
+
+\newcommand{\@pointlistsum}{%
+  \ifnum\value{pointlistmode}=1\relax%
+    \expandafter\xdef\csname pointval-\the\value{pointlistasn}\endcsname%
+      {\the\value{pointlistsum}}%
+  \fi%
+  \expandafter\xdef\csname pointnum-\the\value{pointlistasn}\endcsname%
+    {\the\value{pointlistsum}}%
+  \setcounter{pointlistmode}{3}%
+  \setcounter{pointlistsum}{0}%
+}
+
+\newcommand{\@pointlistinit}{%
+  \setcounter{pointlistasn}{0}%
+  \setcounter{pointlistmode}{0}%
+  \setcounter{pointlistsum}{0}%
+}
+
+\newcommand{\@tabtoksadd}[1]{%
+  \@pointlisttoks=\expandafter{\the\expandafter\@pointlisttoks#1}%
+}
+
+\newcommand{\@pointlistprint}{%
+  \@pointlisttoks={}%
+  \edef\@numasn{\the\value{pointlistasn}}%
+  \@tabtoksadd{Aufgabe}%
+  \@pointlistprintrow{pointname}%
+  \@tabtoksadd{ \\\hline\hline}%
+  \@tabtoksadd{Maximale Punktzahl}%
+  \@pointlistprintrow{pointval}%
+  \@tabtoksadd{ \\\hline}%
+  \@tabtoksadd{\rule[-0.18cm]{0pt}{0.6cm} Erreichte Punktzahl}%
+  \@pointlistprintrow{pointpre}%
+  \@tabtoksadd{ \\\hline}%
+  \sffamily%
+  \begin{tabular}{|r||*{\@numasn}{c|}c}%
+  \hline%
+  \the\@pointlisttoks%
+  \end{tabular}%
+}
+
+\newcounter{pointlistcnt}
+
+\newcommand{\@pointlistprintrow}[1]{%
+  \setcounter{pointlistcnt}{0}%
+  \whiledo{\value{pointlistcnt}<\value{pointlistasn}}{%
+    \expandafter\@tabtoksadd{\expandafter&%
+                             \csname#1-\the\value{pointlistcnt}\endcsname}%
+    \stepcounter{pointlistcnt}%
+  }%
+}
+
+\newenvironment{pointlist}[1][0.6cm]%
+  {\setlength{\@pointcellwidth}{#1}%
+   \@pointlistinit\@pointlistparseA}%
+  {\@pointlistprint}

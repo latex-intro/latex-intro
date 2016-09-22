@@ -1,0 +1,295 @@
+\documentclass[parskip=half-,DIV14,10pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+%\usepackage{lmodern}
+
+\usepackage{asnment}
+\usepackage{soerenmath}
+
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+% Veranstaltung, Zettel und Abgabe bei jedem Zettel anpassen
+\newcommand{\coursename}{Semilin.\ Algebra~0}
+\newcommand{\asnmentname}{Übungsblatt~42}
+\newcommand{\deadline}{11.\,10.\,2015}
+
+\newcommand{\tutorpar}%
+           {Tutor:\\Blaise Pascal}
+\newcommand{\shorttutorpar}{\tutorpar}
+\newcommand{\studentpar}%
+           {Bearbeitet von:\\[1ex]
+            Sir Isaac Newton\\[0.3ex]
+            Gottfried Wilhelm Leibniz}
+\newcommand{\shortstudentpar}%
+           {Isaac Newton\\G.\,W.\ Leibniz}
+\newcommand{\titlepar}%
+           {\bfseries\huge Semilineare\\[-2mm] Algebra 0\\[2mm]
+            \mdseries\LARGE\asnmentname\\[2mm]
+            \normalsize Abgabe: \deadline}
+
+% Punkte bei jedem Zettel anpassen
+\newcommand{\pointtab}{%
+  \begin{pointlist}
+    1ai:5, 1aii:3, 2:10,
+    $\sum$ : +
+  \end{pointlist}%
+}
+
+\begin{document}
+
+\asnmenttitle % setzt den Titel
+
+Übungszettel in \LaTeX\ abzugeben ist nicht nur eine sehr gute Übung
+für spätere Seminar- und Abschlussarbeiten, sondern es bringt noch
+eine Reihe weiterer Vorteile.  Der Quelltext lässt sich wunderbar in
+Repositories verwalten, von vielen Leuten gleichzeitig bearbeiten, und
+man kann in der PDF-"`Reinschrift"' viel besser Fehler korrigieren als
+auf dem Papier.  Die Tatsache, dass Formeln in \LaTeX\ vom Text
+"`umschlossen"' werden, motiviert dazu, ausführlichere Erklärungen zu
+schreiben.
+
+Die Klassen aus dem KOMA-Paket sind zwar im Prinzip sehr gut,
+aber nicht auf die Bearbeitung von Übungszetteln ausgelegt.
+Dies behebt diese Vorlage.  Sie enthält alle Elemente, die
+typischerweise für Übungszettel relevant sind, und bringt sie kompakt
+unter.
+
+Am Anfang stehen ein paar Beispiele, wie die Bearbeitung einiger
+hypothetischer Übungsaufgaben aussieht, und im Anhang folgt dann die
+Erläuterung.
+
+In Informatik, Numerik und angewandten Fächern ist es häufig nötig,
+Programmcode mit abzudrucken.  Das hierzu häufig verwendete
+\lstinline!listings!-Paket ist hier so konfiguriert, dass es sich in
+das Layout einpasst.  Sollte im Rahmen der Veranstaltung bereits eine
+andere Vorlage zur Verfügung gestellt werden, sprecht bitte vorher ab,
+welche ihr verwendet.
+
+\section{}
+\subsection{}
+\subsubsection{}
+
+\begin{given}
+Sei $A\in\R^{n\times n}$ eine reelle symmetrische Matrix.  Seien
+$\lambda,\mu\in\R$ Eigenwerte von $A$ mit zugehörigen Eigenvektoren 
+$v,w\in\R^n\setminus\{0\}$, sodass gilt:
+\[ Av=\lambda v,\qquad Aw=\mu w. \]
+\end{given}
+
+\begin{toshow}
+Für $\lambda\neq\mu$ sind $v,w$ orthogonal, also $\iprod{v,w}=0$.
+\end{toshow}
+
+\begin{proof}
+Betrachte die beiden folgenden Ausdrücke:
+\begin{align}
+\label{eq:umf1}
+\iprod{Av,w}&=\iprod{\lambda v,w}=\lambda\iprod{v,w}\\[3pt]
+\label{eq:umf2}
+\iprod{v,Aw}&=\iprod{v,\mu w}=\mu\iprod{v,w}
+\end{align}
+
+Da $A$ symmetrisch ist, gilt $\iprod{Av,w}=\iprod{v,Aw}$.  Durch
+Einsetzen in \eqref{eq:umf1},\eqref{eq:umf2} erhalten wir:
+\[
+\lambda\iprod{v,w}=\mu\iprod{v,w},\qquad
+\text{also}\quad
+(\lambda-\mu)\,\iprod{v,w}=0.
+\]
+Für $\lambda\neq\mu$ folgt daraus $\iprod{v,w}=0$.
+\end{proof}
+
+\subsubsection{}
+
+\begin{toshow}
+Sei $\lambda\in\C$ ein Eigenwert der hermiteschen Matrix
+$A\in\C^{n\times n}$.  Dann ist $\lambda$ rein reell, also
+$\Im(\lambda)=0$.
+\end{toshow}
+
+\begin{proof}
+Betrachte den zugehörigen Eigenvektor $v\in\C^n\setminus\{0\}$.  Weil
+$A$ hermitesch und das Skalarprodukts sesquilinear ist, gilt:
+\[
+\lambda\iprod{v,v}=\iprod{\lambda v,v}=\iprod{Av,v}=\iprod{v,Av}
+=\iprod{v,\lambda v}=\overline{\lambda}\iprod{v,v}
+\]
+Wegen $\iprod{v,v}>0$ ist dann $\lambda=\overline{\lambda}$, also
+$\Im(\lambda)=0$.
+\end{proof}
+
+
+\section{}
+
+Die \lstinline!main!-Methode gibt den String \lstinline!"hello, world"! aus.
+\begin{lstlisting}[language=java]
+/* Kommentare und Strings dürfen auch Umlaute enthalten, wenn man UTF-8 benutzt.
+ */
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("hello, world");
+    }
+}
+\end{lstlisting}
+
+Im folgenden Programm ist das \emph{Heron-Verfahren} implementiert,
+welches nach der Iterationsvorschrift
+\[
+y_{k+1} = \frac{y_k+x/y_k}{2},\qquad x>0
+\]
+einen Näherungswert für $\sqrt{x}$ liefert.  Der Grenzwert
+\[
+\lim_{k\to\infty}y_k = \sqrt{x}\qquad\text{für}~y_0>0
+\]
+wurde in der Vorlesung bewiesen.
+\lstinputlisting[language=java]{Wurzel.java}
+
+\appendix
+
+\section{\TeX{}nisches}
+
+Die meisten Dinge, die für jeden Übungszettel neu angepasst werden
+müssen (insbesondere Nummer, Abgabefrist und Punktetabelle --
+vgl.\ \ref{sec:tabelle}) sind in der \lstinline!.tex!-Datei zu
+finden.  Die Datei \lstinline!soerenmath.sty! enthält einige nützliche
+Makros, die Tipparbeit ersparen und der Struktur der Lösung dienen
+sollen; das ist aber zum großen Teil Geschmackssache.  Ebenfalls ist
+hier noch das \lstinline!listings!-Paket konfiguriert, sodass Zeilen
+einer Länge von 80~Zeichen gerade ohne Umbruch abgedruckt werden
+können.
+
+Die Datei \lstinline!asnment.sty! enthält das Layout.  In den meisten
+Situationen sollte es ausreichen, die Variablen in der
+\lstinline!.tex!-Datei anzupassen.  Die Makros
+\lstinline!\thesection!, \lstinline!\thesubsection! und
+\lstinline!\thesubsubsection! sind so ausgelegt, dass zunächst
+arabisch, dann alphabetisch und zuletzt römisch nummeriert wird.
+Sollte dies in einer Veranstaltung anders gehandhabt werden, können
+die entsprechenden Definitionen leicht angepasst werden.
+
+Die Datei \lstinline!cm-super-t1.enc! hat den einzigen Zweck, dass der
+Buchstabe "`ß"' besser aussieht.
+
+\subsection{Punktetabelle}
+\label{sec:tabelle}
+
+Eine Punktetabelle zu erzeugen ist mit der vorliegenden Umgebung in
+den meisten Fällen sehr einfach.  Der Quelltext in dieser Vorlage
+lautet:
+\begin{lstlisting}
+\begin{pointlist}
+  1ai:5, 1aii:3, 2:10,
+  $\sum$ : +
+\end{pointlist}
+\end{lstlisting}
+
+Die einzelnen (Teil-)Aufgaben sind durch Kommata getrennt.  Zuerst
+kommt die Nummer der Aufgabe und anschließend nach einem Doppelpunkt
+die Anzahl der erreichbaren Punkte.  Steht statt einer Punktzahl ein
+"`\lstinline!+!"'-Zeichen, so werden alle Punktzahlen der vorherigen
+Aufgaben aufsummiert.  Leerzeichen und einfache Zeilenumbrüche werden
+ignoriert.
+
+Eine Schwierigkeit könnte sich daraus ergeben, dass es bei einem
+Übungszettel Bonus-Aufgaben gibt, welche die maximale Punktzahl nicht
+erhöhen.  Dies lässt sich lösen, indem man diese Aufgaben bei der
+Berechnung der Summe herausnimmt:
+\begin{lstlisting}
+\begin{pointlist}
+  1:10, 2:10, 3:10, 4:10, 5:10, B:5!0,
+  $\sum$ : +
+\end{pointlist}
+\end{lstlisting}
+In diesem Beispiel bringen die Aufgaben 1 bis 5 jeweils 10 Punkte, und
+die mit "`B"' bezeichnete Bonusaufgabe bringt 5 Punkte, wird aber für
+die Summe mit 0 Punkten berechnet:
+\begin{center}
+\begin{pointlist}
+  1:10, 2:10, 3:10, 4:10, 5:10, B:5!0,
+  $\sum$ : +
+\end{pointlist}
+\end{center}
+
+In vielen praktischen Fächern ist es der Fall, dass Theorie- und
+Programmieraufgaben getrennt bewertet werden.  Nehmen wir an, ein
+Übungszettel habe 3 Theorie- und 2 Programmieraufgaben:
+\begin{lstlisting}
+\begin{pointlist}
+  1:10, 2:10, 3:10,
+  $\sum$ : +,
+  P1:10, P2:10,
+  $\sum$ : +
+\end{pointlist}
+\end{lstlisting}
+Durch die erste Summen-Ausgabe wird die Summe zurückgesetzt, sodass
+die zweite Summe nur die Aufgaben P1 und P2 umfasst.
+\begin{center}
+\begin{pointlist}
+  1:8, 2:8, 3:8,
+  $\sum$ : +,
+  P1:10, P2:10,
+  $\sum$ : +
+\end{pointlist}
+\end{center}
+
+Mithilfe eines optionalen Parameters lässt sich die Breite der Zellen
+verändern.  Außerdem lassen sich Einträge durch Paare geschweifter
+Klammern "`schützen"', sodass sie auch \lstinline|:!+,| enthalten
+dürfen.  Letztendlich kann auch eine Summen-Spalte so angepasst
+werden, dass sie einen anderen Wert enthält als dem berechneten:
+\begin{center}
+\begin{pointlist}[1cm]
+  {1+}:9, {2,3}:7, $\sum$:0x10!+,
+  {4:a}:5, 5:{3!}!6, $\sum$:+
+\end{pointlist}
+\end{center}
+Der Quellcode hierzu lautet:
+\begin{lstlisting}
+\begin{pointlist}[1cm]
+  {1+}:9, {2,3}:7, $\sum$:0x10!+,
+  {4:a}:5, 5:{3!}!6, $\sum$:+
+\end{pointlist}
+\end{lstlisting}
+
+\subsection{Fehler beim Kompilieren}
+
+Sollten beim Kompilieren Fehler der Art
+\begin{lstlisting}[numbers=none]
+!pdfTeX error: pdflatex (file cm-super-ts1.enc): cannot open encoding file for reading
+\end{lstlisting}
+oder
+\begin{lstlisting}[numbers=none]
+!pdfTeX error: pdflatex (file sfbx1200.pfb): cannot open Type 1 font file for reading
+\end{lstlisting}
+auftreten, so ist die Schrift \lstinline[language=]!cm-super! nicht
+installiert.  Mögliche Lösungen sind:
+
+\begin{enumerate}
+\item Installation von \lstinline[language=]!cm-super! (empfohlen).
+  Die Schrift ist sowohl in \TeX\,Live als auch in MiK\TeX\ enthalten.
+
+\item Falls stattdessen die Schrift \lstinline[language=]!lmodern!
+  installiert ist, kann diese durch
+\begin{lstlisting}[numbers=none]
+\usepackage{lmodern}
+\end{lstlisting}
+aktiviert werden.  Allerdings sieht damit große Schrift verfälscht aus.
+
+\item Zur Not kann auch auf die Standard-Kodierung zurückgegriffen
+  werden.  Hierzu müssen in \lstinline[language=]!uebung42.tex! die
+  Zeile
+\begin{lstlisting}[numbers=none]
+\usepackage[T1]{fontenc}
+\end{lstlisting}
+  sowie in \lstinline[language=]!soerenmath.tex! die Zeilen
+\begin{lstlisting}[numbers=none]
+\RequirePackage{textcomp}
+\lstset{upquote=true}
+\end{lstlisting}
+  deaktiviert werden.
+\end{enumerate}
+
+\end{document}
