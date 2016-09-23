@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function build {
+    for f in *.tex
+      do
+        latexmk -pdf $f
+    done
+}
+
+cd uebungen
+build
+cd ..
+build
