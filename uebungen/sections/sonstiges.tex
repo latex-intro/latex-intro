@@ -1,0 +1,20 @@
+\section{Weitere Aufgaben}
+    \begin{uebung}
+        \item Du kannst dein Dokument in mehrere Dateien aufteilen, das ist vor
+        allem bei langen Dokumenten sinnvoll. Verschiebe die komplette Präambel
+        (außer die \cmd{documentclass}-Zeile) in die Datei \texttt{Kopf.tex} und
+        die letzten Zwei Kapitel vor dem Anhang in die Datei \texttt{Schluss.tex}.
+        
+        In deinem Hauptdokument kannst du die Dateien jetzt mit
+        \cmd{input}\marg{Dateiname} einbinden. Was ist der Unterschied zu
+        \cmd{include}\marg{Dateiname}?
+            \begin{hinweis}
+                Das Erstellen des Dokuments funktioniert dann nur noch aus der Hauptdatei.
+                Um das zu ändern, wechsle zur Hauptdatei und klicke auf
+                \enquote{Optionen \textrightarrow{} Aktuelle Datei zur Masterdatei erklären}.
+            \end{hinweis}
+            \begin{loesung}
+                \cmd{include} macht unter anderem ein \cmd{clearpage} vor und nach
+                der Datei. Siehe auch \href{http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include}{diesen Stack Exchange Thread}.
+            \end{loesung}
+    \end{uebung}
