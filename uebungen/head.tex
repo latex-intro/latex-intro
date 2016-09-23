@@ -31,10 +31,9 @@
 
 \newenvironment{uebung}{\begin{enumerate}[label=\thesection.\arabic*),ref=\thesection.\arabic*]}{\end{enumerate}}
 
-\newenvironment{hinweis}{\begin{description}[labelindent=2.5em,leftmargin=2.5em,topsep=0em]%
+\newenvironment{hinweis}{\begin{mdframed}[style=loesung,hidealllines=true]%
 	\small
-	\item[Hinweis:]
-	\ignorespaces}{\end{description}}
+	\textbf{Hinweis:} }{\end{mdframed}}
 	
 \newenvironment{mathespecial}{}{}
 
@@ -50,7 +49,7 @@
   \let\endmathespecial\endhide
 }
 
-\mdfdefinestyle{loesung}{leftmargin=2.5em,rightmargin=2.5em}
+\mdfdefinestyle{loesung}{leftmargin=1.5em,rightmargin=1.5em}
 
 \newcommand\abs[1]{\lvert#1\rvert}
 \newcommand\norm[1]{\lVert#1\rVert}

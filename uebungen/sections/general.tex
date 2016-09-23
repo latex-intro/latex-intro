@@ -1,7 +1,4 @@
 \section{Dokumentenformatierungen}
-\begin{uebung}
-\item Erstelle ein Minimaldokument mit dem Code aus 
-	Abbildung~\ref{minimaldoc} und erstelle daraus eine PDF.\label{firststart:first}
 
 \begin{figure}[b!]
 	\begin{minipage}[t]{.5\textwidth}
@@ -37,7 +34,7 @@ Lorem ipsum dolor sit amet,\ldots
 		\end{itemize}
 		\item man muss sich beim Eingeben nur konzentrieren, sonst 
 			passieren Fehler:
-		\begin{enumerate}
+		\begin{enumerate}[label=(\roman*)]
 			\item beliebt ist, eine \umg{enumerate}"=Umgebung mit 
 				einer \umg{itemize}"=Umgebung zu schließen
 			\item oder statt \texttt{\{itemi\textit{z}e\}} 
@@ -46,6 +43,12 @@ Lorem ipsum dolor sit amet,\ldots
 	\end{enumerate}
 	\end{minipage}
 \end{figure}
+
+\begin{uebung}
+\item Erstelle ein Minimaldokument mit dem Code aus 
+	Abbildung~\ref{minimaldoc} und erstelle daraus eine PDF.\label{firststart:first}
+
+
 	
 \item Teste was passiert, wenn du die \pkg{inputenc}-Zeile auskommentierst.
     Probiere was passiert, wenn du anstatt \texttt{utf8} zum Beispiel
@@ -121,6 +124,15 @@ Lorem ipsum dolor sit amet,\ldots
     \end{loesung}
 
 \item Füge nun die Liste aus Abbildung \ref{enumerate} in dein Dokument ein.
+    Benutze das Paket \pkg{enumitem} um die Nummerierung mit den kleinen
+    römischen Ziffern zu realisieren.
+    \begin{hinweis}
+        Wie du den Bezeichner änderst, steht in der Dokumentation des Pakets
+        \pkg{enumitem}. Alle Pakete sind im CTAN (Comprehensive TEX Archive Network)
+        zu finden. Eine Suche mit der Suchmaschine deiner Wahl nach
+        \enquote{ctan Paketname} für gewöhnlich zum Erfolg. Die Dokumentation für
+        das \pkg{enumitem}-Paket findest du hier: \url{http://ctan.org/pkg/enumitem}
+    \end{hinweis}
     \begin{loesung}
 \begin{verbatim}
 \begin{enumerate}
@@ -137,7 +149,7 @@ Lorem ipsum dolor sit amet,\ldots
   \end{itemize}
   \item man muss sich beim Eingeben nur konzentrieren, sonst 
     passieren Fehler:
-  \begin{enumerate}
+  \begin{enumerate}[label=(\roman*)]
     \item beliebt ist, eine \umg{enumerate}"=Umgebung mit 
       einer \umg{itemize}"=Umgebung zu schließen
     \item oder statt \texttt{\{itemi\textit{z}e\}} 

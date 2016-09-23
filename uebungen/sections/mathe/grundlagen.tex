@@ -11,27 +11,46 @@
             \[
                 a^2+b^2=c^2.
             \]
-        \begin{loesung}
-            Das Element-Zeichen erhalten wir durch den Befehel \cmd{in}. Zum Schluss
-            wird der Abgesetzte Mathe-Modus gestartet mit \cmd{[} \dots \cmd{]}.
-        \end{loesung}
+            \begin{loesung}
+                Das Element-Zeichen erhalten wir durch den Befehel \cmd{in}. Zum Schluss
+                wird der Abgesetzte Mathe-Modus gestartet mit \cmd{[} \dots \cmd{]}.
+            \end{loesung}
 
 
-        \item Die Summenformel für die geometrische Folge lautet:
-        \[
-            s_n = 1+ q+q^2+\dots+q^n = \sum_{k=0}^{n}q^k = \frac{1-q^{n+1}}{1-q}
-        \]
-        Für den Grenzwert von $s_n$ gilt für $\abs{q}<1$: 
-        \[
-            s_n\xrightarrow{n\rightarrow\infty} \frac{1}{1-q}
-        \]
-        \begin{loesung}
-            Die Punkte $\dots$ erhalten wir wie gewohnt durch \cmd{dots}. Im
-            abgesetzten Mathe-Modus erhalten wir die Summe $\sum$ durch \cmd{sum}
-            und über \\ \verb|\sum^{Text}_{Text}| erhalten wir die Grenzwerte.
-            Die Brüche werden über \cmd{frac}\marg{Zähler}\marg{Nenner} eingeführt.
-            Der Pfeil, der hier benutzt werden soll ist \cmd{xrightarrow}\marg{text}.
-        \end{loesung}
+            \item Die Summenformel für die geometrische Folge lautet:
+            \[
+                s_n = 1+ q+q^2+\dots+q^n = \sum_{k=0}^{n}q^k = \frac{1-q^{n+1}}{1-q}
+            \]
+            Für den Grenzwert von $s_n$ gilt für $\abs{q}<1$: 
+            \[
+                s_n\xrightarrow{n\rightarrow\infty} \frac{1}{1-q}
+            \]
+            \begin{loesung}
+                Die Punkte $\dots$ erhalten wir wie gewohnt durch \cmd{dots}. Im
+                abgesetzten Mathe-Modus erhalten wir die Summe $\sum$ durch \cmd{sum}
+                und über \\ \verb|\sum^{Text}_{Text}| erhalten wir die Grenzwerte.
+                Die Brüche werden über \cmd{frac}\marg{Zähler}\marg{Nenner} eingeführt.
+                Der Pfeil, der hier benutzt werden soll ist \cmd{xrightarrow}\marg{text}.
+            \end{loesung}
+        \item Formel \eqref{fnformel} und Fehlerformel \eqref{fnfehler} für die
+            $n$-te harmonische Frequenz einer schwingenden Seite:
+            \begin{align}
+		        f_n &= \frac{n}{2L} \sqrt{\frac{F}{\rho A}}\label{fnformel}\\
+		        \Delta f_n &= \pm \left\lbrace 
+		            \left| \frac{\partial f_n}{\partial A} \Delta A \right| +
+		            \left| \frac{\partial f_n}{\partial F} \Delta F \right|
+		            \right\rbrace \label{fnfunction}\\
+		        \Delta f_n &= \pm \left\lbrace
+		            \left| \frac{-F n}{4 A^2 \rho L \sqrt{\frac{F}{\rho A}}}
+		                \Delta A \right| + 
+		            \left| \frac{-n}{4 A \rho L \sqrt{\frac{F}{\rho A}}}
+		                \Delta F \right|
+		            \right\rbrace \label{fnfehler}
+            \end{align}
+            \begin{loesung}
+                Wichtige Befehle: \verb|\Delta \pm \partial|
+            \end{loesung}
+            
         \begin{mathespecial}
         \item  
             \begin{mythm}[Existenz des linksneutralen Elements]
@@ -118,4 +137,7 @@ x_1\\ \vdots\\x_{#1}
 \DeclareMathOperator{\im}{Im}
                 \end{verbatim}
             \end{loesung}
+        \item Die Formel \eqref{fnfunction} entspricht einem im physikalischem 
+            Praktikum sehr häufig benutztem Schema, ersetze diese Zeile mit der
+            Funktion \verb|\errtwo{f_n}{A}{F}|, welche du vorher definieren musst.
     \end{enumerate}
