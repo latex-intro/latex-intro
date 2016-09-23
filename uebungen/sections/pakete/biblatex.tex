@@ -1,0 +1,83 @@
+\item Erstelle eine Bibliographie mit Biblatex. Gehe dazu wie folgt vor:
+    \begin{enumerate}
+        \item Zuerst brauchst du eine Bibliographie-Datei. In dieser sind die 
+            jeweiligen Quellen eingetragen. Die einzelnen Einträge beginnen immer
+            mit einem @, gefolgt von dem Typ der Quelle. Direkt danach steht der
+            Zitierschlüssel, welchen du beim Verweisen benötigst.
+        
+            Für den Anfang nutze die Beispieldaten aus dem Listing \ref{bibfile}.
+            Erstelle eine neue Datei, kopiere den Inhalt des Listings herein und
+            speichere sie unter dem Namen \texttt{Literatur.bib} ab.
+        
+        \item Lade nun das Paket \pkg{biblatex} mit den Optionen
+            \texttt{backend=biber} und \texttt{style=authoryear}. Außerdem musst
+            du \LaTeX{} sagen, wo deine Literaturdatenbank zu finden ist, dies
+            machst du mit dem Befehl \cmd{addbibresource}\marg{Dateiname}
+            \begin{loesung}
+                \begin{verbatim}
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{Literatur.bib}
+                \end{verbatim}
+            \end{loesung}
+        
+        \item Jetzt kannst du auf eine der Quellen verweisen. Probiere das mit
+            zwei der drei Quellen aus.
+            \begin{hinweis}
+                Beispiel für \enquote{Per Anhalter durch die Galaxis}:
+                \cite{Adam2004}.
+            
+                Wenn die Ausgabe nur den verwendeten Schlüssel in Fett anzeigt,
+                benutzt du kein Latexmk. Wenn möglich wechsle zu Latexmk, da
+                dieses Programm \texttt{biber} aufruft. Wenn das nicht möglich ist,
+                gehe zu \enquote{Benutzer/in \textrightarrow{} Eigene Befehle
+                \textrightarrow{} Eigene Befehle editieren} und füge bei einem
+                Eintrag den Befehl \verb|biber %| hinzu. Vergib außerdem einen
+                geeigneten Namen. Jetzt kannst du Biber aus dem Menü
+                \enquote{Benutzer/in \textrightarrow{} Eigene Befehle} aufrufen.
+            \end{hinweis}
+            \begin{loesung}
+                Mit \cmd{cite}\marg{Schlüssel}
+            \end{loesung}
+        
+        \item Für ein Literaturverzeichnis in den Anhang ein.
+            \begin{loesung}
+                Mit \cmd{printbibliography}
+            \end{loesung}
+        
+        \item Füge den dritten Eintrag ins Literaturverzeichnis hinzu, ohne ihn
+            sichtbar zu referenzieren.
+            \begin{loesung}
+                Mit \cmd{nocite}\marg{Schlüssel}
+            \end{loesung}
+        
+        \item Füge eine Paketoption hinzu, um die ISBN zu verbergen.
+            \begin{loesung}
+                Option: \verb|isbn=false|
+            \end{loesung}
+        
+        \item Wenn du das noch nicht machst, ändere deine Zitierbefehle auf den
+            automatischen Modus. Teste dann verschiedene Zitierstile, mindestens
+            jedoch \texttt{verbose} und \texttt{numeric}.
+            \begin{loesung}
+                Mit \cmd{autocite}\marg{Schlüssel}
+            \end{loesung}
+        
+        \item Gehe nun auf die \href{http://www.suub.uni-bremen.de/}{Seite der
+            Uni-Bibliothek} und suche nach dem Buch \enquote{LaTeX Referenz}
+            von Herbert Voß, exportiere die Bibliographie-Informationen über den
+            kleinen Knopf rechts neben dem Bild, füge sie deiner
+            \texttt{Literatur.bib} hinzu und referenziere das Buch.
+            \begin{hinweis}
+                Den vorgegebenen Schlüssel kannst du natürlich ändern.
+            \end{hinweis}
+        
+        \item Warum nutzen wir hier das Backend \emph{biber} anstelle von
+            \emph{BibTex}?
+            \begin{loesung}
+                BibTex unterstützt kein UTF8 und damit keine Umlaute.
+            \end{loesung}
+    \end{enumerate}
+
+\begin{figure}[p!]
+\lstinputlisting[caption={Beispielhafte Bibliographie-Datei},label=bibfile]{files/bibliography.bib}
+\end{figure}
