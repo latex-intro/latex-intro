@@ -1,6 +1,3 @@
-\section{Zeichnen in \LaTeX{}}
-
-\begin{uebung}
 \item Versucht den Schaltkreis aus Abbildung \ref{schaltkreis} nachzubauen.
 \begin{figure}[h]
 \center
@@ -24,29 +21,6 @@
 	    to[open] (0,0);
 	    \end{scope}
 	\end{circuitikz}
-\end{figure}
-\begin{figure}[h]
-    \center
-	\caption{Anspruchsvolle Zeichnung}\label{Zeichnung}
-	\begin{tikzpicture}
-        \draw[->] (-4,0) -- (6,0) node[right] at (6,0) {$\mathbb{R}$};
-        \draw[->] (0,-2) -- (0,4) node[above] at (0,4) {$\i\mathbb{R}$};
-        \draw (-3,0) arc (180:0:3cm);
-        \draw (-0.1,3) -- (0.1,3) node[above right] {$\i$};
-        \draw (-3,-0.1) -- (-3,0.1) node[below] {$-1$};
-        \draw (3,-0.1) -- (3,0.1) node[below] {$1$};
-        \draw[fill=black] (-2.4,1.4) circle (1pt) node[above right] {$z$};
-        \draw[fill=black] (0.6,1.4) circle (1pt) node[above right] {$1+z$};
-        \draw[fill=black] (5.4,-1.4) circle (1pt) node[above right] {$1-z$};
-        \draw[dashed] (-2.4,-0.1) -- (-2.4,1.4) node[below] at (-2.4,0) {$a$};
-        \draw[dashed] (0.6,-0.1) -- (0.6,1.4) node[below] at (0.6,0) {$1+a$};
-        \draw[dashed] (5.4,0.1) -- (5.4,-1.4) node[above] at (5.4,0) {$1-a$};
-        \draw[dashed] (0.1,1.4) -- (-2.4,1.4) node[right] at (0,1.4) {$\i b$};
-        \draw[dashed] (-0.1,-1.4) -- (5.4,-1.4) node[left] at (0,-1.4) {$-\i b$};
-        \draw[->] (0,0) -- (5.4,-1.4);
-        \draw[->] (0,0) -- (0.6,1.4);
-    \end{tikzpicture}
-	%\end{minipage}
 \end{figure}
 \begin{loesung}
 \begin{verbatim}

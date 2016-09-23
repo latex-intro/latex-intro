@@ -36,13 +36,18 @@
 	\item[Hinweis:]
 	\ignorespaces}{\end{description}}
 	
-\newenvironment{mathe}{\begin{mdframed}\small\ignorespaces}{\end{mdframed}}
+\newenvironment{mathespecial}{}{}
 
 \newenvironment{loesung}{\begin{mdframed}[style=loesung]\small\textbf{Lösung:} }{\end{mdframed}}
 \NewEnviron{hide}{}
 \newcommand{\hidesolutions}{
   \let\loesung\hide
   \let\endloesung\endhide
+}
+
+\newcommand{\hidespecialmath}{
+  \let\mathespecial\hide
+  \let\endmathespecial\endhide
 }
 
 \mdfdefinestyle{loesung}{leftmargin=2.5em,rightmargin=2.5em}

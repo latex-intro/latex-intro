@@ -1,0 +1,121 @@
+\item Finde die \LaTeX{} Kommandos für $\forall\,\oslash\,\leftrightsquigarrow\,\otimes\,\uplus\,\hat{a}$.
+    \begin{loesung}
+        \verb|\forall \oslash \leftrightsquigarrow \otimes \uplus \hat{abc}|
+    \end{loesung}
+
+    
+\item Setze die folgenden Texte in \LaTeX{} um:
+    \begin{enumerate}
+        \item Seien $a,b,c\in\R$, mit $a,b$ die Katheten und $c$ die Hypotenuse
+            eines rehtwinkligen Dreiecks. Dann gilt: 
+            \[
+                a^2+b^2=c^2.
+            \]
+        \begin{loesung}
+            Das Element-Zeichen erhalten wir durch den Befehel \cmd{in}. Zum Schluss
+            wird der Abgesetzte Mathe-Modus gestartet mit \cmd{[} \dots \cmd{]}.
+        \end{loesung}
+
+
+        \item Die Summenformel für die geometrische Folge lautet:
+        \[
+            s_n = 1+ q+q^2+\dots+q^n = \sum_{k=0}^{n}q^k = \frac{1-q^{n+1}}{1-q}
+        \]
+        Für den Grenzwert von $s_n$ gilt für $\abs{q}<1$: 
+        \[
+            s_n\xrightarrow{n\rightarrow\infty} \frac{1}{1-q}
+        \]
+        \begin{loesung}
+            Die Punkte $\dots$ erhalten wir wie gewohnt durch \cmd{dots}. Im
+            abgesetzten Mathe-Modus erhalten wir die Summe $\sum$ durch \cmd{sum}
+            und über \\ \verb|\sum^{Text}_{Text}| erhalten wir die Grenzwerte.
+            Die Brüche werden über \cmd{frac}\marg{Zähler}\marg{Nenner} eingeführt.
+            Der Pfeil, der hier benutzt werden soll ist \cmd{xrightarrow}\marg{text}.
+        \end{loesung}
+        \begin{mathespecial}
+        \item  
+            \begin{mythm}[Existenz des linksneutralen Elements]
+                Sei $(G,\circ)$ eine Gruppe.
+                \begin{enumerate}[label=(\roman*)]
+                    \item Sind $e_1$ und $e_2$ neutrale Elemente, so folgt $e_1=e_2$.
+                    \item Sind $h_1$ und $h_2$ beide invers zu $g\in G$, so
+                        folgt $h_1 = h_2$.  
+                \end{enumerate}
+            \end{mythm}
+                \begin{proof}\text{ }\\
+                \begin{enumerate}[label=(\roman*)]
+                    \item Ausnutzung der Eigenschaft des neutralen Elements liefert
+                        $e_1 = e_1\circ e_2=e_2$.
+                    \item Es gilt: 
+                        \begin{alignat*}{2}
+                            h_2 &= e\circ h_2 = (h_1\circ g)\circ h_2\\
+                                &= h_1 \circ (g\circ h_2)\\
+                                &= h_1 \circ e = h_1
+                        \end{alignat*}  
+                \end{enumerate}
+                \end{proof}
+                \begin{hinweis}
+                    Schaut euch das \pkg{amsmath}-Paket an.
+                \end{hinweis}
+            \begin{loesung}
+                Das $\circ$ erhalten wir durch \cmd{circ}. Die \umg{enumerate}-Umgebung
+                wird wie gewohnt mit \verb|[label=(\roman*)]| in der Nummerierung
+                angepasst. Wir haben hier ein eigenes Theorem über das
+                \pkg{amsthm}-Paket geladen und über den Befehl\\
+                \cmd{newtheorem}\marg{Name}\oarg{Zählung}\marg{Bezeichnung}\oarg{Gliederung}
+                das neue Theorem definiert. Im Header sollte dann 
+                \verb|\newtheorem{mythm}{Satz}| o.Ä. stehen, sodass ihr die
+                \umg{mythm}-Umgebung erzeugt habt. Was folgt ist eine
+                \umg{proof}-Umgebung, die automatisch den Kasten am Ende und
+                \glqq Beweis:\grqq{} setzt.
+            \end{loesung} 
+            \end{mathespecial}                             
+    \end{enumerate}
+
+
+\item Erstelle mit \cmd{newcommand} neue Kommandos, um den Schreibaufwand zu reduzieren.
+    \begin{enumerate}
+        \item \cmd{H} soll das Kommando für $\mathbb{H}$ sein und \cmd{eps}
+            soll $\varepsilon$ ausgeben.
+            \begin{loesung}
+                \verb|\newcommand{\H}{\mathbb{H}}| und \verb|\newcommand{\eps}{\varepsilon}|
+            \end{loesung}
+        \item \cmd{xvec}\{n\} soll $(x_1,\dots,x_n)$ und \cmd{xVec}\{n\} soll 
+            \[
+                \begin{pmatrix}
+                x_1 \\ \vdots \\ x_n
+                \end{pmatrix}
+            \]
+            ausgeben. Die Punkte $\dots$ sollen dabei nicht ersetzt werden.
+            \begin{loesung}
+                \verb|\newcommand{\xvec}[1]{(x_1,\dots,x_{#1}}|; Hier geht
+                natürlich auch die \umg{pmatrix}-Umgebung. Weiter
+            \begin{verbatim}
+\newcommand{xVec}[1]{
+\begin{pmatrix}
+x_1\\ \vdots\\x_{#1}
+\end{pmatrix}}
+            \end{verbatim}
+            \end{loesung}
+        \item \cmd{abs}\{x\} soll $\abs{x}$ ausgeben und \cmd{norm}\{x\}
+            soll $\norm{x}$ ausgeben.
+            \begin{loesung}
+                \begin{verbatim}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+                \end{verbatim}
+            \end{loesung}
+        \item \cmd{i} soll $\mathfrak{i}$ ausgeben \cmd{complex}\{z\} soll
+            $\complex{z}$ ausgeben.
+            \begin{loesung}
+                Dieses Beispiel ist besonders interessant, denn \cmd{i} ist
+                bereits vordefiniert: 
+                \begin{verbatim}
+\renewcommand{\i}{\mathfrak{i}}
+\newcommand{\complex}[1]{
+  \re\left(#1\right)+\i\im\left(#1\right)}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+                \end{verbatim}
+            \end{loesung}
+    \end{enumerate}
