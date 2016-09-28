@@ -2,12 +2,13 @@
 
 Dies ist eine Sammlung an Folien für die verschiedenen
 Latex-Einführungsveranstaltungen an der Uni Bremen. Sie wird entwickelt von der
-Arbeitsgruppe Latex-Kurse (Mail: latex-kurse@mailman.zfn.uni-bremen.de).
+Arbeitsgruppe Latex-Kurse (Mail:
+[latex-kurse@mailman.zfn.uni-bremen.de](mailto:latex-kurse@mailman.zfn.uni-bremen.de)).
 
 ## Konfiguration
 
-Zur Erstellung eine an eine Veranstaltung angepasste Präsentation kann wie
-unten beschrieben angelegt werden. Dann kann die Folienauswahl und Reihenfolge
+Zur Erstellung einer an eine Veranstaltung angepassten Präsentation kann wie
+unten beschrieben vorgegangen werden. Dann kann die Folienauswahl und Reihenfolge
 individuell geändert werden.
 
 Folgende Dinge können angepasst werden:
@@ -18,6 +19,7 @@ Folgende Dinge können angepasst werden:
     - Folien: `\renewcommand{\exerciseurl}{URL}`
     - Wenn beides zusammen woanders verfügbar ist (z.B. StudIP), kann der gesamte
       Text mit `\renewcommand{\exercisesource}{Die Folien findet ihr hier}`
+      geändert werden
 - Um für verschiedene Übungszettel immer die korrekten Nummern für die Übungen
   zu benutzen, muss der Übungszettel im Verzeichnis `uebungen` gespeichert werden
   und mit `\registerexercise{<Dateiname>}` bekannt gemacht werden (Dateiname 
@@ -38,8 +40,9 @@ Umgebung oder `\verb` benutzt werden.
   Folien und des Übungszettels, darauf Außerdem die Aufforderung, die angegebene
   Aufgabe zu bearbeiten. Das Label muss im registrierten Übungszettel vorhanden
   sein, alternativ können auch die beiden Label `<label>:first` und `<label>:last`
-  vorhanden sein, dann wird ein Bereich von Ausgaben ausgegeben. _Die Variante mit
-  `first` und `last` wird priorisiert!_
+  vorhanden sein, dann wird ein Bereich von Ausgaben ausgegeben. _Wenn alle drei
+  möglichen Label in der Übung vorhanden sind, wird die Variante mit
+  `first` und `last` priorisiert!_
 - `\loesung[Label]{Titel}{Body}`: Erstellt eine Lösungsfolie, mit dem gegebenen
   Titel und dem Body. _Verbatim ist nicht möglich, da die Folie nicht `fragile`
   ist_. Die Lösungen werden im Handout-Modus nicht angezeigt. Wenn das optionale
