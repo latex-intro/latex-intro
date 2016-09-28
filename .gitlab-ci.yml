@@ -1,0 +1,74 @@
+image: hiono/texlive
+
+stages:
+    - uebungen
+    - slides
+    - collect
+
+uebung:komplett:
+    stage: uebungen
+    script:
+        - cd uebungen
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" Uebung-komplett.tex
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+uebung:physik:
+    stage: uebungen
+    script:
+        - cd uebungen
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" Uebung-Physik.tex
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+uebung:mathe:
+    stage: uebungen
+    script:
+        - cd uebungen
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" Uebung-Mathe.tex
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+
+slides:komplett:
+    stage: slides
+    dependencies:
+        - uebung:komplett
+    script:
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" presentation-Komplett.tex
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+slides:physik:handout:
+    stage: slides
+    dependencies:
+        - uebung:physik
+    script:
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" presentation-Physik-Handout.tex
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+slides:physik:slides:
+    stage: slides
+    dependencies:
+        - uebung:physik
+    script:
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" presentation-Physik-Slides.tex
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+
+collector:
+    stage: collect
+    script: echo OK
+    environment: production
+    artifacts:
+        paths:
+            - presentation-*.pdf
+            - uebungen/Uebung-*.pdf
