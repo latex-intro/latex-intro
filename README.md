@@ -5,6 +5,9 @@ Latex-Einführungsveranstaltungen an der Uni Bremen. Sie wird entwickelt von der
 Arbeitsgruppe Latex-Kurse (Mail:
 [latex-kurse@mailman.zfn.uni-bremen.de](mailto:latex-kurse@mailman.zfn.uni-bremen.de)).
 
+Die aktuellen Versionen der PDFs
+[finden sich hier](https://git.stugen.de/latex-kurse/presentation/builds/artifacts/master/browse?job=collector).
+
 ## Konfiguration
 
 Zur Erstellung einer an eine Veranstaltung angepassten Präsentation kann wie
