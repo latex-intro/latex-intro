@@ -1,37 +1,17 @@
-\begin{frame}
- \begin{center}
-  \Huge Grafiken
- \end{center}
-\end{frame}
+\section{Grafiken}
 
 \subsection{Grafiken einbinden}
 \begin{frame}[fragile]
 \frametitle{Grafiken einbinden}
-  Im Header wird ein weiteres Paket benötigt, um Grafiken
-einbinden zu können \\
-\begin{codeblock}
-\begin{small}
-\begin{verbatim}
-    \documentclass[a4paper,11pt,DIV=11]{scrartcl}
-    \usepackage[utf8]{inputenc}
-    \usepackage[ngerman]{babel}
-    \usepackage{amsfonts, amsmath, amssymb}
-    \usepackage{graphicx}
-\end{verbatim}
-\end{small}
-\end{codeblock}
-\end{frame}
-
-\subsection{Unterstützte Formate}
-\begin{frame}
-\frametitle{Unterstützte Formate}
+\framesubtitle{Das Paket \pkg{graphicx}}
+\textbf{Unterstützte Formate:}\smallskip
   \begin{itemize}
     \item[PNG] Portable Network Graphics
     \begin{itemize}
       \item verlustfreie Kompression
       \item Raster-/Pixelgrafik
     \end{itemize}
-    \item[JP(E)G] Joint Photographic Experts Group
+    \item[JPG] Joint Photographic Experts Group
     \begin{itemize}
       \item verlustbehaftete Kompression
       \item Raster-/Pixelgrafik
@@ -41,10 +21,6 @@ einbinden zu können \\
       \item verlustfreie Kompression
       \item vektorbasiert, daher meist sehr gut skalierbar
     \end{itemize}
-    \item[(E)PS] (Encapsulated) Postscript
-    \begin{itemize}
-      \item vektorbasiert, benötigt allerdings eigenes Paket
-    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -52,11 +28,11 @@ einbinden zu können \\
 \begin{frame}[fragile]
 \frametitle{Grafiken einbinden}
 \begin{codeblock}
-  \begin{verbatim}
-    \begin{figure}
-    \includegraphics[width=0.5\textwidth]{xkcd1.png}
-    \end{figure}
-  \end{verbatim}
+\begin{verbatim}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{xkcd1.png}
+\end{figure}
+\end{verbatim}
 \end{codeblock}
 \pause 
  \begin{figure}
@@ -69,14 +45,12 @@ einbinden zu können \\
 \frametitle{Bildunterschrift}
  
 \begin{codeblock}
- 
-
-  \begin{verbatim}
-    \begin{figure}
-    \includegraphics[width=0.5\textwidth]{xkcd1.png}
-    \caption{  Beispielbild von XKCD.com }
-    \end{figure}
-  \end{verbatim}
+\begin{verbatim}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{xkcd1.png}
+\caption{Beispielbild von XKCD.com}
+\end{figure}
+\end{verbatim}
 \end{codeblock}
     \begin{figure}
       \includegraphics[width=0.3\textwidth]{xkcd1.png}
@@ -88,11 +62,11 @@ einbinden zu können \\
 \begin{frame}[fragile]
 \frametitle{Positionierung von Abbildungen}
   \begin{codeblock}
-   \begin{verbatim}
-    \begin{figure}[htbp]
-    \includegraphics[width=0.5\textwidth]{xkcd1.png}
-    \end{figure}
-   \end{verbatim}
+\begin{verbatim}
+\begin{figure}[htbp]
+\includegraphics[width=0.5\textwidth]{xkcd1.png}
+\end{figure}
+\end{verbatim}
   \end{codeblock}
   
   \begin{itemize}
