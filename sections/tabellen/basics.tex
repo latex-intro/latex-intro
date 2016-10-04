@@ -1,8 +1,9 @@
 \section{Tabellen}
 
 \subsection{Grundlage}
-\begin{frame}[fragile]
-\frametitle{Tabellen}
+\begin{frame}[fragile]{Tabellen}
+\framesubtitle{Die Syntax}
+\begin{codeblock}
 \begin{verbatim}
 \begin{tabular}{|l|c|r|}
  \hline
@@ -10,49 +11,70 @@
  aber & nur mit zwei & Zeilen \\ \hline
 \end{tabular}
 \end{verbatim}
+\end{codeblock}
 \pause
-  
+
+\medskip
+  \begin{table}
+  \center
     \begin{tabular}{|l|c|r|}\hline
       Tabelle & mit & drei Spalten \\\hline
       aber & nur mit zwei & Zeilen \\\hline
     \end{tabular}
+    \end{table}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Tabellen}
+\begin{frame}[fragile]{Tabellen}
+\framesubtitle{Feste Spaltenbreite}
+\begin{codeblock}
 \begin{verbatim}
 \begin{tabular}{|c|p{2cm}|p{4cm}}
  1. S. & 2. S. mit 2cm & 3. S. mit 4cm
 \end{tabular}
 \end{verbatim}
+\end{codeblock}
 \pause
+
+\medskip
+    \begin{table}
+    \center
     \begin{tabular}{|c|p{2cm}|p{4cm}}
       1. S. & 2. S. mit 2cm & 3. S. mit 4cm
     \end{tabular}
+    \end{table}\pause
+    \medskip
+    
+Spalten mit fester Breite sind immer im Blocksatz!
 \end{frame}
 
 \subsection{Erweiterte Tabellenfunktionen}
-\begin{frame}[fragile]
-\frametitle{Tabellen}
+\begin{frame}[fragile]{Der Befehl \cmd{multicolumn}}
+\begin{codeblock}
 \begin{verbatim}  
-\begin{tabular}{|l||c|c|c||r|}
+\begin{tabular}{|l||*{3}{c|}|r|}
  \hline
  A & 1 & 2 & 3 & Ein \vline Beispiel \\ \hline
  B & 4 & 5 & 6 & Weitere Zeile \\ \hline \hline
  C & \multicolumn{3}{c||}{7 8 9} & Ende \\ \hline
 \end{tabular}
 \end{verbatim}
-  \begin{tabular}{|l||c|c|c||r|}
+\end{codeblock}\pause
+\begin{table}
+\center
+  \begin{tabular}{|l||*{3}{c|}|r|}
     \hline
     A & 1 & 2 & 3 & Ein \vline Beispiel \\\hline
     B & 4 & 5 & 6 & Weitere Zeile \\\hline \hline
     C & \multicolumn{3}{c||}{7 8 9} & Ende \\\hline
   \end{tabular}
+  \end{table}
 \end{frame}
 
 \subsection{Table-Umgebung}
 \begin{frame}[fragile]
 \frametitle{Table-Umgebung}
+\begin{small}
+\begin{codeblock}
 \begin{verbatim}  
 \begin{table}
  \begin{tabular}{|l|c|r|}
@@ -62,36 +84,11 @@
  \end{tabular}
  \caption{Einfaches Tabellenbeispiel}
 \end{table}
-  \end{verbatim} \pause
+  \end{verbatim} 
+  \end{codeblock}
+  \end{small}\pause
 
   \begin{table}
-      \begin{tabular}{|l|c|r|}
-	\hline
-	Tabelle & mit & drei Spalten \\\hline
-	aber & nur mit zwei & Zeilen \\\hline
-      \end{tabular}
-      \caption{Einfaches Tabellenbeispiel}
-    \end{table}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Tabelle zentrieren}
-\begin{verbatim}  
-\begin{table}
- \centering
- \begin{tabular}{|l|c|r|}
-  \hline
-  Tabelle & mit & drei Spalten \\\hline
-  aber & nur mit zwei & Zeilen \\\hline
- \end{tabular}
- \caption{Einfaches Tabellenbeispiel}
-\end{table}
-\end{verbatim}
-\pause
-    
-    \begin{table}
-      \centering
       \begin{tabular}{|l|c|r|}
 	\hline
 	Tabelle & mit & drei Spalten \\\hline
