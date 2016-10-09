@@ -1,0 +1,46 @@
+\subsection{Paket: \pkg{longtable}}
+
+\begin{frame}[fragile]{hilfreiches Paket: \pkg{longtable}}
+(schöne) Tabellen über mehrere Seiten
+
+\footnotesize
+\begin{codeblock}
+% benutze das paket fancyvrb
+\begin{Verbatim}[fontsize=\tiny]  
+\begin{longtable}{|c|c|}
+\hline Zeit t & Geschwindigkeit $v_{\text{B}}$  \\ \hline 
+\endfirsthead
+
+\multicolumn{2}{c}{Hier gehts weiter...} \\ \hline 
+Zeit t & Geschwindigkeit $v_{\text{B}}$  \\ \hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Weiter auf der nächsten Seite}} \\ 
+\hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+1 & 2 \\ 
+ ...
+\end{longtable}
+\end{Verbatim}
+\end{codeblock}
+\end{frame}
+
+\begin{frame}[fragile]{\pkg{longtable}(so siehts dann aus)}
+\begin{figure}
+ \includegraphics[width=0.3\textwidth]{images/longtable_v2.png}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}[fragile]{zu beachten bei \pkg{longtable}}
+\begin{itemize}
+\item mit \textbackslash endfirsthead definiert man die oberste Zeile der Tabelle 
+\item mit \textbackslash endhead definiert man die oberste Zeile der Tabelle auf den folgenden Seiten
+\item mit \textbackslash endfoot und \textbackslash endlastfoot analog die letzten Zeilen
+\end{itemize}
+\end{frame}
+
