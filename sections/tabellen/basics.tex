@@ -1,8 +1,31 @@
 \section{Tabellen}
 
 \subsection{Grundlage}
+
 \begin{frame}[fragile]
 \frametitle{Tabellen}
+\framesubtitle{Die \umg{tabular}-Umgebung}
+\begin{codeblock}
+\verb|\begin{tabular}|\marg{Spaltendefinition}\\
+\verb|  |\textlangle\emph{Tabelleninhalt}\textrangle\\
+\verb|\end{tabular}|
+\end{codeblock}
+\pause\bigskip
+  
+\begin{itemize}
+    \item \textit{Spaltendefinition}: \texttt{r}, \texttt{l}, \texttt{c},
+        jeder Buchstabe eine Spalte\pause
+    \item Senkrechte Linien mit \verb+|+\pause
+    \item \textit{Tabelleninhalt}: Spalten werden mit \verb|&| getrennt,
+        Zeilen mit \verb|\\|\pause
+    \item Horizontale Linien mit \cmd{hline}\pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tabellen}
+\framesubtitle{Ein Beispiel}
+\begin{codeblock}
 \begin{verbatim}
 \begin{tabular}{|l|c|r|}
  \hline
@@ -10,7 +33,8 @@
  aber & nur mit zwei & Zeilen \\ \hline
 \end{tabular}
 \end{verbatim}
-\pause
+\end{codeblock}
+\pause\bigskip
   
     \begin{tabular}{|l|c|r|}\hline
       Tabelle & mit & drei Spalten \\\hline
@@ -20,12 +44,16 @@
 
 \begin{frame}[fragile]
 \frametitle{Tabellen}
+Auch feste Breiten von Spalten können vorgegeben werden:
+\begin{codeblock}
 \begin{verbatim}
 \begin{tabular}{|c|p{2cm}|p{4cm}}
  1. S. & 2. S. mit 2cm & 3. S. mit 4cm
 \end{tabular}
 \end{verbatim}
-\pause
+\end{codeblock}
+\pause\bigskip
+
     \begin{tabular}{|c|p{2cm}|p{4cm}}
       1. S. & 2. S. mit 2cm & 3. S. mit 4cm
     \end{tabular}
@@ -33,15 +61,15 @@
 
 \subsection{Erweiterte Tabellenfunktionen}
 \begin{frame}[fragile]
-\frametitle{Tabellen}
-\begin{verbatim}  
-\begin{tabular}{|l||c|c|c||r|}
- \hline
- A & 1 & 2 & 3 & Ein \vline Beispiel \\ \hline
- B & 4 & 5 & 6 & Weitere Zeile \\ \hline \hline
- C & \multicolumn{3}{c||}{7 8 9} & Ende \\ \hline
-\end{tabular}
-\end{verbatim}
+\frametitle{Erweiterte Tabellenfunktionen}
+\begin{itemize}
+    \item Mehrfache \verb+|+ in Spaltendefinition für entsprechende Linien
+    \item \cmd{multicolumn}\marg{Anzahl Spalten}\marg{Format}\marg{Inhalt} für Zellen über mehrere Spalten
+    \item \cmd{vline} für senkrechte Linien in Zellen
+\end{itemize}
+\pause
+\bigskip
+
   \begin{tabular}{|l||c|c|c||r|}
     \hline
     A & 1 & 2 & 3 & Ein \vline Beispiel \\\hline
@@ -53,45 +81,19 @@
 \subsection{Table-Umgebung}
 \begin{frame}[fragile]
 \frametitle{Table-Umgebung}
-\begin{verbatim}  
-\begin{table}
- \begin{tabular}{|l|c|r|}
-  \hline
-  Tabelle & mit & drei Spalten \\ \hline
-  aber & nur mit zwei & Zeilen \\ \hline
- \end{tabular}
- \caption{Einfaches Tabellenbeispiel}
-\end{table}
-  \end{verbatim} \pause
+\begin{itemize}
+    \item Die \umg{table}-Umgebung funktioniert wie die \umg{figure}-Umgebung\pause
+    \item Eigentliche Tabelle mit \umg{tabular}-Umgebung in \umg{table}-Umgebung
+        stecken\pause
+    \item Tabelle zentrieren: \cmd{centering} vor der \umg{tabular}-Umgebung\pause
+    \item \cmd{caption} und \cmd{label} wie gehabt
+\end{itemize}
+
+
+\pause
+\bigskip
 
   \begin{table}
-      \begin{tabular}{|l|c|r|}
-	\hline
-	Tabelle & mit & drei Spalten \\\hline
-	aber & nur mit zwei & Zeilen \\\hline
-      \end{tabular}
-      \caption{Einfaches Tabellenbeispiel}
-    \end{table}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\frametitle{Tabelle zentrieren}
-\begin{verbatim}  
-\begin{table}
- \centering
- \begin{tabular}{|l|c|r|}
-  \hline
-  Tabelle & mit & drei Spalten \\\hline
-  aber & nur mit zwei & Zeilen \\\hline
- \end{tabular}
- \caption{Einfaches Tabellenbeispiel}
-\end{table}
-\end{verbatim}
-\pause
-    
-    \begin{table}
-      \centering
       \begin{tabular}{|l|c|r|}
 	\hline
 	Tabelle & mit & drei Spalten \\\hline
