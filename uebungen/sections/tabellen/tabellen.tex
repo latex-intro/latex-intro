@@ -1,0 +1,66 @@
+\item Erstelle eine 3-spaltige Tabelle mit den ersten 5 natürlichen Zahlen, ihren Quadraten und ihren dritten Potenzen. 
+
+\begin{loesung}
+z.B. 
+\verb|\begin{tabular}{ccc}|
+\verb| 1 & 1 & 1 \\|
+\verb|...|
+\verb|\end{tabular}|
+\end{loesung}
+
+\item Mache die erste Spalte linksbündig, die zweite rechtsbündig, die dritte exakt $3.14\,$cm breit. Benutze 
+die maximal mögliche Anzahl von Linien (zwischen Spalten und Zeilen und an den Rändern)
+
+\begin{loesung}
+z.B. 
+\begin{verbatim}
+\begin{tabular}{|l|r|p{3.14cm}|} \hline
+ 1 & 1 & 1 \\ \hline
+...
+\end{tabular}
+\end{verbatim}
+\end{loesung}
+
+
+
+\item Benutze das \texttt{array}-Paket, um die erste Spalte der Tabelle fett zu formatieren. Füge 2 Zellen zusammen zu einer langen Zelle.
+
+
+\begin{loesung}
+z.B. 
+\begin{verbatim}
+\usepackage{array}
+\begin{tabular}{|l >{\bfseries}|r|p{3.14cm}|} \hline
+ 1 & 1 & 1 \\ \hline
+...
+5 & \multicolumn{2}{c}{vereinigte Zelle}
+\end{tabular}
+\end{verbatim}
+\end{loesung}
+
+\item benutze das Pakte \texttt{longtable}, um eine seitenübergreifende Tabelle zu setzen. Schreibe über die 2.Tabellenhälfte einen kurzen Kommentar 
+\emph{hier geht die Tabelle weiter}
+
+
+\begin{loesung}
+z.B. 
+\begin{verbatim}
+\usepackage{longtable}
+ 
+\begin{longtable}{|c|c|}
+\hline Zeit t & Geschwindigkeit $v_{\text{B}}$  \\ \hline 
+\endfirsthead
+
+\multicolumn{2}{c}{Hier geht die Tabelle weiter} \\ \hline 
+Zeit t & Geschwindigkeit $v_{\text{B}}$  \\ \hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Weiter auf der nächsten Seite}} \\ 
+\endfoot
+
+1 & 2 \\ 
+ ...
+\end{longtable}
+\end{verbatim}
+\end{loesung}
+
