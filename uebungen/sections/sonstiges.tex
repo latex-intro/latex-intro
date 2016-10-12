@@ -4,7 +4,7 @@
         allem bei langen Dokumenten sinnvoll. Verschiebe die komplette Präambel
         (außer die \cmd{documentclass}-Zeile) in die Datei \texttt{Kopf.tex} und
         die letzten Zwei Kapitel vor dem Anhang in die Datei \texttt{Schluss.tex}.
-        
+
         In deinem Hauptdokument kannst du die Dateien jetzt mit
         \cmd{input}\marg{Dateiname} einbinden. Was ist der Unterschied zu
         \cmd{include}\marg{Dateiname}?
@@ -16,5 +16,45 @@
             \begin{loesung}
                 \cmd{include} macht unter anderem ein \cmd{clearpage} vor und nach
                 der Datei. Siehe auch \href{http://tex.stackexchange.com/questions/246/when-should-i-use-input-vs-include}{diesen Stack Exchange Thread}.
+            \end{loesung}
+
+        \item Erstelle eine Tabelle, in welcher du ein paar Messwerte darstellst.
+            Verwende hierzu einfach ein paar Zahlen mit Nachkommastellen und Einheiten.
+            Setze die Einheiten korrekt und richte die Zahlen am Komma aus.
+            \begin{hinweis}
+                Praktisch vor allem für Praktikumsprotokolle in der Physik, das Paket \pkg{siunitx} ist
+                hier hilfreich!
+            \end{hinweis}
+            \begin{loesung}
+            	\pkg{siunitx} fügt den Spaltentyp \texttt{S} hinzu, dieser richtet am Komma aus.
+            	
+            	Beispiel: \cmd{begin}\verb|{tabular}{S}|
+            \end{loesung}
+
+        \item Füge deinem Dokument noch ein paar Formeln hinzu, welche nummeriert werden
+            sollen. Erstelle außerdem einige Verweise auf die Formeln. Mit dem Paket
+            \pkg{mathtools} kann da Nummerierung bei nicht referenzierten Formeln
+            automatisch ausgeblendet werden (Option \verb|showonlyrefs|). Recherchiere
+            die Verwendungsweise und eventuell auftretende Probleme und wende die Option an.
+            \begin{loesung}
+            	Benutze das Paket \pkg{mathtools}, dann mit
+            	\verb|\mathtoolsset{showonlyrefs=true}| die Option aktivieren.
+            	Funktioniert nur wenn die Formel mit \cmd{eqref} referenziert wird.
+            	
+            	Probleme: Überlange Formeln laufen eventuell in das Label hinein.
+            \end{loesung}
+
+        \item Man kann die Positionierung von \umg{figure} und \umg{table} Umgebungen mit
+            Angaben wie \verb|[tp]| beeinflussen. Dafür muss man aber an jedem Gleitobjekt
+            diese Angabe machen. Unter
+            \url{https://www.latex-project.org/publications/tb111mitt-float.pdf}
+            findest du eine sehr gute Übersicht, wie man die Positionierung beeinflussen kann.
+
+            Wie schafft man es, dass \LaTeX{} bis zu 80\%{} der Seite mit Gleitobjekten füllt,
+            die mit \verb|[b]| positioniert werden sollen?
+            Erstelle hierzu einige Gleitobjekte und teste das Verhalten.
+            \begin{loesung}
+            	Details siehe verlinktes PDF, für spezifische Aufgabe\\
+            	\verb|\renewcommand{\bottomfraction}{0.8}| in die Präambel.
             \end{loesung}
     \end{uebung}

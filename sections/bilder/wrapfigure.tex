@@ -1,45 +1,32 @@
 \subsection{Paket: wrapfigure}
 
-\begin{frame}[fragile]{wrapfigure}
+\begin{frame}[fragile]
+\frametitle{Abbildungen von Text umfließen lassen}
+\framesubtitle{Das Paket \pkg{wrapfig}}
+
 Um Text um Bilder \enquote{herumfließen} zu lassen, benutzen wir das Paket \pkg{wrapfig}.
 
 \begin{codeblock}
-\begin{verbatim}
-\usepackage{wrapfig}
-\begin{document}
-\begin{wrapfigure}{l}{6cm}
-\includegraphics[width=0.5\textwidth]{xkcd1.png}
-\end{wrapfigure}
-\footnotesize \lipsum[1]
-
-\end{document}
-\end{verbatim}
-\end{codeblock}
-\pause
-\end{frame}
-
-\begin{frame}[fragile]{wrapfigure}
-\begin{wrapfigure}
-{l}
-{6cm}
-\includegraphics[width=0.5\textwidth]{images/xkcd1.png}
-\end{wrapfigure}
-\footnotesize \lipsum[1]
-\end{frame}
-
-\begin{frame}[fragile]{zu beachten bei wrapfigure}
-\begin{codeblock}
-\begin{verbatim}
-\begin{wrapfigure}{l}{8cm}
-\includegraphics[width=0.5\textwidth]{xkcd.png}
-\end{wrapfigure}
-\end{verbatim}
+\verb|\begin{wrapfigure}|\marg{Ausrichtung}\marg{Breite}\\
+\verb|\includegraphics[width=0.5\textwidth]{xkcd.png}|\\
+\verb|\end{wrapfigure}|
 \end{codeblock}
 
 \begin{itemize}
- \item l=links ; 8cm=breite
- \item kein \textbackslash flushright, \textbackslash flushleft, \textbackslash centering im Text um das Bild. 
- (für das Bild selbst emfiehlt sich \textbackslash centering)
+ \item \textit{Ausrichtung}: Links: \texttt{l}, Rechts: \texttt{r}
+ \item \textit{Breite}: Zum Beispiel \texttt{8cm}
+ \item Bild nicht rechts/links Ausrichten, da es sonst ggf. in den Text rutscht.
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Abbildungen von Text umfließen lassen}
+\begin{wrapfigure}
+{l}
+{6cm}
+\includegraphics[width=0.5\textwidth]{images/xkcd.png}
+\end{wrapfigure}
+\footnotesize \lipsum[2]
 \end{frame}
 

@@ -4,18 +4,21 @@
 \begin{frame}[fragile]
 \frametitle{Grafiken einbinden}
 \framesubtitle{Das Paket \pkg{graphicx}}
+Mit dem Befehl \cmd{includegraphics} können Grafiken eingebunden werden.
+\bigskip\pause
+
 \textbf{Unterstützte Formate:}\smallskip
   \begin{itemize}
     \item[PNG] Portable Network Graphics
     \begin{itemize}
       \item verlustfreie Kompression
       \item Raster-/Pixelgrafik
-    \end{itemize}
+    \end{itemize}\pause
     \item[JPG] Joint Photographic Experts Group
     \begin{itemize}
       \item verlustbehaftete Kompression
       \item Raster-/Pixelgrafik
-    \end{itemize}
+    \end{itemize}\pause
     \item[PDF] Portable Document Format
     \begin{itemize}
       \item verlustfreie Kompression
@@ -24,19 +27,31 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]
+\frametitle{Grafiken einbinden}
+\framesubtitle{Die \umg{figure}-Umgebung}
+\begin{itemize}
+    \item Damit Grafiken ideal positioniert werden können, gibt es spezielle
+        Gleit-Umgebungen (engl. \enquote{floats})
+    \item \LaTeX{} platziert diese automatisch an der nächsten passenden Stelle
+    \item Die Umgebung kann auch Bildunterschriften enthalten
+    \item Die Positionierung kann in Grenzen beeinflusst werden
+\end{itemize}
+\end{frame}
+
 \subsection{includegraphics}
 \begin{frame}[fragile]
 \frametitle{Grafiken einbinden}
 \begin{codeblock}
 \begin{verbatim}
 \begin{figure}
-\includegraphics[width=0.5\textwidth]{xkcd1.png}
+\includegraphics[width=0.5\textwidth]{xkcd.png}
 \end{figure}
 \end{verbatim}
 \end{codeblock}
 \pause 
  \begin{figure}
-      \includegraphics[width=0.5\textwidth]{images/xkcd1.png}
+      \includegraphics[width=0.5\textwidth]{images/xkcd.png}
  \end{figure}
 \end{frame}
 
@@ -47,13 +62,13 @@
 \begin{codeblock}
 \begin{verbatim}
 \begin{figure}
-\includegraphics[width=0.5\textwidth]{xkcd1.png}
+\includegraphics[width=0.5\textwidth]{xkcd.png}
 \caption{Beispielbild von XKCD.com}
 \end{figure}
 \end{verbatim}
 \end{codeblock}
     \begin{figure}
-      \includegraphics[width=0.3\textwidth]{xkcd1.png}
+      \includegraphics[width=0.3\textwidth]{xkcd.png}
       \caption{Beispielbild von XKCD.com}
     \end{figure}
 \end{frame}
@@ -64,16 +79,17 @@
   \begin{codeblock}
 \begin{verbatim}
 \begin{figure}[htbp]
-\includegraphics[width=0.5\textwidth]{xkcd1.png}
+\includegraphics[width=0.5\textwidth]{xkcd.png}
 \end{figure}
 \end{verbatim}
   \end{codeblock}
+  \pause
   
   \begin{itemize}
-    \item[h]<2-> (here) Positioniert bevorzugt an der Textstelle, an der
-die Umgebung steht
-    \item[t]<3-> (top) Positioniert bevorzugt am Seitenanfang
-    \item[b]<4-> (bottom) Positioniert bevorzugt am Seitenende
-    \item[p]<5-> (page) Positioniert auf neuer Seite
+    \item[h] (here) Positioniert bevorzugt an der Textstelle, an
+        der die Umgebung steht\pause
+    \item[t] (top) Positioniert bevorzugt am Seitenanfang\pause
+    \item[b] (bottom) Positioniert bevorzugt am Seitenende\pause
+    \item[p] (page) Positioniert auf neuer Seite
   \end{itemize}
 \end{frame}

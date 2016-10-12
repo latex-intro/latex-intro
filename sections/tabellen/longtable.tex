@@ -1,5 +1,4 @@
-\subsection{Paket: \pkg{longtable}}
-
+\subsection{Tabellen über mehrere Seiten}
 \begin{frame}[fragile]{Das Paket \pkg{longtable}}
 \begin{itemize}
 \item Tabellen mit Seitenumbruch mit dem Paket \pkg{longtable} erzeugen.\pause
@@ -10,7 +9,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{hilfreiches Paket: \pkg{longtable}}
+\begin{frame}[fragile]{Das Paket \pkg{longtable}}
 \framesubtitle{Beispiel}
 \footnotesize
 \begin{codeblock}
@@ -38,18 +37,21 @@ Zeit t & Geschwindigkeit $v_{\text{B}}$  \\ \hline
 \end{codeblock}
 \end{frame}
 
-\begin{frame}[fragile]{\pkg{longtable}(so siehts dann aus)}
+\begin{frame}[fragile]
+\frametitle{Tabellen über mehrere Seiten: Ein Beispiel}
 \begin{figure}
- \includegraphics[width=0.3\textwidth]{images/longtable_v2.png}
+ \includegraphics[height=0.8\textheight]{images/longtable_v2.png}
 \end{figure}
 
 \end{frame}
 
-\begin{frame}[fragile]{zu beachten bei \pkg{longtable}}
+\begin{frame}[fragile]
+\frametitle{Tabellen über mehrere Seiten}
+\framesubtitle{Wichtiges}
 \begin{itemize}
-\item mit \textbackslash endfirsthead definiert man die oberste Zeile der Tabelle 
-\item mit \textbackslash endhead definiert man die oberste Zeile der Tabelle auf den folgenden Seiten
-\item mit \textbackslash endfoot und \textbackslash endlastfoot analog die letzten Zeilen
+\item mit \cmd{endfirsthead} definiert man die oberste Zeile der Tabelle 
+\item mit \cmd{endhead} definiert man die oberste Zeile der Tabelle auf den folgenden Seiten
+\item mit \cmd{endfoot} und \cmd{endlastfoot} analog die letzten Zeilen
 \end{itemize}
 \end{frame}
 

@@ -1,8 +1,29 @@
 \section{Tabellen}
 
 \subsection{Grundlage}
-\begin{frame}[fragile]{Tabellen}
-\framesubtitle{Die Syntax}
+\begin{frame}[fragile]
+\frametitle{Tabellen}
+\framesubtitle{Die \umg{tabular}-Umgebung}
+\begin{codeblock}
+\verb|\begin{tabular}|\marg{Spaltendefinition}\\
+\verb|  |\textlangle\emph{Tabelleninhalt}\textrangle\\
+\verb|\end{tabular}|
+\end{codeblock}
+\pause\bigskip
+  
+\begin{itemize}
+    \item \textit{Spaltendefinition}: \texttt{r}, \texttt{l}, \texttt{c},
+        jeder Buchstabe eine Spalte\pause
+    \item Senkrechte Linien mit \verb+|+\pause
+    \item \textit{Tabelleninhalt}: Spalten werden mit \verb|&| getrennt,
+        Zeilen mit \verb|\\|\pause
+    \item Horizontale Linien mit \cmd{hline}\pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Tabellen}
+\framesubtitle{Ein Beispiel}
 \begin{codeblock}
 \begin{verbatim}
 \begin{tabular}{|l|c|r|}
@@ -17,6 +38,9 @@
 \medskip
   \begin{table}
   \center
+
+\pause\bigskip
+  
     \begin{tabular}{|l|c|r|}\hline
       Tabelle & mit & drei Spalten \\\hline
       aber & nur mit zwei & Zeilen \\\hline
@@ -26,6 +50,7 @@
 
 \begin{frame}[fragile]{Tabellen}
 \framesubtitle{Feste Spaltenbreite}
+Auch feste Breiten von Spalten können vorgegeben werden:
 \begin{codeblock}
 \begin{verbatim}
 \begin{tabular}{|c|p{2cm}|p{4cm}}
@@ -38,6 +63,8 @@
 \medskip
     \begin{table}
     \center
+\pause\bigskip
+
     \begin{tabular}{|c|p{2cm}|p{4cm}}
       1. S. & 2. S. mit 2cm & 3. S. mit 4cm
     \end{tabular}
@@ -48,7 +75,18 @@ Spalten mit fester Breite sind immer im Blocksatz!
 \end{frame}
 
 \subsection{Erweiterte Tabellenfunktionen}
+
+\begin{frame}[fragile]
+\frametitle{Erweiterte Tabellenfunktionen}
+\begin{itemize}
+    \item Mehrfache \verb+|+ in Spaltendefinition für entsprechende Linien
+    \item \cmd{multicolumn}\marg{Anzahl Spalten}\marg{Format}\marg{Inhalt} für Zellen über mehrere Spalten
+    \item \cmd{vline} für senkrechte Linien in Zellen
+\end{itemize}
+
+\end{frame}
 \begin{frame}[fragile]{Der Befehl \cmd{multicolumn}}
+\framesubtitle{Beispiel}
 \begin{codeblock}
 \begin{verbatim}  
 \begin{tabular}{|l||*{3}{c|}|r|}
@@ -62,7 +100,7 @@ Spalten mit fester Breite sind immer im Blocksatz!
 \begin{table}
 \center
   \begin{tabular}{|l||*{3}{c|}|r|}
-    \hline
+   \hline
     A & 1 & 2 & 3 & Ein \vline Beispiel \\\hline
     B & 4 & 5 & 6 & Weitere Zeile \\\hline \hline
     C & \multicolumn{3}{c||}{7 8 9} & Ende \\\hline
@@ -70,30 +108,16 @@ Spalten mit fester Breite sind immer im Blocksatz!
   \end{table}
 \end{frame}
 
+
 \subsection{Table-Umgebung}
 \begin{frame}[fragile]
 \frametitle{Table-Umgebung}
-\begin{small}
-\begin{codeblock}
-\begin{verbatim}  
-\begin{table}
- \begin{tabular}{|l|c|r|}
-  \hline
-  Tabelle & mit & drei Spalten \\ \hline
-  aber & nur mit zwei & Zeilen \\ \hline
- \end{tabular}
- \caption{Einfaches Tabellenbeispiel}
-\end{table}
-  \end{verbatim} 
-  \end{codeblock}
-  \end{small}\pause
+\begin{itemize}
+    \item Die \umg{table}-Umgebung funktioniert wie die \umg{figure}-Umgebung\pause
+    \item Eigentliche Tabelle mit \umg{tabular}-Umgebung in \umg{table}-Umgebung
+        stecken\pause
+    \item Tabelle zentrieren: \cmd{centering} vor der \umg{tabular}-Umgebung\pause
+    \item \cmd{caption} und \cmd{label} wie gehabt
+\end{itemize}
 
-  \begin{table}
-      \begin{tabular}{|l|c|r|}
-	\hline
-	Tabelle & mit & drei Spalten \\\hline
-	aber & nur mit zwei & Zeilen \\\hline
-      \end{tabular}
-      \caption{Einfaches Tabellenbeispiel}
-    \end{table}
 \end{frame}
