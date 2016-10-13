@@ -49,7 +49,7 @@ slides:mathe:slides:
     dependencies:
         - uebung:komplett
     script:
-        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" presentation-mathe-slides.pdf
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" presentation-mathe-slides.tex
     artifacts:
         untracked: true
         expire_in: 1 week
