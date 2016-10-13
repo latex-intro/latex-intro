@@ -17,7 +17,7 @@
     \item Senkrechte Linien mit \verb+|+\pause
     \item \textit{Tabelleninhalt}: Spalten werden mit \verb|&| getrennt,
         Zeilen mit \verb|\\|\pause
-    \item Horizontale Linien mit \cmd{hline}\pause
+    \item Horizontale Linien mit \cmd{hline}
 \end{itemize}
 \end{frame}
 
@@ -33,14 +33,12 @@
 \end{tabular}
 \end{verbatim}
 \end{codeblock}
-\pause
+\pause\bigskip
 
-\medskip
   \begin{table}
   \center
 
-\pause\bigskip
-  
+
     \begin{tabular}{|l|c|r|}\hline
       Tabelle & mit & drei Spalten \\\hline
       aber & nur mit zwei & Zeilen \\\hline
@@ -48,7 +46,8 @@
     \end{table}
 \end{frame}
 
-\begin{frame}[fragile]{Tabellen}
+\begin{frame}[fragile]
+\frametitle{Tabellen}
 \framesubtitle{Feste Spaltenbreite}
 Auch feste Breiten von Spalten können vorgegeben werden:
 \begin{codeblock}
@@ -58,20 +57,17 @@ Auch feste Breiten von Spalten können vorgegeben werden:
 \end{tabular}
 \end{verbatim}
 \end{codeblock}
-\pause
-
-\medskip
+\pause\bigskip
     \begin{table}
     \center
-\pause\bigskip
 
     \begin{tabular}{|c|p{2cm}|p{4cm}}
       1. S. & 2. S. mit 2cm & 3. S. mit 4cm
     \end{tabular}
     \end{table}\pause
     \medskip
-    
-Spalten mit fester Breite sind immer im Blocksatz!
+
+    Spalten mit fester Breite sind immer im Blocksatz!
 \end{frame}
 
 \subsection{Erweiterte Tabellenfunktionen}
@@ -79,24 +75,12 @@ Spalten mit fester Breite sind immer im Blocksatz!
 \begin{frame}[fragile]
 \frametitle{Erweiterte Tabellenfunktionen}
 \begin{itemize}
-    \item Mehrfache \verb+|+ in Spaltendefinition für entsprechende Linien
-    \item \cmd{multicolumn}\marg{Anzahl Spalten}\marg{Format}\marg{Inhalt} für Zellen über mehrere Spalten
+    \item Mehrfache \verb+|+ in Spaltendefinition für entsprechende Linien \pause
+    \item \cmd{multicolumn}\marg{Anzahl Spalten}\marg{Format}\marg{Inhalt} für Zellen über mehrere Spalten\pause
     \item \cmd{vline} für senkrechte Linien in Zellen
 \end{itemize}
 
-\end{frame}
-\begin{frame}[fragile]{Der Befehl \cmd{multicolumn}}
-\framesubtitle{Beispiel}
-\begin{codeblock}
-\begin{verbatim}  
-\begin{tabular}{|l||*{3}{c|}|r|}
- \hline
- A & 1 & 2 & 3 & Ein \vline Beispiel \\ \hline
- B & 4 & 5 & 6 & Weitere Zeile \\ \hline \hline
- C & \multicolumn{3}{c||}{7 8 9} & Ende \\ \hline
-\end{tabular}
-\end{verbatim}
-\end{codeblock}\pause
+\pause
 \begin{table}
 \center
   \begin{tabular}{|l||*{3}{c|}|r|}
