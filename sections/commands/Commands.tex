@@ -1,10 +1,8 @@
 \section{Eigene Befehle}
 
 \begin{frame}[fragile]{Befehle definieren}
-Wenn ihr viel mit \LaTeX{} arbeitet, werdet ihr zwangsläufig auf Ausdrücke stoßen, die wiederholt eingegeben werden. 
+Lange wiederholte Ausdrücke nerven. Über
 
-\medskip\pause
-Das dauert oft lange und wir können uns die Zeit sparen, indem wir über den Befehl 
 \begin{center}
 \cmd{newcommand}\oarg{Anzahl Parameter}\marg{Befehlsname}\marg{Definition}
 \end{center}
@@ -31,13 +29,13 @@ Das ist jetzt sehr einfach: $\R$.
 \end{frame}
 
 \begin{frame}[fragile]{Wichtig für eigene Befehle}
-\LaTeX{} warnt euch davor, wenn ihr einen vorhandenen Befehl überschreiben wollt. Ihr erhaltet die Fehlermeldung
+Werden Befehle überschrieben erhaltet Ihr folgende Meldung: 
 \begin{center}
-\textcolor{red}{\LaTeX{} Error: Command ... already defined.}
+\textcolor{red}{\LaTeX{} Error: Command ... already defined...}
 \end{center}\pause
-Seid ihr euch sicher, dass der Befehel, den ihr überschreiben wollt, von euch nicht genutzt wird, dann könnt ihr diesen mit 
+Befehle dennoch überschreiben mit:
 \begin{center}
 \cmd{renewcommand}\oarg{Anzahl Parameter}\marg{Befehlsname}\marg{Definition}
 \end{center}
-überschreiben. Ihr solltet euch dabei aber absolut sicher sein, dass ihr den überschriebenen Befehl später nicht mehr benötigt! 
+\alert{Nur wenn der Befehl nicht verwendet wird überschreiben!!!} 
 \end{frame}
