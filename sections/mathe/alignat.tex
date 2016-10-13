@@ -1,6 +1,6 @@
 \begin{frame}[fragile]{Die \umg{alignat}-Umgebung}
 \framesubtitle{Aussehen} 
-Die \umg{alignat}-Umgebung empfiehlt sich vor allem bei Umformen von Gleichungen. Ein Beispiel:
+Die \umg{alignat}-Umgebung bei Umformen von Gleichungen:
 \begin{columns}
 \begin{column}{.5\textwidth}
 \begin{codeblock}
@@ -55,14 +55,12 @@ Was fällt auf?
 
 \medskip
 \pause
-Die \umg{alignat}-Umgebung wechselt stets zwischen rechts-links-Ausrichtung.
+Wechsel zwischen rechts-links-Ausrichtung
 \end{frame}
 
 \begin{frame}[fragile]{Die \umg{alignat}-Umgebung}
-Problem: Eine Zeile aus einer \umg{alignat}-Umgebung soll nicht nummeriert werden, bzw. wir wollen eine Zeile anders nummerieren.
-
-\medskip\pause
-Lösung: Die Befehle \cmd{notag} und \cmd{tag}\marg{Text}.
+\framesubtitle{Benutzerdefinierte Nummerierung}
+Benutzerdefinierte Nummerierung durch die Befehle \cmd{notag} und \cmd{tag}\marg{Text}.
 
 \begin{columns}
 \begin{column}{0.5\textwidth}
@@ -89,5 +87,5 @@ Lösung: Die Befehle \cmd{notag} und \cmd{tag}\marg{Text}.
 \end{columns}
 
 \medskip\pause
-Mit dem Befehl \cmd{tag}\marg{Text} lässt sich in der \umg{alignat*}-Umgebung auch eine einzelne Gleichung nummerieren. 
+\cmd{tag}\marg{text} ermöglicht Nummerierung einzelner Gleichungen
 \end{frame}
