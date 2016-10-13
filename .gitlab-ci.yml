@@ -43,6 +43,18 @@ slides:komplett:
         untracked: true
         expire_in: 1 week
 
+
+slides:mathe:slides:
+    stage: slides
+    dependencies:
+        - uebung:komplett
+    script:
+        - latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode %O %S" presentation-mathe-slides.pdf
+    artifacts:
+        untracked: true
+        expire_in: 1 week
+
+
 slides:physik:handout:
     stage: slides
     dependencies:
