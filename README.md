@@ -5,9 +5,6 @@ Latex-Einführungsveranstaltungen an der Uni Bremen. Sie wird entwickelt von der
 Arbeitsgruppe Latex-Kurse (Mail:
 [latex-kurse@mailman.zfn.uni-bremen.de](mailto:latex-kurse@mailman.zfn.uni-bremen.de)).
 
-Die aktuellen Versionen der PDFs
-[finden sich hier](https://git.stugen.de/latex-kurse/presentation/builds/artifacts/master/browse?job=collector).
-
 ## Konfiguration
 
 Zur Erstellung einer an eine Veranstaltung angepassten Präsentation kann wie
@@ -25,7 +22,7 @@ Folgende Dinge können angepasst werden:
       geändert werden
 - Um für verschiedene Übungszettel immer die korrekten Nummern für die Übungen
   zu benutzen, muss der Übungszettel im Verzeichnis `uebungen` gespeichert werden
-  und mit `\registerexercise{<Dateiname>}` bekannt gemacht werden (Dateiname 
+  und mit `\registerexercise{<Dateiname>}` bekannt gemacht werden (Dateiname
   _ohne_ Endung).
 
 ## Benutzerdefinierte Funktionen zur Layoutvereinheitlichung (aka Styleguide)
@@ -64,6 +61,10 @@ immernoch eine `verbatim`-Umgebung benutzt werden.
   Verzeichnis.
 - `\handoutsolutions`: Zeigt Lösungen auch in Handouts an, alle anderen
   Auswahlregeln bleiben bestehen
+- `\newcommand{\customtheme}{<Name>}`: Lädt ein benutzerdefiniertes Theme aus dem Ordner
+  `config/themes`. Eventuell sind weitere Dateien nötig, welche nicht in diesem
+  Repository vorhanden sind. Diese sollten dann im `texmf`-Tree gespeichert
+  werden. Muss vor dem Einbinden von `config/head` stattfinden!
 
 ## Übungszettel
 
