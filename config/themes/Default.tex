@@ -1,0 +1,12 @@
+\usetheme{metropolis}
+\metroset{block=fill}
+\setbeamercolor{framesubtitle}{fg=mDarkTeal}
+\addtobeamertemplate{frametitle}{}{%
+  \ifx\insertframesubtitle\@empty\else%
+  \usebeamerfont{framesubtitle}%
+  \usebeamercolor[fg]{framesubtitle}%
+  \vspace{1em}\insertframesubtitle%
+  \fi%
+}
+\newcommand{\fbnum}[1]{}
+\newcommand{\fbname}[1]{}

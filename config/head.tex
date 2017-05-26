@@ -47,10 +47,11 @@
 \graphicspath{{./images/}}
 
 \renewcommand{\familydefault}{\sfdefault}
-\usetheme[footlinenumber, navline=false, footlineauthor]{Bremen}
 
-\fbnum{00}
-\fbname{Uni Bremen}
+\ifx \customtheme \undefined \input{config/themes/Default}\else%
+\input{config/themes/\customtheme}
+\fi%
+
 \subject{\LaTeX}
 
 \title{Eine Einführung in \LaTeX{}}
@@ -71,13 +72,5 @@ Yannik Schädler}
 % Keine Abstände vor und nach Codeblöcken
 \preto{\@verbatim}{\topsep=1pt \partopsep=1pt }
 \makeatother
-
-\AtBeginSection{\begin{frame}
-    \begin{center}
-    \Huge \textbf{\secname}
-    \end{center}        
-\end{frame}}
-
-\input{config/smallBremenFootline}
 
 \input{config/functions}
