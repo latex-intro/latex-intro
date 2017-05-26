@@ -86,12 +86,12 @@
     \begin{block}{Ablaufschema}\centering
         \begin{tikzpicture}[scale=.75,shorten <=2pt, shorten >=2pt]
 
-            \node[rectangle,label=above:{Code}]
-            	(code) 		at (0,0) {\includegraphics[height=30pt]{texicon.png}};
+            \node[rectangle]
+            	(code) 		at (0,0) {Code};
             \node[rectangle,draw,fill=white]
             	(latex) 	at (3,0) {\texttt{pdflatex}};
-            \node[rectangle,label=above:{Dokument}]
-            	(dokument) 	at (6,0) {\includegraphics[height=30pt]{pdficon.png}};
+            \node[rectangle]
+            	(dokument) 	at (6,0) {Dokument};
             \node
             	(aux) at (3,-2) {\footnotesize Hilfsdateien: \texttt{.aux}, \texttt{.toc},
             	\texttt{.log}, \ldots};
